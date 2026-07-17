@@ -262,7 +262,7 @@
                 {
                     "id": "counties-pmtiles",
                     "display_name": "Counties (Utah)",
-                    "visible": true,
+                    "visible": false,
                     "default_style": {
                         "fill-color": "#37474F",
                         "fill-opacity": 0.0
