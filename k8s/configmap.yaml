@@ -8,7 +8,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: utah-public-lands-config
-  namespace: biodiversity
+  namespace: schmidtdse
 data:
   config.template.json: |
     {
@@ -92,7 +92,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: utah-public-lands-nginx
-  namespace: biodiversity
+  namespace: schmidtdse
 data:
   nginx.conf.template: |
     server {
