@@ -35,11 +35,11 @@ python -m http.server 8000
 
 ```bash
 git add -A && git commit -m "<message>" && git push
-kubectl rollout restart deployment/utah-public-lands -n biodiversity
-kubectl rollout status  deployment/utah-public-lands -n biodiversity
+kubectl rollout restart deployment/utah-public-lands -n schmidtdse
+kubectl rollout status  deployment/utah-public-lands -n schmidtdse
 ```
 
-- App/Service/Deployment name: `utah-public-lands`; namespace: `biodiversity`; host: `utah-public-lands.nrp-nautilus.io`.
+- App/Service/Deployment name: `utah-public-lands`; namespace: `schmidtdse`; host: `utah-public-lands.nrp-nautilus.io`.
 - The LLM proxy key is injected server-side from the shared `open-llm-proxy-secrets` secret (browser never sees it); the `llm` block in `layers-input.json` is only used for local dev / GitHub Pages fallback.
 
 See the [deployment guide](https://boettiger-lab.github.io/geo-agent/docs/guide/deployment) for details.
