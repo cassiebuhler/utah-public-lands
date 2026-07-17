@@ -1,0 +1,163 @@
+# LLM config template — NO SECRETS.
+#
+# The upstream LLM proxy key lives only in the nginx config (see
+# `utah-public-lands-nginx` below), which injects the Authorization header
+# server-side via `proxy_set_header`. The browser only sees a relative
+# `/api/llm` endpoint and never holds the key.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: utah-public-lands-config
+  namespace: biodiversity
+data:
+  config.template.json: |
+    {
+        "mcp_server_url": "${MCP_SERVER_URL}",
+        "llm_model": "qwen",
+        "transcription_model": {
+            "value": "gemma-4-e4b",
+            "endpoint": "/api/llm",
+            "api_key": "unused"
+        },
+        "llm_models": [
+            {
+                "value": "gemma",
+                "label": "NRP Gemma",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "qwen",
+                "label": "DSE-nimbus",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "glm-5",
+                "label": "NRP GLM-5.2",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "z-ai/glm-5.2",
+                "label": "GLM-5.2 (OpenRouter)",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "deepseek/deepseek-v4-flash",
+                "label": "DeepSeek V4 Flash (OpenRouter)",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "qwen3",
+                "label": "NRP Qwen3",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "qwen3-small",
+                "label": "NRP Qwen3 Small",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "gpt-oss",
+                "label": "NRP GPT-OSS 120B",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "kimi",
+                "label": "NRP Kimi K2.5",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            },
+            {
+                "value": "minimax-m2",
+                "label": "NRP minimax-m2",
+                "endpoint": "/api/llm",
+                "api_key": "unused"
+            }
+        ]
+    }
+
+---
+# Nginx configuration — reverse-proxies /api/llm/ to open-llm-proxy and
+# injects the Authorization header from ${PROXY_KEY} at container start
+# (the startup command runs envsubst over this file). The browser never
+# receives the key.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: utah-public-lands-nginx
+  namespace: biodiversity
+data:
+  nginx.conf.template: |
+    server {
+        listen 80;
+        server_name _;
+
+        root /usr/share/nginx/html;
+        index index.html;
+
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
+        add_header Access-Control-Allow-Headers "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Accept";
+
+        # ── Reverse proxy to open-llm-proxy ──────────────────────────
+        # Clients POST to /api/llm/chat/completions with a dummy bearer
+        # token; nginx rewrites the Authorization header using the
+        # ${PROXY_KEY} substituted in at container startup.
+        #
+        # IPv4-only (geo-agent-ops#64): open-llm-proxy.nrp-nautilus.io advertises
+        # a AAAA (IPv6) record, and NRP nodes are heterogeneous — some have working
+        # IPv6 egress, some don't. A literal-hostname proxy_pass resolves once at
+        # startup and can latch onto an IPv6 address a given pod's node can't reach,
+        # so connect() fails (101: Network unreachable) → nginx marks the upstream
+        # down → intermittent 502s in the browser. A runtime resolver with ipv6=off
+        # + a variabled proxy_pass forces resolution onto the IPv4 A-record on every
+        # request. 10.96.0.10 is the in-cluster CoreDNS ClusterIP (kube-dns); the
+        # nginx:alpine build here rejects `local=on` (it parses it as a nameserver
+        # host and crashloops — validated against nginx 1.31.2).
+        # This is the owned, permanent config — there is no server-side fix to wait
+        # for (the AAAA isn't broken, just unreachable from some nodes). Keep it.
+        location ~ ^/api/llm/(.*)$ {
+            resolver 10.96.0.10 ipv6=off valid=30s;
+            set $llm_upstream "open-llm-proxy.nrp-nautilus.io";
+            # A variabled proxy_pass drops nginx's implicit URI rewrite, so
+            # reconstruct the /v1/ path (and any query string) from the regex
+            # capture above.
+            proxy_pass https://$llm_upstream:443/v1/$1$is_args$args;
+            proxy_ssl_server_name on;
+            proxy_ssl_name open-llm-proxy.nrp-nautilus.io;
+            proxy_set_header Host open-llm-proxy.nrp-nautilus.io;
+            proxy_set_header Authorization "Bearer ${PROXY_KEY}";
+
+            # Allow long agent loops (multi-turn tool use). 600s keeps the
+            # timeout uniform across the whole chain: the geo-agent client
+            # defaults to 600s (app/agent.js _llmTimeoutMs) and open-llm-proxy's
+            # httpx timeout is 600s, so this sidecar was the odd hop at 300s —
+            # cutting off slow-decode models (e.g. glm-5.2) the rest of the
+            # chain would still wait for.
+            proxy_read_timeout 600s;
+            proxy_send_timeout 600s;
+
+            # Don't buffer streaming responses
+            proxy_buffering off;
+        }
+
+        location / {
+            try_files $uri $uri/ /index.html;
+            add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+            add_header Pragma "no-cache";
+            add_header Expires "0";
+        }
+
+        location /health {
+            access_log off;
+            return 200 "healthy\n";
+            add_header Content-Type text/plain;
+        }
+    }

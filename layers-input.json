@@ -1,0 +1,319 @@
+{
+    "catalog": "https://s3-west.nrp-nautilus.io/public-data/stac/catalog.json",
+    "titiler_url": "https://titiler.nrp-nautilus.io",
+    "mcp_url": "https://dev-duckdb-mcp.nrp-nautilus.io/mcp",
+    "auto_approve": true,
+    "geocoder": {
+        "provider": "nominatim",
+        "search_box": true
+    },
+    "geolocate": {
+        "button": true,
+        "agent_tool": true
+    },
+    "sidebar": {
+        "enabled": true,
+        "chat_title": "Chat"
+    },
+    "view": {
+        "center": [-110.6, 37.6],
+        "zoom": 7
+    },
+    "charts": {
+        "enabled": true
+    },
+    "llm": {
+        "user_provided": true,
+        "transcription_model": { "value": "gemma" },
+        "default_endpoint": "https://openrouter.ai/api/v1",
+        "models": [
+            { "value": "anthropic/claude-sonnet-4", "label": "Claude Sonnet" },
+            { "value": "google/gemini-2.5-flash", "label": "Gemini Flash" },
+            { "value": "qwen/qwen3-235b-a22b", "label": "Qwen3 235B" },
+            { "value": "moonshotai/kimi-k2", "label": "Kimi K2" }
+        ]
+    },
+    "welcome": {
+        "message": "Explore how Bears Ears and Grand Staircase-Escalante National Monuments have changed from 2016 to 2026. Try asking:",
+        "examples": [
+            "Show me the Bears Ears and Grand Staircase-Escalante monument boundaries.",
+            "Play the wildfire history across Southern Utah over time.",
+            "How did irrecoverable carbon inside the monuments change from 2018 to 2024?",
+            "Which Utah counties overlap the two national monuments, and by how many acres?"
+        ]
+    },
+    "links": {
+        "github": "https://github.com/boettiger-lab/utah-public-lands",
+        "docs": "https://boettiger-lab.github.io/geo-agent/"
+    },
+    "collections": [
+        {
+            "collection_id": "nlcd-2024",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd-2024/stac-collection.json",
+            "assets": [
+                {
+                    "id": "nlcd-2024-cog",
+                    "display_name": "Land Cover (NLCD 2024)",
+                    "group": "Land Cover & Vegetation",
+                    "legend_type": "categorical"
+                }
+            ]
+        },
+        {
+            "collection_id": "cgls-lc100-2019",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json",
+            "assets": [
+                {
+                    "id": "cgls-lc100-2019-cog",
+                    "display_name": "Land Cover (Copernicus 2019)",
+                    "group": "Land Cover & Vegetation",
+                    "legend_type": "categorical"
+                }
+            ]
+        },
+        {
+            "collection_id": "rap-pfg-cover",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rap/rap-pfg-cover/stac-collection.json",
+            "assets": [
+                {
+                    "id": "rap-pfg-cover-cog",
+                    "display_name": "Rangeland Herbaceous Cover (RAP 2025)",
+                    "group": "Land Cover & Vegetation",
+                    "colormap": "greens",
+                    "rescale": "0,100",
+                    "legend_label": "% cover"
+                }
+            ]
+        },
+        {
+            "collection_id": "global-human-modification",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-human-modification/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ghm-cog",
+                    "display_name": "Human Modification (~2016 baseline)",
+                    "group": "Land Cover & Vegetation",
+                    "colormap": "magma",
+                    "rescale": "0,1",
+                    "legend_label": "0-1 modification index"
+                }
+            ]
+        },
+        {
+            "collection_id": "irrecoverable-carbon",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
+            "assets": [
+                {
+                    "id": "v2-irrecoverable-2024-cog",
+                    "display_name": "Irrecoverable Carbon (by year)",
+                    "group": "Carbon",
+                    "colormap": "reds",
+                    "rescale": "0,150",
+                    "legend_label": "Mg C / ha",
+                    "versions": [
+                        { "label": "2024", "asset_id": "v2-irrecoverable-2024-cog" },
+                        { "label": "2023", "asset_id": "v2-irrecoverable-2023-cog" },
+                        { "label": "2022", "asset_id": "v2-irrecoverable-2022-cog" },
+                        { "label": "2018", "asset_id": "v2-irrecoverable-2018-cog" }
+                    ],
+                    "default_version": "2024"
+                }
+            ]
+        },
+        {
+            "collection_id": "silvis-wui-2020",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-wui/stac-collection.json",
+            "assets": [
+                {
+                    "id": "wui-2020-pmtiles",
+                    "display_name": "Wildland-Urban Interface (SILVIS 2020)",
+                    "group": "Land Cover & Vegetation",
+                    "default_style": {
+                        "fill-color": "#B71C1C",
+                        "fill-opacity": 0.35
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-fires-2021-combined",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/usgs-fires-2021/combined/stac-collection.json",
+            "assets": [
+                {
+                    "id": "combined-pmtiles",
+                    "display_name": "Wildfire Perimeters (by year)",
+                    "group": "Fire",
+                    "default_style": {
+                        "fill-color": "#E65100",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#BF360C",
+                        "line-width": 0.6
+                    },
+                    "control": {
+                        "type": "slider",
+                        "field": "Fire_Year",
+                        "label": "Fire year",
+                        "min": 1984,
+                        "max": 2020,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    },
+                    "tooltip_fields": [
+                        "Listed_Fire_Names",
+                        "Fire_Year",
+                        "GIS_Acres"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
+            "assets": [
+                {
+                    "id": "fee-pmtiles",
+                    "display_name": "Protected Areas - Fee (Utah)",
+                    "group": "Protected Areas",
+                    "default_style": {
+                        "fill-color": [
+                            "match", ["get", "GAP_Sts"],
+                            "1", "#26633A",
+                            "2", "#3E9C47",
+                            "3", "#7EB3D3",
+                            "4", "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "default_filter": ["==", ["get", "State_Nm"], "UT"],
+                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-nhd-perennial-streams",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs-nhd/perennial-streams/stac-collection.json",
+            "group": { "name": "Context", "collapsed": true },
+            "assets": [
+                {
+                    "id": "perennial-streams-pmtiles",
+                    "display_name": "Perennial Streams",
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": "#1565C0",
+                        "line-width": 0.6,
+                        "line-opacity": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "federal-trails-2026",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
+            "group": { "name": "Context", "collapsed": true },
+            "assets": [
+                {
+                    "id": "federal-trails-2026-pmtiles",
+                    "display_name": "Federal Trails (USFS / NPS / BLM)",
+                    "layer_type": "line",
+                    "default_style": {
+                        "line-color": [
+                            "match", ["get", "admin_agency"],
+                            "USFS", "#2E7D32",
+                            "NPS", "#5D4037",
+                            "BLM", "#E65100",
+                            "#888888"
+                        ],
+                        "line-width": 1.0,
+                        "line-opacity": 0.9
+                    },
+                    "tooltip_fields": ["trail_name", "admin_agency", "admin_unit", "length_miles"]
+                }
+            ]
+        },
+        {
+            "collection_id": "landmark-iplc-poly",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
+            "assets": [
+                {
+                    "id": "iplc-poly-pmtiles",
+                    "display_name": "Indigenous & Community Lands (LandMark)",
+                    "group": "Tribal & Cultural",
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.2
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.8
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "overture-divisions-counties-2026-02-18",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-overturemaps/2026-02-18.0/counties/stac-collection.json",
+            "group": { "name": "Context", "collapsed": true },
+            "assets": [
+                {
+                    "id": "counties-pmtiles",
+                    "display_name": "Counties (Utah)",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#37474F",
+                        "fill-opacity": 0.0
+                    },
+                    "default_filter": ["==", ["get", "region"], "US-UT"],
+                    "outline_style": {
+                        "line-color": "#37474F",
+                        "line-width": 0.6,
+                        "line-opacity": 0.6
+                    },
+                    "tooltip_fields": ["names.primary"]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-combined",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/combined/stac-collection.json",
+            "assets": [
+                {
+                    "id": "combined-pmtiles",
+                    "display_name": "National Monuments - current extent (PAD-US 4.1)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": [
+                            "match", ["get", "Unit_Nm"],
+                            "Bears Ears National Monument", "#8B4513",
+                            "Grand Staircase-Escalante National Monument", "#00695C",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.15
+                    },
+                    "outline_style": {
+                        "line-color": [
+                            "match", ["get", "Unit_Nm"],
+                            "Bears Ears National Monument", "#8B4513",
+                            "Grand Staircase-Escalante National Monument", "#00695C",
+                            "#888888"
+                        ],
+                        "line-width": 2.0
+                    },
+                    "default_filter": [
+                        "all",
+                        ["==", ["get", "Des_Tp"], "NM"],
+                        ["match", ["get", "Unit_Nm"],
+                            ["Bears Ears National Monument", "Grand Staircase-Escalante National Monument"],
+                            true, false]
+                    ],
+                    "tooltip_fields": ["Unit_Nm", "Des_Tp", "Mang_Name", "GIS_Acres"]
+                }
+            ]
+        }
+    ]
+}
