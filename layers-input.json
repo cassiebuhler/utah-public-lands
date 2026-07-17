@@ -122,42 +122,6 @@
             ]
         },
         {
-            "collection_id": "usgs-fires-2021-combined",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-fire/usgs-fires-2021/combined/stac-collection.json",
-            "assets": [
-                {
-                    "id": "combined-pmtiles",
-                    "display_name": "Wildfire Perimeters (by year)",
-                    "group": "Fire",
-                    "visible": true,
-                    "default_style": {
-                        "fill-color": "#E65100",
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#BF360C",
-                        "line-width": 0.6
-                    },
-                    "control": {
-                        "type": "slider",
-                        "field": "Fire_Year",
-                        "label": "Fire year",
-                        "min": 1984,
-                        "max": 2020,
-                        "step": 1,
-                        "mode": "cumulative",
-                        "animate": true,
-                        "duration_seconds": 25
-                    },
-                    "tooltip_fields": [
-                        "Listed_Fire_Names",
-                        "Fire_Year",
-                        "GIS_Acres"
-                    ]
-                }
-            ]
-        },
-        {
             "collection_id": "pad-us-4.1-fee",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "assets": [
