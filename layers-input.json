@@ -72,20 +72,6 @@
             ]
         },
         {
-            "collection_id": "rap-pfg-cover",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-rap/rap-pfg-cover/stac-collection.json",
-            "assets": [
-                {
-                    "id": "rap-pfg-cover-cog",
-                    "display_name": "Rangeland Herbaceous Cover (RAP 2025)",
-                    "group": "Land Cover & Vegetation",
-                    "colormap": "greens",
-                    "rescale": "0,100",
-                    "legend_label": "% cover"
-                }
-            ]
-        },
-        {
             "collection_id": "global-human-modification",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-human-modification/stac-collection.json",
             "assets": [
@@ -143,6 +129,7 @@
                     "id": "combined-pmtiles",
                     "display_name": "Wildfire Perimeters (by year)",
                     "group": "Fire",
+                    "visible": true,
                     "default_style": {
                         "fill-color": "#E65100",
                         "fill-opacity": 0.45
