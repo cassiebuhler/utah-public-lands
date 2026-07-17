@@ -273,7 +273,7 @@
                         "line-width": 0.6,
                         "line-opacity": 0.6
                     },
-                    "tooltip_fields": ["names.primary"]
+                    "tooltip_fields": ["name_en"]
                 }
             ]
         },
