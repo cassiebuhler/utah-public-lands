@@ -229,40 +229,58 @@
             ]
         },
         {
-            "collection_id": "pad-us-4.1-combined",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/combined/stac-collection.json",
+            "collection_id": "benm-boundaries",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json",
             "assets": [
                 {
-                    "id": "combined-pmtiles",
-                    "display_name": "National Monuments - current extent (PAD-US 4.1)",
+                    "id": "benm-2026",
+                    "display_name": "Bears Ears (by era)",
                     "group": "Monument Boundaries",
                     "visible": true,
                     "default_style": {
-                        "fill-color": [
-                            "match", ["get", "Unit_Nm"],
-                            "Bears Ears National Monument", "#8B4513",
-                            "Grand Staircase-Escalante National Monument", "#00695C",
-                            "#888888"
-                        ],
+                        "fill-color": "#8B4513",
                         "fill-opacity": 0.15
                     },
                     "outline_style": {
-                        "line-color": [
-                            "match", ["get", "Unit_Nm"],
-                            "Bears Ears National Monument", "#8B4513",
-                            "Grand Staircase-Escalante National Monument", "#00695C",
-                            "#888888"
-                        ],
-                        "line-width": 2.0
+                        "line-color": "#8B4513",
+                        "line-width": 2.5
                     },
-                    "default_filter": [
-                        "all",
-                        ["==", ["get", "Des_Tp"], "NM"],
-                        ["match", ["get", "Unit_Nm"],
-                            ["Bears Ears National Monument", "Grand Staircase-Escalante National Monument"],
-                            true, false]
+                    "tooltip_fields": ["name", "acres", "status"],
+                    "versions": [
+                        {"label": "2016 original", "asset_id": "benm-2016"},
+                        {"label": "2017 reduced", "asset_id": "benm-2017"},
+                        {"label": "2021 restored", "asset_id": "benm-2021"},
+                        {"label": "2026 reduced", "asset_id": "benm-2026"}
                     ],
-                    "tooltip_fields": ["Unit_Nm", "Des_Tp", "Mang_Name", "GIS_Acres"]
+                    "default_version": "2026 reduced"
+                }
+            ]
+        },
+        {
+            "collection_id": "gsenm-boundaries",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json",
+            "assets": [
+                {
+                    "id": "gsenm-2026",
+                    "display_name": "Grand Staircase-Escalante (by era)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#00695C",
+                        "fill-opacity": 0.15
+                    },
+                    "outline_style": {
+                        "line-color": "#00695C",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": ["name", "acres", "status"],
+                    "versions": [
+                        {"label": "1996 original", "asset_id": "gsenm-1996"},
+                        {"label": "2017 reduced", "asset_id": "gsenm-2017"},
+                        {"label": "2021 restored", "asset_id": "gsenm-2021"},
+                        {"label": "2026 reduced", "asset_id": "gsenm-2026"}
+                    ],
+                    "default_version": "2026 reduced"
                 }
             ]
         }

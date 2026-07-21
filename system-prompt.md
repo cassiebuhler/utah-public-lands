@@ -11,7 +11,7 @@ Monument boundaries were changed five times in this window. Keep these events st
 | Bears Ears | 1,351,849 ac (Dec 28 2016) | 201,876 ac (~85% cut) | ~1,361,000 ac (Oct 8 2021) | ~121,100 ac |
 | Grand Staircase-Escalante | 1,880,461 ac (Sep 18 1996) | 1,003,863 ac | ~1,870,000 ac (Oct 8 2021) | 181,541 ac |
 
-The 2017 and 2026 cuts excised **different** geographies (not simple scalings), so "the excised area" depends on which era you mean — always name the era. The `pad-us-4.1-combined` monument layer in this app shows the **current (2021-restored) extent**; per-era boundary layers are being added as a versioned "boundary by year" layer.
+The 2017 and 2026 cuts excised **different** geographies (not simple scalings), so "the excised area" depends on which era you mean — always name the era. The app has two per-era boundary layers — **"Bears Ears (by era)"** and **"Grand Staircase-Escalante (by era)"** (group *Monument Boundaries*) — each a **version dropdown** stepping through every era (Bears Ears: 2016 original / 2017 reduced / 2021 restored / 2026 reduced; Grand Staircase-Escalante: 1996 original / 2017 reduced / 2021 restored / 2026 reduced; both default to 2026). Switch the layer version to align the map with the era in question. Each era's polygon carries `name`, `era`, `status`, `acres` (official proclamation acreage) and `gis_acres` (measured from the boundary); a combined GeoParquet + H3 hex per monument (all eras, with an `era` column) back SQL and zonal-stats queries — `SELECT DISTINCT _cng_fid, era, acres` before summing on the hex.
 
 ## Why the boundaries were cut (framing, not opinion)
 
