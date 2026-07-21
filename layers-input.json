@@ -69,30 +69,16 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json",
             "assets": [
                 {
-                    "id": "benm-pmtiles",
-                    "display_name": "Bears Ears",
-                    "group": "Monument Boundaries",
-                    "visible": true,
+                    "id": "benm-2016",
+                    "display_name": "2016 original",
+                    "group": "Bears Ears",
+                    "visible": false,
                     "default_style": {
+                        "fill-color": "#B5D4F4",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": [
-                            "match",
-                            [
-                                "get",
-                                "era"
-                            ],
-                            "2016 original",
-                            "#B5D4F4",
-                            "2017 reduced",
-                            "#85B7EB",
-                            "2021 restored",
-                            "#378ADD",
-                            "2026 proposed",
-                            "#0C447C",
-                            "#888888"
-                        ],
+                        "line-color": "#B5D4F4",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
@@ -100,15 +86,81 @@
                         {
                             "label": "2016 original",
                             "color": "#B5D4F4"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2017",
+                    "display_name": "2017 reduced",
+                    "group": "Bears Ears",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#85B7EB",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#85B7EB",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2017 reduced",
                             "color": "#85B7EB"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2021",
+                    "display_name": "2021 restored",
+                    "group": "Bears Ears",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#378ADD",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#378ADD",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2021 restored",
                             "color": "#378ADD"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2026",
+                    "display_name": "2026 proposed",
+                    "group": "Bears Ears",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#0C447C",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#0C447C",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2026 proposed",
                             "color": "#0C447C"
@@ -116,7 +168,6 @@
                     ],
                     "tooltip_fields": [
                         "name",
-                        "era",
                         "acres",
                         "status"
                     ]
@@ -128,30 +179,16 @@
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json",
             "assets": [
                 {
-                    "id": "gsenm-pmtiles",
-                    "display_name": "Grand Staircase-Escalante",
-                    "group": "Monument Boundaries",
-                    "visible": true,
+                    "id": "gsenm-1996",
+                    "display_name": "1996 original",
+                    "group": "Grand Staircase-Escalante",
+                    "visible": false,
                     "default_style": {
+                        "fill-color": "#FAC775",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": [
-                            "match",
-                            [
-                                "get",
-                                "era"
-                            ],
-                            "1996 original",
-                            "#FAC775",
-                            "2017 reduced",
-                            "#EF9F27",
-                            "2021 restored",
-                            "#BA7517",
-                            "2026 proposed",
-                            "#633806",
-                            "#888888"
-                        ],
+                        "line-color": "#FAC775",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
@@ -159,15 +196,81 @@
                         {
                             "label": "1996 original",
                             "color": "#FAC775"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2017",
+                    "display_name": "2017 reduced",
+                    "group": "Grand Staircase-Escalante",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#EF9F27",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#EF9F27",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2017 reduced",
                             "color": "#EF9F27"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2021",
+                    "display_name": "2021 restored",
+                    "group": "Grand Staircase-Escalante",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#BA7517",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#BA7517",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2021 restored",
                             "color": "#BA7517"
-                        },
+                        }
+                    ],
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2026",
+                    "display_name": "2026 proposed",
+                    "group": "Grand Staircase-Escalante",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#633806",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#633806",
+                        "line-width": 2.5
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
                         {
                             "label": "2026 proposed",
                             "color": "#633806"
@@ -175,7 +278,6 @@
                     ],
                     "tooltip_fields": [
                         "name",
-                        "era",
                         "acres",
                         "status"
                     ]
