@@ -70,17 +70,24 @@
             "assets": [
                 {
                     "id": "benm-2016",
-                    "display_name": "Bears Ears \u2014 2016 (original)",
+                    "display_name": "Bears Ears \u2014 2016 original",
                     "group": "Monument Boundaries",
-                    "visible": true,
+                    "visible": false,
                     "default_style": {
-                        "fill-color": "#2c7bb6",
+                        "fill-color": "#4878D0",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#2c7bb6",
+                        "line-color": "#4878D0",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2016 original",
+                            "color": "#4878D0"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -89,17 +96,24 @@
                 },
                 {
                     "id": "benm-2017",
-                    "display_name": "Bears Ears \u2014 2017 (reduced)",
+                    "display_name": "Bears Ears \u2014 2017 reduced",
                     "group": "Monument Boundaries",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#fdae61",
+                        "fill-color": "#EE854A",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#fdae61",
+                        "line-color": "#EE854A",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2017 reduced",
+                            "color": "#EE854A"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -108,17 +122,24 @@
                 },
                 {
                     "id": "benm-2021",
-                    "display_name": "Bears Ears \u2014 2021 (restored)",
+                    "display_name": "Bears Ears \u2014 2021 restored",
                     "group": "Monument Boundaries",
-                    "visible": false,
+                    "visible": true,
                     "default_style": {
-                        "fill-color": "#1a9641",
+                        "fill-color": "#6ACC64",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#1a9641",
+                        "line-color": "#6ACC64",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2021 restored",
+                            "color": "#6ACC64"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -127,17 +148,24 @@
                 },
                 {
                     "id": "benm-2026",
-                    "display_name": "Bears Ears \u2014 2026 (proposed)",
+                    "display_name": "Bears Ears \u2014 2026 proposed",
                     "group": "Monument Boundaries",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#d7191c",
+                        "fill-color": "#D65F5F",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#d7191c",
+                        "line-color": "#D65F5F",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2026 proposed",
+                            "color": "#D65F5F"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -152,17 +180,24 @@
             "assets": [
                 {
                     "id": "gsenm-1996",
-                    "display_name": "Grand Staircase-Escalante \u2014 1996 (original)",
+                    "display_name": "Grand Staircase-Escalante \u2014 1996 original",
                     "group": "Monument Boundaries",
-                    "visible": true,
+                    "visible": false,
                     "default_style": {
-                        "fill-color": "#2c7bb6",
+                        "fill-color": "#4878D0",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#2c7bb6",
+                        "line-color": "#4878D0",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "1996 original",
+                            "color": "#4878D0"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -171,17 +206,24 @@
                 },
                 {
                     "id": "gsenm-2017",
-                    "display_name": "Grand Staircase-Escalante \u2014 2017 (reduced)",
+                    "display_name": "Grand Staircase-Escalante \u2014 2017 reduced",
                     "group": "Monument Boundaries",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#fdae61",
+                        "fill-color": "#EE854A",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#fdae61",
+                        "line-color": "#EE854A",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2017 reduced",
+                            "color": "#EE854A"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -190,17 +232,24 @@
                 },
                 {
                     "id": "gsenm-2021",
-                    "display_name": "Grand Staircase-Escalante \u2014 2021 (restored)",
+                    "display_name": "Grand Staircase-Escalante \u2014 2021 restored",
                     "group": "Monument Boundaries",
-                    "visible": false,
+                    "visible": true,
                     "default_style": {
-                        "fill-color": "#1a9641",
+                        "fill-color": "#6ACC64",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#1a9641",
+                        "line-color": "#6ACC64",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2021 restored",
+                            "color": "#6ACC64"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -209,17 +258,24 @@
                 },
                 {
                     "id": "gsenm-2026",
-                    "display_name": "Grand Staircase-Escalante \u2014 2026 (proposed)",
+                    "display_name": "Grand Staircase-Escalante \u2014 2026 proposed",
                     "group": "Monument Boundaries",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#d7191c",
+                        "fill-color": "#D65F5F",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#d7191c",
+                        "line-color": "#D65F5F",
                         "line-width": 2.5
                     },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "2026 proposed",
+                            "color": "#D65F5F"
+                        }
+                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -234,7 +290,7 @@
             "assets": [
                 {
                     "id": "iplc-poly-pmtiles",
-                    "display_name": "Indigenous & Community Lands (LandMark)",
+                    "display_name": "Indigenous & Community Lands (LandMark 2025)",
                     "group": "Tribal & Cultural",
                     "default_style": {
                         "fill-color": "#6A1B9A",
@@ -243,7 +299,14 @@
                     "outline_style": {
                         "line-color": "#6A1B9A",
                         "line-width": 0.8
-                    }
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Indigenous / community lands",
+                            "color": "#6A1B9A"
+                        }
+                    ]
                 }
             ]
         },
@@ -253,7 +316,7 @@
             "assets": [
                 {
                     "id": "fee-pmtiles",
-                    "display_name": "Protected Areas - Fee (Utah)",
+                    "display_name": "Protected Areas \u2013 Fee (Utah, PAD-US 4.1)",
                     "group": "Protected Areas",
                     "default_style": {
                         "fill-color": [
@@ -286,6 +349,25 @@
                         "Unit_Nm",
                         "GAP_Sts",
                         "Mang_Type"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "GAP 1 \u2013 biodiversity (strict)",
+                            "color": "#26633A"
+                        },
+                        {
+                            "label": "GAP 2 \u2013 biodiversity (multi-use)",
+                            "color": "#3E9C47"
+                        },
+                        {
+                            "label": "GAP 3 \u2013 multiple use",
+                            "color": "#7EB3D3"
+                        },
+                        {
+                            "label": "GAP 4 \u2013 no known mandate",
+                            "color": "#BDBDBD"
+                        }
                     ]
                 }
             ]
@@ -299,7 +381,7 @@
             "assets": [
                 {
                     "id": "federal-trails-2026-pmtiles",
-                    "display_name": "Federal Trails (USFS / NPS / BLM)",
+                    "display_name": "Federal Trails 2026 (USFS / NPS / BLM)",
                     "layer_type": "line",
                     "default_style": {
                         "line-color": [
@@ -324,6 +406,21 @@
                         "admin_agency",
                         "admin_unit",
                         "length_miles"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "USFS",
+                            "color": "#2E7D32"
+                        },
+                        {
+                            "label": "NPS",
+                            "color": "#5D4037"
+                        },
+                        {
+                            "label": "BLM",
+                            "color": "#E65100"
+                        }
                     ]
                 }
             ]
