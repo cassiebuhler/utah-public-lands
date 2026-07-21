@@ -20,7 +20,7 @@ AGENTS.md           ← configuration reference for AI coding agents
 
 - **Wildfire perimeters** carry an animated **year slider** (1984→2020) — press play to watch fire history accumulate across the region.
 - **Irrecoverable carbon** is a **version dropdown** (2018 / 2022 / 2023 / 2024).
-- **Per-era monument boundaries** (2016 original → 2017 cut → 2021 restored → 2026 cut) are a planned versioned layer — see the open data-ingestion issue. The current map shows the restored (2021) extent from PAD-US 4.1.
+- **Per-era monument boundaries** are two **version dropdowns** — *Bears Ears (by era)* (2016 original → 2017 cut → 2021 restored → 2026 cut) and *Grand Staircase-Escalante (by era)* (1996 original → 2017 cut → 2021 restored → 2026 cut) — each stepping through the redesignations (default 2026). Backed by the `public-utah` catalog (SGID / PAD-US 2.1 / PAD-US 4.1 / 2026 proposed boundaries).
 
 ## Local development
 
