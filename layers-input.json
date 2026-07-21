@@ -16,7 +16,10 @@
         "chat_title": "Chat"
     },
     "view": {
-        "center": [-110.6, 37.6],
+        "center": [
+            -110.6,
+            37.6
+        ],
         "zoom": 7
     },
     "charts": {
@@ -24,22 +27,36 @@
     },
     "llm": {
         "user_provided": true,
-        "transcription_model": { "value": "gemma" },
+        "transcription_model": {
+            "value": "gemma"
+        },
         "default_endpoint": "https://openrouter.ai/api/v1",
         "models": [
-            { "value": "anthropic/claude-sonnet-4", "label": "Claude Sonnet" },
-            { "value": "google/gemini-2.5-flash", "label": "Gemini Flash" },
-            { "value": "qwen/qwen3-235b-a22b", "label": "Qwen3 235B" },
-            { "value": "moonshotai/kimi-k2", "label": "Kimi K2" }
+            {
+                "value": "anthropic/claude-sonnet-4",
+                "label": "Claude Sonnet"
+            },
+            {
+                "value": "google/gemini-2.5-flash",
+                "label": "Gemini Flash"
+            },
+            {
+                "value": "qwen/qwen3-235b-a22b",
+                "label": "Qwen3 235B"
+            },
+            {
+                "value": "moonshotai/kimi-k2",
+                "label": "Kimi K2"
+            }
         ]
     },
     "welcome": {
         "message": "Explore how Bears Ears and Grand Staircase-Escalante National Monuments have changed from 2016 to 2026. Try asking:",
         "examples": [
-            "Show me the Bears Ears and Grand Staircase-Escalante monument boundaries.",
-            "Play the wildfire history across Southern Utah over time.",
-            "How did irrecoverable carbon inside the monuments change from 2018 to 2024?",
-            "Which Utah counties overlap the two national monuments, and by how many acres?"
+            "Overlay the Bears Ears boundary in 2016 and its 2026 proposed reduction.",
+            "How many acres did the 2026 proposal cut from Grand Staircase-Escalante compared with its 2021 extent?",
+            "Show tribal and community lands (LandMark) around the two monuments.",
+            "Which protected areas and federal trails fall inside the 2026 proposed Bears Ears boundary?"
         ]
     },
     "links": {
@@ -48,141 +65,166 @@
     },
     "collections": [
         {
-            "collection_id": "nlcd-2024",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/nlcd-2024/stac-collection.json",
+            "collection_id": "benm-boundaries",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json",
             "assets": [
                 {
-                    "id": "nlcd-2024-cog",
-                    "display_name": "Land Cover (NLCD 2024)",
-                    "group": "Land Cover & Vegetation",
-                    "legend_type": "categorical"
-                }
-            ]
-        },
-        {
-            "collection_id": "cgls-lc100-2019",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-land-cover/cgls-lc100-2019/stac-collection.json",
-            "assets": [
-                {
-                    "id": "cgls-lc100-2019-cog",
-                    "display_name": "Land Cover (Copernicus 2019)",
-                    "group": "Land Cover & Vegetation",
-                    "legend_type": "categorical"
-                }
-            ]
-        },
-        {
-            "collection_id": "global-human-modification",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-human-modification/stac-collection.json",
-            "assets": [
-                {
-                    "id": "ghm-cog",
-                    "display_name": "Human Modification (~2016 baseline)",
-                    "group": "Land Cover & Vegetation",
-                    "colormap": "magma",
-                    "rescale": "0,1",
-                    "legend_label": "0-1 modification index"
-                }
-            ]
-        },
-        {
-            "collection_id": "irrecoverable-carbon",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-carbon/stac-collection.json",
-            "assets": [
-                {
-                    "id": "v2-irrecoverable-2024-cog",
-                    "display_name": "Irrecoverable Carbon (by year)",
-                    "group": "Carbon",
-                    "colormap": "reds",
-                    "rescale": "0,150",
-                    "legend_label": "Mg C / ha",
-                    "versions": [
-                        { "label": "2024", "asset_id": "v2-irrecoverable-2024-cog" },
-                        { "label": "2023", "asset_id": "v2-irrecoverable-2023-cog" },
-                        { "label": "2022", "asset_id": "v2-irrecoverable-2022-cog" },
-                        { "label": "2018", "asset_id": "v2-irrecoverable-2018-cog" }
-                    ],
-                    "default_version": "2024"
-                }
-            ]
-        },
-        {
-            "collection_id": "silvis-wui-2020",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-wui/stac-collection.json",
-            "assets": [
-                {
-                    "id": "wui-2020-pmtiles",
-                    "display_name": "Wildland-Urban Interface (SILVIS 2020)",
-                    "group": "Land Cover & Vegetation",
+                    "id": "benm-2016",
+                    "display_name": "Bears Ears \u2014 2016 (original)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
                     "default_style": {
-                        "fill-color": "#B71C1C",
-                        "fill-opacity": 0.35
-                    }
-                }
-            ]
-        },
-        {
-            "collection_id": "pad-us-4.1-fee",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
-            "assets": [
-                {
-                    "id": "fee-pmtiles",
-                    "display_name": "Protected Areas - Fee (Utah)",
-                    "group": "Protected Areas",
-                    "default_style": {
-                        "fill-color": [
-                            "match", ["get", "GAP_Sts"],
-                            "1", "#26633A",
-                            "2", "#3E9C47",
-                            "3", "#7EB3D3",
-                            "4", "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.5
+                        "fill-color": "#2c7bb6",
+                        "fill-opacity": 0
                     },
-                    "default_filter": ["==", ["get", "State_Nm"], "UT"],
-                    "tooltip_fields": ["Unit_Nm", "GAP_Sts", "Mang_Type"]
-                }
-            ]
-        },
-        {
-            "collection_id": "usgs-nhd-perennial-streams",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs-nhd/perennial-streams/stac-collection.json",
-            "group": { "name": "Context", "collapsed": true },
-            "assets": [
-                {
-                    "id": "perennial-streams-pmtiles",
-                    "display_name": "Perennial Streams",
-                    "layer_type": "line",
-                    "default_style": {
-                        "line-color": "#1565C0",
-                        "line-width": 0.6,
-                        "line-opacity": 0.8
-                    }
-                }
-            ]
-        },
-        {
-            "collection_id": "federal-trails-2026",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
-            "group": { "name": "Context", "collapsed": true },
-            "assets": [
-                {
-                    "id": "federal-trails-2026-pmtiles",
-                    "display_name": "Federal Trails (USFS / NPS / BLM)",
-                    "layer_type": "line",
-                    "default_style": {
-                        "line-color": [
-                            "match", ["get", "admin_agency"],
-                            "USFS", "#2E7D32",
-                            "NPS", "#5D4037",
-                            "BLM", "#E65100",
-                            "#888888"
-                        ],
-                        "line-width": 1.0,
-                        "line-opacity": 0.9
+                    "outline_style": {
+                        "line-color": "#2c7bb6",
+                        "line-width": 2.5
                     },
-                    "tooltip_fields": ["trail_name", "admin_agency", "admin_unit", "length_miles"]
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2017",
+                    "display_name": "Bears Ears \u2014 2017 (reduced)",
+                    "group": "Monument Boundaries",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#fdae61",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#fdae61",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2021",
+                    "display_name": "Bears Ears \u2014 2021 (restored)",
+                    "group": "Monument Boundaries",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#1a9641",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#1a9641",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "benm-2026",
+                    "display_name": "Bears Ears \u2014 2026 (proposed)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#d7191c",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#d7191c",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "gsenm-boundaries",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json",
+            "assets": [
+                {
+                    "id": "gsenm-1996",
+                    "display_name": "Grand Staircase-Escalante \u2014 1996 (original)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#2c7bb6",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#2c7bb6",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2017",
+                    "display_name": "Grand Staircase-Escalante \u2014 2017 (reduced)",
+                    "group": "Monument Boundaries",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#fdae61",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#fdae61",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2021",
+                    "display_name": "Grand Staircase-Escalante \u2014 2021 (restored)",
+                    "group": "Monument Boundaries",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#1a9641",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#1a9641",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
+                },
+                {
+                    "id": "gsenm-2026",
+                    "display_name": "Grand Staircase-Escalante \u2014 2026 (proposed)",
+                    "group": "Monument Boundaries",
+                    "visible": true,
+                    "default_style": {
+                        "fill-color": "#d7191c",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#d7191c",
+                        "line-width": 2.5
+                    },
+                    "tooltip_fields": [
+                        "name",
+                        "acres",
+                        "status"
+                    ]
                 }
             ]
         },
@@ -206,81 +248,83 @@
             ]
         },
         {
-            "collection_id": "overture-divisions-counties-2026-02-18",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-overturemaps/2026-02-18.0/counties/stac-collection.json",
-            "group": { "name": "Context", "collapsed": true },
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "assets": [
                 {
-                    "id": "counties-pmtiles",
-                    "display_name": "Counties (Utah)",
-                    "visible": false,
+                    "id": "fee-pmtiles",
+                    "display_name": "Protected Areas - Fee (Utah)",
+                    "group": "Protected Areas",
                     "default_style": {
-                        "fill-color": "#37474F",
-                        "fill-opacity": 0.0
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "GAP_Sts"
+                            ],
+                            "1",
+                            "#26633A",
+                            "2",
+                            "#3E9C47",
+                            "3",
+                            "#7EB3D3",
+                            "4",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.5
                     },
-                    "default_filter": ["==", ["get", "region"], "US-UT"],
-                    "outline_style": {
-                        "line-color": "#37474F",
-                        "line-width": 0.6,
-                        "line-opacity": 0.6
-                    },
-                    "tooltip_fields": ["name_en"]
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "State_Nm"
+                        ],
+                        "UT"
+                    ],
+                    "tooltip_fields": [
+                        "Unit_Nm",
+                        "GAP_Sts",
+                        "Mang_Type"
+                    ]
                 }
             ]
         },
         {
-            "collection_id": "benm-boundaries",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json",
+            "collection_id": "federal-trails-2026",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
+            "group": {
+                "name": "Trails"
+            },
             "assets": [
                 {
-                    "id": "benm-2026",
-                    "display_name": "Bears Ears (by era)",
-                    "group": "Monument Boundaries",
-                    "visible": true,
+                    "id": "federal-trails-2026-pmtiles",
+                    "display_name": "Federal Trails (USFS / NPS / BLM)",
+                    "layer_type": "line",
                     "default_style": {
-                        "fill-color": "#8B4513",
-                        "fill-opacity": 0.15
+                        "line-color": [
+                            "match",
+                            [
+                                "get",
+                                "admin_agency"
+                            ],
+                            "USFS",
+                            "#2E7D32",
+                            "NPS",
+                            "#5D4037",
+                            "BLM",
+                            "#E65100",
+                            "#888888"
+                        ],
+                        "line-width": 1.0,
+                        "line-opacity": 0.9
                     },
-                    "outline_style": {
-                        "line-color": "#8B4513",
-                        "line-width": 2.5
-                    },
-                    "tooltip_fields": ["name", "acres", "status"],
-                    "versions": [
-                        {"label": "2016 original", "asset_id": "benm-2016"},
-                        {"label": "2017 reduced", "asset_id": "benm-2017"},
-                        {"label": "2021 restored", "asset_id": "benm-2021"},
-                        {"label": "2026 reduced", "asset_id": "benm-2026"}
-                    ],
-                    "default_version": "2026 reduced"
-                }
-            ]
-        },
-        {
-            "collection_id": "gsenm-boundaries",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json",
-            "assets": [
-                {
-                    "id": "gsenm-2026",
-                    "display_name": "Grand Staircase-Escalante (by era)",
-                    "group": "Monument Boundaries",
-                    "visible": true,
-                    "default_style": {
-                        "fill-color": "#00695C",
-                        "fill-opacity": 0.15
-                    },
-                    "outline_style": {
-                        "line-color": "#00695C",
-                        "line-width": 2.5
-                    },
-                    "tooltip_fields": ["name", "acres", "status"],
-                    "versions": [
-                        {"label": "1996 original", "asset_id": "gsenm-1996"},
-                        {"label": "2017 reduced", "asset_id": "gsenm-2017"},
-                        {"label": "2021 restored", "asset_id": "gsenm-2021"},
-                        {"label": "2026 reduced", "asset_id": "gsenm-2026"}
-                    ],
-                    "default_version": "2026 reduced"
+                    "tooltip_fields": [
+                        "trail_name",
+                        "admin_agency",
+                        "admin_unit",
+                        "length_miles"
+                    ]
                 }
             ]
         }
