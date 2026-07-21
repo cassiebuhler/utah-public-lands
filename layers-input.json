@@ -70,22 +70,22 @@
             "assets": [
                 {
                     "id": "benm-2016",
-                    "display_name": "Bears Ears \u2014 2016 original",
-                    "group": "Monument Boundaries",
+                    "display_name": "2016 original",
+                    "group": "Bears Ears",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#4878D0",
+                        "fill-color": "#C08552",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#4878D0",
+                        "line-color": "#C08552",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2016 original",
-                            "color": "#4878D0"
+                            "color": "#C08552"
                         }
                     ],
                     "tooltip_fields": [
@@ -96,22 +96,22 @@
                 },
                 {
                     "id": "benm-2017",
-                    "display_name": "Bears Ears \u2014 2017 reduced",
-                    "group": "Monument Boundaries",
+                    "display_name": "2017 reduced",
+                    "group": "Bears Ears",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#EE854A",
+                        "fill-color": "#9C5B1E",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#EE854A",
+                        "line-color": "#9C5B1E",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2017 reduced",
-                            "color": "#EE854A"
+                            "color": "#9C5B1E"
                         }
                     ],
                     "tooltip_fields": [
@@ -122,22 +122,22 @@
                 },
                 {
                     "id": "benm-2021",
-                    "display_name": "Bears Ears \u2014 2021 restored",
-                    "group": "Monument Boundaries",
+                    "display_name": "2021 restored",
+                    "group": "Bears Ears",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#6B4423",
+                        "fill-color": "#8B4513",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#6B4423",
+                        "line-color": "#8B4513",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#6B4423"
+                            "color": "#8B4513"
                         }
                     ],
                     "tooltip_fields": [
@@ -148,22 +148,22 @@
                 },
                 {
                     "id": "benm-2026",
-                    "display_name": "Bears Ears \u2014 2026 proposed",
-                    "group": "Monument Boundaries",
+                    "display_name": "2026 proposed",
+                    "group": "Bears Ears",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#D65F5F",
+                        "fill-color": "#4A250A",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#D65F5F",
+                        "line-color": "#4A250A",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2026 proposed",
-                            "color": "#D65F5F"
+                            "color": "#4A250A"
                         }
                     ],
                     "tooltip_fields": [
@@ -180,22 +180,22 @@
             "assets": [
                 {
                     "id": "gsenm-1996",
-                    "display_name": "Grand Staircase-Escalante \u2014 1996 original",
-                    "group": "Monument Boundaries",
+                    "display_name": "1996 original",
+                    "group": "Grand Staircase-Escalante",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#4878D0",
+                        "fill-color": "#5FBDB3",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#4878D0",
+                        "line-color": "#5FBDB3",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "1996 original",
-                            "color": "#4878D0"
+                            "color": "#5FBDB3"
                         }
                     ],
                     "tooltip_fields": [
@@ -206,22 +206,22 @@
                 },
                 {
                     "id": "gsenm-2017",
-                    "display_name": "Grand Staircase-Escalante \u2014 2017 reduced",
-                    "group": "Monument Boundaries",
+                    "display_name": "2017 reduced",
+                    "group": "Grand Staircase-Escalante",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#EE854A",
+                        "fill-color": "#2E9488",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#EE854A",
+                        "line-color": "#2E9488",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2017 reduced",
-                            "color": "#EE854A"
+                            "color": "#2E9488"
                         }
                     ],
                     "tooltip_fields": [
@@ -232,22 +232,22 @@
                 },
                 {
                     "id": "gsenm-2021",
-                    "display_name": "Grand Staircase-Escalante \u2014 2021 restored",
-                    "group": "Monument Boundaries",
+                    "display_name": "2021 restored",
+                    "group": "Grand Staircase-Escalante",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#6B4423",
+                        "fill-color": "#00695C",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#6B4423",
+                        "line-color": "#00695C",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#6B4423"
+                            "color": "#00695C"
                         }
                     ],
                     "tooltip_fields": [
@@ -258,22 +258,22 @@
                 },
                 {
                     "id": "gsenm-2026",
-                    "display_name": "Grand Staircase-Escalante \u2014 2026 proposed",
-                    "group": "Monument Boundaries",
+                    "display_name": "2026 proposed",
+                    "group": "Grand Staircase-Escalante",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#D65F5F",
+                        "fill-color": "#00332C",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#D65F5F",
+                        "line-color": "#00332C",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2026 proposed",
-                            "color": "#D65F5F"
+                            "color": "#00332C"
                         }
                     ],
                     "tooltip_fields": [
