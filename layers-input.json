@@ -74,18 +74,18 @@
                     "group": "Bears Ears",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#C08552",
+                        "fill-color": "#4878D0",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#C08552",
+                        "line-color": "#4878D0",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2016 original",
-                            "color": "#C08552"
+                            "color": "#4878D0"
                         }
                     ],
                     "tooltip_fields": [
@@ -100,18 +100,18 @@
                     "group": "Bears Ears",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#9C5B1E",
+                        "fill-color": "#EE854A",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#9C5B1E",
+                        "line-color": "#EE854A",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2017 reduced",
-                            "color": "#9C5B1E"
+                            "color": "#EE854A"
                         }
                     ],
                     "tooltip_fields": [
@@ -126,18 +126,18 @@
                     "group": "Bears Ears",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#8B4513",
+                        "fill-color": "#6B4423",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#8B4513",
+                        "line-color": "#6B4423",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#8B4513"
+                            "color": "#6B4423"
                         }
                     ],
                     "tooltip_fields": [
@@ -152,18 +152,18 @@
                     "group": "Bears Ears",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#4A250A",
+                        "fill-color": "#D65F5F",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#4A250A",
+                        "line-color": "#D65F5F",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2026 proposed",
-                            "color": "#4A250A"
+                            "color": "#D65F5F"
                         }
                     ],
                     "tooltip_fields": [
@@ -184,18 +184,22 @@
                     "group": "Grand Staircase-Escalante",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#5FBDB3",
+                        "fill-color": "#4878D0",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#5FBDB3",
-                        "line-width": 2.5
+                        "line-color": "#4878D0",
+                        "line-width": 2.5,
+                        "line-dasharray": [
+                            3,
+                            2
+                        ]
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "1996 original",
-                            "color": "#5FBDB3"
+                            "color": "#4878D0"
                         }
                     ],
                     "tooltip_fields": [
@@ -210,18 +214,22 @@
                     "group": "Grand Staircase-Escalante",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#2E9488",
+                        "fill-color": "#EE854A",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#2E9488",
-                        "line-width": 2.5
+                        "line-color": "#EE854A",
+                        "line-width": 2.5,
+                        "line-dasharray": [
+                            3,
+                            2
+                        ]
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2017 reduced",
-                            "color": "#2E9488"
+                            "color": "#EE854A"
                         }
                     ],
                     "tooltip_fields": [
@@ -236,18 +244,22 @@
                     "group": "Grand Staircase-Escalante",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#00695C",
+                        "fill-color": "#6B4423",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#00695C",
-                        "line-width": 2.5
+                        "line-color": "#6B4423",
+                        "line-width": 2.5,
+                        "line-dasharray": [
+                            3,
+                            2
+                        ]
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#00695C"
+                            "color": "#6B4423"
                         }
                     ],
                     "tooltip_fields": [
@@ -262,18 +274,22 @@
                     "group": "Grand Staircase-Escalante",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#00332C",
+                        "fill-color": "#D65F5F",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#00332C",
-                        "line-width": 2.5
+                        "line-color": "#D65F5F",
+                        "line-width": 2.5,
+                        "line-dasharray": [
+                            3,
+                            2
+                        ]
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2026 proposed",
-                            "color": "#00332C"
+                            "color": "#D65F5F"
                         }
                     ],
                     "tooltip_fields": [
