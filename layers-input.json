@@ -126,18 +126,18 @@
                     "group": "Monument Boundaries",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#6ACC64",
+                        "fill-color": "#6B4423",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#6ACC64",
+                        "line-color": "#6B4423",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#6ACC64"
+                            "color": "#6B4423"
                         }
                     ],
                     "tooltip_fields": [
@@ -236,18 +236,18 @@
                     "group": "Monument Boundaries",
                     "visible": true,
                     "default_style": {
-                        "fill-color": "#6ACC64",
+                        "fill-color": "#6B4423",
                         "fill-opacity": 0
                     },
                     "outline_style": {
-                        "line-color": "#6ACC64",
+                        "line-color": "#6B4423",
                         "line-width": 2.5
                     },
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
                             "label": "2021 restored",
-                            "color": "#6ACC64"
+                            "color": "#6B4423"
                         }
                     ],
                     "tooltip_fields": [
