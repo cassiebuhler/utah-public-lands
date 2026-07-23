@@ -764,6 +764,64 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "locatable-operations",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/locatable-operations/stac-collection.json",
+            "assets": [
+                {
+                    "id": "locatable-operations-pmtiles",
+                    "display_name": "Locatable-Mineral Operations (BLM)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "op_level"
+                            ],
+                            "Notice",
+                            "#26A69A",
+                            "Plan of Operations",
+                            "#00695C",
+                            "#999999"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#004D40",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "op_level",
+                        "CMMDTY",
+                        "CSE_DISP",
+                        "RCRD_ACRS",
+                        "ADMIN_STATE"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Notice (≤ 5-acre disturbance)",
+                            "color": "#26A69A"
+                        },
+                        {
+                            "label": "Plan of Operations",
+                            "color": "#00695C"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
