@@ -822,6 +822,182 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "udogm",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/udogm/stac-collection.json",
+            "assets": [
+                {
+                    "id": "udogm-wells-pmtiles",
+                    "display_name": "Oil & Gas Wells (UDOGM)",
+                    "group": "Utah DNR (UDOGM)",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 2.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "welltype"
+                            ],
+                            "OW",
+                            "#43A047",
+                            "GW",
+                            "#E53935",
+                            "D",
+                            "#9E9E9E",
+                            [
+                                "WI",
+                                "WD"
+                            ],
+                            "#1E88E5",
+                            "#757575"
+                        ],
+                        "circle-opacity": 0.75,
+                        "circle-stroke-width": 0.2,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "wellname",
+                        "operator",
+                        "welltype",
+                        "wellstatus",
+                        "fieldname",
+                        "county",
+                        "year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Oil well",
+                            "color": "#43A047"
+                        },
+                        {
+                            "label": "Gas well",
+                            "color": "#E53935"
+                        },
+                        {
+                            "label": "Dry hole",
+                            "color": "#9E9E9E"
+                        },
+                        {
+                            "label": "Injection / disposal",
+                            "color": "#1E88E5"
+                        },
+                        {
+                            "label": "Other well type",
+                            "color": "#757575"
+                        }
+                    ]
+                },
+                {
+                    "id": "udogm-mineral-mines-pmtiles",
+                    "display_name": "Mineral Mine Permits (UDOGM)",
+                    "group": "Utah DNR (UDOGM)",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 3.5,
+                        "circle-color": "#6D4C41",
+                        "circle-opacity": 0.85,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "Mine_Name",
+                        "Mineral_Type",
+                        "Mine_Status",
+                        "Company",
+                        "County",
+                        "year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Permitted mineral mine",
+                            "color": "#6D4C41"
+                        }
+                    ]
+                },
+                {
+                    "id": "udogm-coal-permits-pmtiles",
+                    "display_name": "Coal Mine Permits (UDOGM)",
+                    "group": "Utah DNR (UDOGM)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "status"
+                            ],
+                            "Active",
+                            "#33691E",
+                            "Temporary Cessation",
+                            "#F9A825",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "outline_style": {
+                        "line-color": "#1B2E0F",
+                        "line-width": 0.6
+                    },
+                    "tooltip_fields": [
+                        "mine_name",
+                        "company",
+                        "status",
+                        "County",
+                        "acres",
+                        "year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Active",
+                            "color": "#33691E"
+                        },
+                        {
+                            "label": "Temporary cessation",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Inactive / abandoned / other",
+                            "color": "#9E9E9E"
+                        }
+                    ]
+                },
+                {
+                    "id": "udogm-oil-gas-fields-pmtiles",
+                    "display_name": "Producing Oil & Gas Fields (UDOGM)",
+                    "group": "Utah DNR (UDOGM)",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#FB8C00",
+                        "fill-opacity": 0.2
+                    },
+                    "outline_style": {
+                        "line-color": "#E65100",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": [
+                        "FIELDNAME",
+                        "STATUS",
+                        "PROD_FORM_",
+                        "COUNTY",
+                        "DISC_WELL",
+                        "year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Producing oil & gas field",
+                            "color": "#FB8C00"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
