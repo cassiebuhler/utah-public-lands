@@ -285,6 +285,277 @@
             ]
         },
         {
+            "collection_id": "oil-gas-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
+            "assets": [
+                {
+                    "id": "oil-gas-leases-pmtiles",
+                    "display_name": "BLM Oil & Gas Leases (2015+)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_filter": [
+                        "all",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "ADMIN_STATE"
+                            ],
+                            "UT"
+                        ],
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "lease_year"
+                            ],
+                            2015
+                        ]
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#E65100",
+                            "Pending",
+                            "#FBC02D",
+                            "Interim",
+                            "#8D6E63",
+                            "Closed",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3300",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_DISP",
+                        "RCRD_ACRS",
+                        "lease_year",
+                        "CMMDTY",
+                        "EFF_DT"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#FBC02D"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "mining-claims",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mining-claims/stac-collection.json",
+            "assets": [
+                {
+                    "id": "mining-claims-pmtiles",
+                    "display_name": "BLM Mining Claims (lode / placer / mill / tunnel)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "admin_state"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "BLM_PROD"
+                            ],
+                            "LODE CLAIM",
+                            "#8E24AA",
+                            "LODE CLAIM - NATIONAL PARK",
+                            "#8E24AA",
+                            "PLACER CLAIM",
+                            "#00897B",
+                            "PLACER CLAIM - NATIONAL PARK",
+                            "#00897B",
+                            "MILL SITE",
+                            "#F9A825",
+                            "TUNNEL SITE",
+                            "#D81B60",
+                            "#999999"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#4A148C",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "BLM_PROD",
+                        "CSE_DISP",
+                        "status",
+                        "RCRD_ACRS"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Lode claim",
+                            "color": "#8E24AA"
+                        },
+                        {
+                            "label": "Placer claim",
+                            "color": "#00897B"
+                        },
+                        {
+                            "label": "Mill site",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Tunnel site",
+                            "color": "#D81B60"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "ugs-mineral-occurrences",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-mineral-occurrences/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ugs-mineral-occurrences-pmtiles",
+                    "display_name": "Mineral Occurrences (UGS UMOS)",
+                    "group": "Energy & Minerals",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 3.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "TYPE_"
+                            ],
+                            "Metal",
+                            "#E65100",
+                            "Ind. Min.",
+                            "#3182BD",
+                            "Energy",
+                            "#756BB1",
+                            "Metal - Energy",
+                            "#C94A4A",
+                            "Metal - Ind. Min.",
+                            "#31A354",
+                            "Ind. Min. - Energy",
+                            "#9E6BB0",
+                            "Metal - Ind. Min. - Energy",
+                            "#8C6D31",
+                            "#999999"
+                        ],
+                        "circle-opacity": 0.8,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "SITE_NAME",
+                        "COMMODITY",
+                        "TYPE_",
+                        "STATUS",
+                        "DISTRICT",
+                        "COUNTY"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Metallic",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Industrial minerals",
+                            "color": "#3182BD"
+                        },
+                        {
+                            "label": "Energy",
+                            "color": "#756BB1"
+                        },
+                        {
+                            "label": "Metal + Energy",
+                            "color": "#C94A4A"
+                        },
+                        {
+                            "label": "Metal + Ind. min.",
+                            "color": "#31A354"
+                        },
+                        {
+                            "label": "Ind. min. + Energy",
+                            "color": "#9E6BB0"
+                        },
+                        {
+                            "label": "Metal + Ind. min. + Energy",
+                            "color": "#8C6D31"
+                        },
+                        {
+                            "label": "Other / unspecified",
+                            "color": "#999999"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "coal-deposits",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
+            "assets": [
+                {
+                    "id": "coal-deposits-pmtiles",
+                    "display_name": "Coal Deposit Areas (1988)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#5B3A29",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#2B1A12",
+                        "line-width": 0.6
+                    },
+                    "tooltip_fields": [
+                        "KMDA_NAME",
+                        "ACREAGE",
+                        "FAV_CODE"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Coal deposit area (UGS 1988)",
+                            "color": "#5B3A29"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "landmark-iplc-poly",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
             "assets": [
@@ -420,203 +691,6 @@
                         {
                             "label": "BLM",
                             "color": "#E65100"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "oil-gas-leases",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
-            "assets": [
-                {
-                    "id": "oil-gas-leases-pmtiles",
-                    "display_name": "BLM Oil & Gas Leases (2015+)",
-                    "group": "Energy & Minerals",
-                    "visible": false,
-                    "default_filter": [
-                        "all",
-                        [
-                            "==",
-                            [
-                                "get",
-                                "ADMIN_STATE"
-                            ],
-                            "UT"
-                        ],
-                        [
-                            ">=",
-                            [
-                                "get",
-                                "lease_year"
-                            ],
-                            2015
-                        ]
-                    ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#E65100",
-                            "Pending",
-                            "#FBC02D",
-                            "Interim",
-                            "#8D6E63",
-                            "Closed",
-                            "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#7F3300",
-                        "line-width": 0.4
-                    },
-                    "tooltip_fields": [
-                        "CSE_NAME",
-                        "CSE_DISP",
-                        "RCRD_ACRS",
-                        "lease_year",
-                        "CMMDTY",
-                        "EFF_DT"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#FBC02D"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#BDBDBD"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "ugs-mineral-occurrences",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-mineral-occurrences/stac-collection.json",
-            "assets": [
-                {
-                    "id": "ugs-mineral-occurrences-pmtiles",
-                    "display_name": "Mineral Occurrences (UGS UMOS)",
-                    "group": "Energy & Minerals",
-                    "layer_type": "circle",
-                    "visible": false,
-                    "default_style": {
-                        "circle-radius": 3.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "TYPE_"
-                            ],
-                            "Metal",
-                            "#E65100",
-                            "Ind. Min.",
-                            "#3182BD",
-                            "Energy",
-                            "#756BB1",
-                            "Metal - Energy",
-                            "#C94A4A",
-                            "Metal - Ind. Min.",
-                            "#31A354",
-                            "Ind. Min. - Energy",
-                            "#9E6BB0",
-                            "Metal - Ind. Min. - Energy",
-                            "#8C6D31",
-                            "#999999"
-                        ],
-                        "circle-opacity": 0.8,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
-                    },
-                    "tooltip_fields": [
-                        "SITE_NAME",
-                        "COMMODITY",
-                        "TYPE_",
-                        "STATUS",
-                        "DISTRICT",
-                        "COUNTY"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Metallic",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Industrial minerals",
-                            "color": "#3182BD"
-                        },
-                        {
-                            "label": "Energy",
-                            "color": "#756BB1"
-                        },
-                        {
-                            "label": "Metal + Energy",
-                            "color": "#C94A4A"
-                        },
-                        {
-                            "label": "Metal + Ind. min.",
-                            "color": "#31A354"
-                        },
-                        {
-                            "label": "Ind. min. + Energy",
-                            "color": "#9E6BB0"
-                        },
-                        {
-                            "label": "Metal + Ind. min. + Energy",
-                            "color": "#8C6D31"
-                        },
-                        {
-                            "label": "Other / unspecified",
-                            "color": "#999999"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "coal-deposits",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
-            "assets": [
-                {
-                    "id": "coal-deposits-pmtiles",
-                    "display_name": "Coal Deposit Areas (1988)",
-                    "group": "Energy & Minerals",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#5B3A29",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#2B1A12",
-                        "line-width": 0.6
-                    },
-                    "tooltip_fields": [
-                        "KMDA_NAME",
-                        "ACREAGE",
-                        "FAV_CODE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Coal deposit area (UGS 1988)",
-                            "color": "#5B3A29"
                         }
                     ]
                 }

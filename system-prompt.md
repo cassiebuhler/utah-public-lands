@@ -26,6 +26,15 @@ The **BLM Oil & Gas Leases** layer backs the extraction framing above. It is a *
 - **`lease_year`** (year of the effective date `EFF_DT`) is **null when the lease has no effective date** — exclude nulls in year trends; it spans 1920–2040 with a small future/reissued tail.
 - Natural analytical move: intersect authorized leases with the **2026 proposed** or **2017 reduced** excised areas to quantify leasing exposure in de-protected land.
 
+### BLM Mining Claims (hard-rock extraction layer)
+
+The **BLM Mining Claims** layer (lode / placer / mill site / tunnel site) is the hard-rock companion to the leases. It is a **national** dataset (~655k claims, both dispositions) but the map layer is **filtered to Utah** (`admin_state = 'UT'`); the agent can query other states via SQL. When working with it:
+
+- **No claim-staking date exists.** The only dates (`Created` / `Modified`) are MLRS **record-management** dates — every value is 2021–2026 (the digital-migration window), **not** when the claim was located/staked. Do **not** treat them as claim age or build "claims staked over time" trends; there is deliberately **no `claim_year`** for this layer (unlike the leases).
+- **`status`** (`not_closed` / `closed`) is the active-vs-closed filter; **`CSE_DISP`** is the finer disposition (Active / Filed / Under Review / … / Closed). **`BLM_PROD`** is the claim type.
+- **`RCRD_ACRS` is a per-claim total** — deduplicate by `_cng_fid` before `SUM` on the H3 hex, same as the leases. Median ~21 ac, but a few records carry huge placeholder acreage — filter outliers before area accounting.
+- **`admin_state`** is derived from the `CSE_NR` serial prefix. Natural analytical move: intersect active (`not_closed`) claims with the **2026 proposed** excised areas.
+
 ## The core analytical move
 
 To show impact, compare a quantity **inside an excised area** against a **retained core** (or the same area before vs. after a boundary change) across years. Use the boundary layers to define the areas, then compute zonal statistics with SQL. When a layer offers a **year slider** (e.g. wildfire perimeters) or a **version dropdown** (e.g. irrecoverable carbon by year), use it to align the map with the era in question, and offer to chart the trend.
