@@ -505,6 +505,90 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "ugs-mineral-occurrences",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-mineral-occurrences/stac-collection.json",
+            "assets": [
+                {
+                    "id": "ugs-mineral-occurrences-pmtiles",
+                    "display_name": "Mineral Occurrences (UGS UMOS)",
+                    "group": "Energy & Minerals",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 3.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "TYPE_"
+                            ],
+                            "Metal",
+                            "#E65100",
+                            "Ind. Min.",
+                            "#3182BD",
+                            "Energy",
+                            "#756BB1",
+                            "Metal - Energy",
+                            "#C94A4A",
+                            "Metal - Ind. Min.",
+                            "#31A354",
+                            "Ind. Min. - Energy",
+                            "#9E6BB0",
+                            "Metal - Ind. Min. - Energy",
+                            "#8C6D31",
+                            "#999999"
+                        ],
+                        "circle-opacity": 0.8,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "SITE_NAME",
+                        "COMMODITY",
+                        "TYPE_",
+                        "STATUS",
+                        "DISTRICT",
+                        "COUNTY"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Metallic",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Industrial minerals",
+                            "color": "#3182BD"
+                        },
+                        {
+                            "label": "Energy",
+                            "color": "#756BB1"
+                        },
+                        {
+                            "label": "Metal + Energy",
+                            "color": "#C94A4A"
+                        },
+                        {
+                            "label": "Metal + Ind. min.",
+                            "color": "#31A354"
+                        },
+                        {
+                            "label": "Ind. min. + Energy",
+                            "color": "#9E6BB0"
+                        },
+                        {
+                            "label": "Metal + Ind. min. + Energy",
+                            "color": "#8C6D31"
+                        },
+                        {
+                            "label": "Other / unspecified",
+                            "color": "#999999"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
