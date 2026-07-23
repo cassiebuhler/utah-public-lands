@@ -589,6 +589,38 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "coal-deposits",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
+            "assets": [
+                {
+                    "id": "coal-deposits-pmtiles",
+                    "display_name": "Coal Deposit Areas (1988)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#5B3A29",
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#2B1A12",
+                        "line-width": 0.6
+                    },
+                    "tooltip_fields": [
+                        "KMDA_NAME",
+                        "ACREAGE",
+                        "FAV_CODE"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Coal deposit area (UGS 1988)",
+                            "color": "#5B3A29"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
