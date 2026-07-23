@@ -431,16 +431,27 @@
             "assets": [
                 {
                     "id": "oil-gas-leases-pmtiles",
-                    "display_name": "BLM Oil & Gas Leases (Utah)",
+                    "display_name": "BLM Oil & Gas Leases (2015+)",
                     "group": "Energy & Minerals",
                     "visible": false,
                     "default_filter": [
-                        "==",
+                        "all",
                         [
-                            "get",
-                            "ADMIN_STATE"
+                            "==",
+                            [
+                                "get",
+                                "ADMIN_STATE"
+                            ],
+                            "UT"
                         ],
-                        "UT"
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "lease_year"
+                            ],
+                            2015
+                        ]
                     ],
                     "default_style": {
                         "fill-color": [

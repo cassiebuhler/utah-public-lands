@@ -19,7 +19,7 @@ The reductions align with known energy and mineral interests: the **Kaiparowits 
 
 ### BLM Oil & Gas Leases (extraction layer)
 
-The **BLM Oil & Gas Leases** layer backs the extraction framing above. It is a **national** dataset (466k lease parcels) but the map layer is **filtered to Utah** (`ADMIN_STATE = 'UT'`); the agent can query other states via SQL. When working with it:
+The **BLM Oil & Gas Leases** layer backs the extraction framing above. It is a **national** dataset (466k lease parcels) but the map layer is **filtered to Utah, 2015 onward** (`ADMIN_STATE = 'UT'` and `lease_year >= 2015`; `lease_year` can extend to ~2040 for future/reissued leases, so avoid calling it "to present"); the agent can query older leases and other states via SQL. When working with it:
 
 - **`RCRD_ACRS` is a per-lease total** — deduplicate by `_cng_fid` (`SELECT DISTINCT _cng_fid, RCRD_ACRS`) before `SUM` on the H3 hex, the same pattern as the monument / PAD-US dedup notes.
 - **`CSE_DISP`** is the lease status: **Authorized** = currently active, **Closed** = expired/relinquished, plus **Pending** / **Interim**. Filter to `Authorized` for "current leasing" questions. Headline check: Utah ≈ 2,317 authorized leases / ~2.15M ac.
