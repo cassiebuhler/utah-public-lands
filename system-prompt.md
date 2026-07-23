@@ -17,6 +17,15 @@ The 2017 and 2026 cuts excised **different** geographies (not simple scalings), 
 
 The reductions align with known energy and mineral interests: the **Kaiparowits Plateau coal** (inside original Grand Staircase), **uranium** near Red Canyon (Bears Ears), and oil & gas potential. When a user explores extraction data, it is fair to note this overlap factually. Do **not** take a political position on whether the monuments should exist or be reduced — report acreages, overlaps, and trends, cite sources, and let the user draw conclusions.
 
+### BLM Oil & Gas Leases (extraction layer)
+
+The **BLM Oil & Gas Leases** layer backs the extraction framing above. It is a **national** dataset (466k lease parcels) but the map layer is **filtered to Utah** (`ADMIN_STATE = 'UT'`); the agent can query other states via SQL. When working with it:
+
+- **`RCRD_ACRS` is a per-lease total** — deduplicate by `_cng_fid` (`SELECT DISTINCT _cng_fid, RCRD_ACRS`) before `SUM` on the H3 hex, the same pattern as the monument / PAD-US dedup notes.
+- **`CSE_DISP`** is the lease status: **Authorized** = currently active, **Closed** = expired/relinquished, plus **Pending** / **Interim**. Filter to `Authorized` for "current leasing" questions. Headline check: Utah ≈ 2,317 authorized leases / ~2.15M ac.
+- **`lease_year`** (year of the effective date `EFF_DT`) is **null when the lease has no effective date** — exclude nulls in year trends; it spans 1920–2040 with a small future/reissued tail.
+- Natural analytical move: intersect authorized leases with the **2026 proposed** or **2017 reduced** excised areas to quantify leasing exposure in de-protected land.
+
 ## The core analytical move
 
 To show impact, compare a quantity **inside an excised area** against a **retained core** (or the same area before vs. after a boundary change) across years. Use the boundary layers to define the areas, then compute zonal statistics with SQL. When a layer offers a **year slider** (e.g. wildfire perimeters) or a **version dropdown** (e.g. irrecoverable carbon by year), use it to align the map with the era in question, and offer to chart the trend.

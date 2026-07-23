@@ -424,6 +424,76 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "oil-gas-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
+            "assets": [
+                {
+                    "id": "oil-gas-leases-pmtiles",
+                    "display_name": "BLM Oil & Gas Leases (Utah)",
+                    "group": "Energy & Minerals",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#E65100",
+                            "Pending",
+                            "#FBC02D",
+                            "Interim",
+                            "#8D6E63",
+                            "Closed",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3300",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_DISP",
+                        "RCRD_ACRS",
+                        "lease_year",
+                        "CMMDTY",
+                        "EFF_DT"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#FBC02D"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
