@@ -695,6 +695,75 @@
                     ]
                 }
             ]
+        },
+        {
+            "collection_id": "usgs-mrds",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/mrds/stac-collection.json",
+            "assets": [
+                {
+                    "id": "mrds-pmtiles",
+                    "display_name": "Mineral Deposits (USGS MRDS)",
+                    "group": "Energy & Minerals",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "state"
+                        ],
+                        "Utah"
+                    ],
+                    "default_style": {
+                        "circle-radius": 3.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "com_type"
+                            ],
+                            "M",
+                            "#E65100",
+                            "N",
+                            "#3182BD",
+                            "B",
+                            "#31A354",
+                            "E",
+                            "#756BB1",
+                            "#999999"
+                        ],
+                        "circle-opacity": 0.8,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "site_name",
+                        "commod1",
+                        "dev_stat",
+                        "oper_type",
+                        "county"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Metallic",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Non-metallic",
+                            "color": "#3182BD"
+                        },
+                        {
+                            "label": "Metallic + non-metallic",
+                            "color": "#31A354"
+                        },
+                        {
+                            "label": "Other / unspecified",
+                            "color": "#999999"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
