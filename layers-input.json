@@ -329,7 +329,7 @@
             "assets": [
                 {
                     "id": "ugs-mineral-occurrences-pmtiles",
-                    "display_name": "Mineral occurrences · UGS 2026 extract",
+                    "display_name": "Mineral occurrences · UGS 2026",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -488,7 +488,7 @@
             "assets": [
                 {
                     "id": "oil-gas-leases-pmtiles",
-                    "display_name": "Oil & gas leases (2015+) · BLM 2026 extract",
+                    "display_name": "Oil & gas leases (2015+) · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "all",
@@ -572,7 +572,7 @@
             "assets": [
                 {
                     "id": "mining-claims-pmtiles",
-                    "display_name": "Hard-rock mining claims · BLM 2026 extract",
+                    "display_name": "Hard-rock mining claims · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -649,7 +649,7 @@
             "assets": [
                 {
                     "id": "udogm-wells-pmtiles",
-                    "display_name": "Oil & gas wells · UDOGM 2026 extract",
+                    "display_name": "Oil & gas wells · UDOGM 2026",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -712,7 +712,7 @@
                 },
                 {
                     "id": "udogm-oil-gas-fields-pmtiles",
-                    "display_name": "Producing oil & gas fields · UDOGM 2026 extract",
+                    "display_name": "Producing oil & gas fields · UDOGM 2026",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#FB8C00",
@@ -740,7 +740,7 @@
                 },
                 {
                     "id": "udogm-coal-permits-pmtiles",
-                    "display_name": "Coal mine permits · UDOGM 2026 extract",
+                    "display_name": "Coal mine permits · UDOGM 2026",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -787,7 +787,7 @@
                 },
                 {
                     "id": "udogm-mineral-mines-pmtiles",
-                    "display_name": "Mineral mine permits · UDOGM 2026 extract",
+                    "display_name": "Mineral mine permits · UDOGM 2026",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -825,7 +825,7 @@
             "assets": [
                 {
                     "id": "locatable-operations-pmtiles",
-                    "display_name": "Hard-rock operations · BLM 2026 extract",
+                    "display_name": "Hard-rock operations · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -1007,7 +1007,7 @@
             "assets": [
                 {
                     "id": "iplc-poly-pmtiles",
-                    "display_name": "Indigenous & community lands · LandMark v202509",
+                    "display_name": "Indigenous & community lands · LandMark 2025",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#6A1B9A",

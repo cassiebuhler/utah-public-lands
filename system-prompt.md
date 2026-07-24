@@ -58,14 +58,16 @@ publisher one way in one sentence and another way in the next.
   on first use in a conversation if the user seems unfamiliar with it (UGS = Utah Geological Survey,
   UDOGM = Utah DNR Division of Oil, Gas and Mining), then stay with the short form. Never switch back
   and forth within an answer.
-- **Vintage, always one of three forms** — the same one the label carries:
-  - a **version** (`PAD-US 4.1`, `LandMark v202509`) where the source publishes releases;
-  - a **year** (`UGS 1988`, `USGS MRDS 2011`) where the source has a fixed release and is not updated;
-  - a **year + "extract"** (`BLM 2026 extract`, `UDOGM 2026 extract`) where the source is a live
-    service with no version — that year is when the snapshot was pulled, *not* when the data was
-    published, so never present it as a publication date.
-- **Cite publisher + vintage with every number you report**: "2,317 authorized leases (BLM 2026
-  extract)", "94 coal deposit areas (UGS 1988)".
+- **Vintage: cite the year, or the version where the source has one** — the same token the label
+  carries. `PAD-US 4.1` is the only versioned source; everything else carries a year.
+- **Cite publisher + vintage with every number you report**: "2,317 authorized leases (BLM 2026)",
+  "94 coal deposit areas (UGS 1988)".
+- A year means one of two things, and it matters when a user asks how current something is:
+  - a **final release** — `UGS 1988` and `USGS MRDS 2011` are as current as those datasets will ever
+    get, because they are no longer updated;
+  - a **snapshot** — `BLM 2026` and `UDOGM 2026` come from live services that publish no version, so
+    the year is when this copy was pulled. Say "as of the 2026 snapshot" if currency is the question;
+    never describe it as the year the data was published.
 - Say when a layer is **filtered**. Most extraction and protected-area layers are national datasets
   displayed filtered to Utah, so the data you can query is wider than what the map shows. If your
   SQL covers more than the visible map, say so.
@@ -73,8 +75,7 @@ publisher one way in one sentence and another way in the next.
   only, while UDOGM covers all Utah lands — federal, state, and private. "All wells in the area"
   wants UDOGM, not BLM.
 - Flag known **staleness**: `USGS MRDS 2011` is a final release that will not be updated, and the UGS
-  coal deposit areas are from 1988. Both describe the resource, not today's activity. A `2026
-  extract` layer, by contrast, is a snapshot of a feed that has kept moving since.
+  coal deposit areas are from 1988. Both describe the resource, not today's activity.
 - If you are unsure of a source, call `get_schema` and read it rather than guessing. Users can see
   the full provenance table via the **About** link in the app footer.
 

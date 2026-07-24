@@ -24,19 +24,20 @@ Layers are grouped by **what the data describes**, not by which agency publishes
 thing.
 
 Every layer label follows one form — **`what it is · PUBLISHER vintage`** — where the vintage is a
-**version** (`PAD-US 4.1`, `LandMark v202509`), a **release year** (`UGS 1988`, `USGS MRDS 2011`), or
-a **year + "extract"** for live services that publish neither (`BLM 2026 extract`). Publisher
-acronyms are used consistently and expanded in [DATA-SOURCES.md](DATA-SOURCES.md).
+year, or a version where the source publishes one (`PAD-US 4.1` is the only one). A year is either a
+final release (`UGS 1988`, `USGS MRDS 2011`) or, for live services that publish no version, the year
+the snapshot was pulled (`BLM 2026`, `UDOGM 2026`); [DATA-SOURCES.md](DATA-SOURCES.md) says which for
+every layer, and expands the publisher acronyms.
 
 | Group | Layers |
 |---|---|
 | **Bears Ears boundaries** | 2016 original → 2017 reduced → 2021 restored → 2026 proposed |
 | **Grand Staircase-Escalante boundaries** | 1996 original → 2017 reduced → 2021 restored → 2026 proposed |
-| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026 extract; mineral deposits · USGS MRDS 2011 |
-| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026 extract; hard-rock mining claims · BLM 2026 extract |
-| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026 extract; hard-rock operations · BLM 2026 extract |
+| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
+| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026 |
+| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
 | **Protected areas & trails** | Protected areas · USGS PAD-US 4.1; federal trails · USFS / NPS / BLM 2026 |
-| **Indigenous & community lands** | Indigenous & community lands · LandMark v202509 |
+| **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
 
 The two monument groups are expanded on load with the 2021 restored + 2026 proposed outlines
 visible; every other group starts collapsed and off, so the map opens on the boundary story rather
