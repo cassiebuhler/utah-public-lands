@@ -21,17 +21,22 @@ AGENTS.md           ← configuration reference for AI coding agents
 
 Layers are grouped by **what the data describes**, not by which agency publishes it, so federal
 (BLM, USGS, USFS, NPS) and state (UGS, UDOGM) sources sit together when they describe the same
-thing. Every layer label names its publisher.
+thing.
+
+Every layer label follows one form — **`what it is · PUBLISHER vintage`** — where the vintage is a
+**version** (`PAD-US 4.1`, `LandMark v202509`), a **release year** (`UGS 1988`, `USGS MRDS 2011`), or
+a **year + "extract"** for live services that publish neither (`BLM 2026 extract`). Publisher
+acronyms are used consistently and expanded in [DATA-SOURCES.md](DATA-SOURCES.md).
 
 | Group | Layers |
 |---|---|
 | **Bears Ears boundaries** | 2016 original → 2017 reduced → 2021 restored → 2026 proposed |
 | **Grand Staircase-Escalante boundaries** | 1996 original → 2017 reduced → 2021 restored → 2026 proposed |
-| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas (UGS 1988), mineral occurrences (UGS UMOS), mineral deposits (USGS MRDS) |
-| **Leases & claims** *(who holds the rights)* | Oil & gas leases 2015+ (BLM), hard-rock mining claims (BLM) |
-| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits (Utah DNR / UDOGM); hard-rock operations (BLM) |
-| **Protected areas & trails** | Protected areas (USGS PAD-US 4.1), federal trails 2026 (USFS / NPS / BLM) |
-| **Indigenous & community lands** | LandMark 2025 |
+| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026 extract; mineral deposits · USGS MRDS 2011 |
+| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026 extract; hard-rock mining claims · BLM 2026 extract |
+| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026 extract; hard-rock operations · BLM 2026 extract |
+| **Protected areas & trails** | Protected areas · USGS PAD-US 4.1; federal trails · USFS / NPS / BLM 2026 |
+| **Indigenous & community lands** | Indigenous & community lands · LandMark v202509 |
 
 The two monument groups are expanded on load with the 2021 restored + 2026 proposed outlines
 visible; every other group starts collapsed and off, so the map opens on the boundary story rather

@@ -51,7 +51,7 @@
         ]
     },
     "welcome": {
-        "message": "Explore how the Bears Ears and Grand Staircase-Escalante boundaries have been redrawn from 1996 to 2026, and what the redrawn land holds. Every layer names its publisher — see \"About\" below for full sources. Try asking:",
+        "message": "Explore how the Bears Ears and Grand Staircase-Escalante boundaries have been redrawn from 1996 to 2026, and what the redrawn land holds. Every layer names its publisher and vintage — see \"About\" below for full sources. Try asking:",
         "examples": [
             "Overlay the Bears Ears boundary in 2016 and its 2026 proposed reduction.",
             "How many acres did the 2026 proposal cut from Grand Staircase-Escalante compared with its 2021 extent?",
@@ -329,7 +329,7 @@
             "assets": [
                 {
                     "id": "ugs-mineral-occurrences-pmtiles",
-                    "display_name": "Mineral occurrences · Utah Geological Survey",
+                    "display_name": "Mineral occurrences · UGS 2026 extract",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -416,7 +416,7 @@
             "assets": [
                 {
                     "id": "mrds-pmtiles",
-                    "display_name": "Mineral deposits · USGS MRDS",
+                    "display_name": "Mineral deposits · USGS MRDS 2011",
                     "layer_type": "circle",
                     "visible": false,
                     "default_filter": [
@@ -488,7 +488,7 @@
             "assets": [
                 {
                     "id": "oil-gas-leases-pmtiles",
-                    "display_name": "Oil & gas leases, 2015+ · BLM",
+                    "display_name": "Oil & gas leases (2015+) · BLM 2026 extract",
                     "visible": false,
                     "default_filter": [
                         "all",
@@ -572,7 +572,7 @@
             "assets": [
                 {
                     "id": "mining-claims-pmtiles",
-                    "display_name": "Hard-rock mining claims · BLM",
+                    "display_name": "Hard-rock mining claims · BLM 2026 extract",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -649,7 +649,7 @@
             "assets": [
                 {
                     "id": "udogm-wells-pmtiles",
-                    "display_name": "Oil & gas wells · Utah DNR (UDOGM)",
+                    "display_name": "Oil & gas wells · UDOGM 2026 extract",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -712,7 +712,7 @@
                 },
                 {
                     "id": "udogm-oil-gas-fields-pmtiles",
-                    "display_name": "Producing oil & gas fields · Utah DNR (UDOGM)",
+                    "display_name": "Producing oil & gas fields · UDOGM 2026 extract",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#FB8C00",
@@ -740,7 +740,7 @@
                 },
                 {
                     "id": "udogm-coal-permits-pmtiles",
-                    "display_name": "Coal mine permits · Utah DNR (UDOGM)",
+                    "display_name": "Coal mine permits · UDOGM 2026 extract",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -787,7 +787,7 @@
                 },
                 {
                     "id": "udogm-mineral-mines-pmtiles",
-                    "display_name": "Mineral mine permits · Utah DNR (UDOGM)",
+                    "display_name": "Mineral mine permits · UDOGM 2026 extract",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -825,7 +825,7 @@
             "assets": [
                 {
                     "id": "locatable-operations-pmtiles",
-                    "display_name": "Hard-rock operations · BLM",
+                    "display_name": "Hard-rock operations · BLM 2026 extract",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -952,7 +952,7 @@
             "assets": [
                 {
                     "id": "federal-trails-2026-pmtiles",
-                    "display_name": "Federal trails, 2026 · USFS / NPS / BLM",
+                    "display_name": "Federal trails · USFS / NPS / BLM 2026",
                     "layer_type": "line",
                     "visible": false,
                     "default_style": {
@@ -1007,7 +1007,7 @@
             "assets": [
                 {
                     "id": "iplc-poly-pmtiles",
-                    "display_name": "Indigenous & community lands · LandMark 2025",
+                    "display_name": "Indigenous & community lands · LandMark v202509",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#6A1B9A",
