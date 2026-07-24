@@ -31,17 +31,22 @@ every layer, and expands the publisher acronyms.
 
 | Group | Layers |
 |---|---|
-| **Bears Ears boundaries** | 2016 original → 2017 reduced → 2021 restored → 2026 proposed |
-| **Grand Staircase-Escalante boundaries** | 1996 original → 2017 reduced → 2021 restored → 2026 proposed |
+| **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac — in effect` → `2026 · 121k ac — PROPOSED` |
+| **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac — in effect` → `2026 · 182k ac — PROPOSED` |
 | **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
 | **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026 |
 | **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
 | **Protected areas & trails** | Protected areas · USGS PAD-US 4.1; federal trails · USFS / NPS / BLM 2026 |
 | **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
 
-The two monument groups are expanded on load with the 2021 restored + 2026 proposed outlines
-visible; every other group starts collapsed and off, so the map opens on the boundary story rather
-than 21 layers at once.
+The two monument groups are expanded on load with the 2021 and 2026 outlines visible; every other
+group starts collapsed and off, so the map opens on the boundary story rather than 21 layers at once.
+
+Boundary labels carry an acreage rather than a word like "reduced" or "restored", so the size change
+reads as a figure instead of a judgement, and legal status is its own field: **2021 is the boundary in
+effect, and the 2026 reduction is proposed only — announced 13 July 2026 and not enacted.** The source
+data disagrees, labelling its 2026 features `era = '2026 reduced'`; that is an upstream artifact, and
+the system prompt instructs the agent not to echo it.
 
 The **resource / rights / activity** split matters analytically: a coal deposit is geology, a lease
 is a right someone holds, and a permitted well is activity on the ground. They are not

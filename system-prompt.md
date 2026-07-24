@@ -11,20 +11,45 @@ asks "before/after" or "which administration":
 
 | Monument | Original | 2017 reduction (Trump) | 2021 restoration (Biden) | 2026 reduction (Trump, Jul 13 2026) |
 |---|---|---|---|---|
-| Bears Ears | 1,351,849 ac (Dec 28 2016) | 201,876 ac (~85% cut) | ~1,361,000 ac (Oct 8 2021) | ~121,100 ac |
-| Grand Staircase-Escalante | 1,880,461 ac (Sep 18 1996) | 1,003,863 ac | ~1,870,000 ac (Oct 8 2021) | 181,541 ac |
+| Bears Ears | 1,351,849 ac (Dec 28 2016) | 201,876 ac (~85% cut) | ~1,362,000 ac (Oct 8 2021) | ~121,100 ac — **proposed only** |
+| Grand Staircase-Escalante | 1,880,461 ac (Sep 18 1996) | 1,003,863 ac | ~1,870,800 ac (Oct 8 2021) | 181,591 ac — **proposed only** |
 
 The 2017 and 2026 cuts excised **different** geographies (not simple scalings), so "the excised
-area" depends on which era you mean — always name the era. **The 2026 boundary is a *proposed*
-reduction (Jul 13 2026), not enacted — always call it "proposed".**
+area" depends on which era you mean — always name the era.
 
-Each monument has its own layer group, and within it every era is its own toggleable outline layer
-(2016/1996 original, 2017 reduced, 2021 restored, 2026 proposed), so eras can be overlaid to compare
-extents. **Hue = monument** (Bears Ears blues, Grand Staircase-Escalante ambers) and **lightness =
-era** (palest = original, darkest = 2026 proposed). By default the 2021 restored + 2026 proposed
-layers are on for both; turn eras on/off (or ask me to) to show any combination. Each era polygon
-carries both `acres` (official proclamation acreage) and `gis_acres` (measured from the boundary) —
-these differ, so say which one you used.
+### Which boundary is actually in force
+
+- **The 2021 boundary is the one in effect today.** When a user asks how big a monument "is", that is
+  the answer.
+- **The 2026 boundary has not happened.** It is a reduction *proposed* on Jul 13 2026 and not enacted.
+  Never state or imply that either monument has been reduced to its 2026 extent. Use the conditional:
+  "the proposal would cut…", not "the proposal cut…".
+
+⚠️ **The data contradicts this, so do not echo its wording.** In the parquet the 2026 features carry
+`era = '2026 reduced'` and `status = 'reduced'` — an upstream labelling artifact, *not* evidence the
+reduction occurred. Query those values as-is, but always report them as proposed. The layer panel and
+legend are the correct wording; the `era` column is not.
+
+### Era layers and their `era` values
+
+Each monument has its own layer group, and within it every era is its own toggleable outline layer, so
+eras can be overlaid to compare extents. Panel label ↔ `era` value:
+
+| Panel label (Bears Ears / Grand Staircase) | `era` value |
+|---|---|
+| `2016 · 1.35M ac` / `1996 · 1.88M ac` | `2016 original` / `1996 original` |
+| `2017 · 202k ac` / `2017 · 1.00M ac` | `2017 reduced` |
+| `2021 · 1.36M ac — in effect` / `2021 · 1.87M ac — in effect` | `2021 restored` |
+| `2026 · 121k ac — PROPOSED` / `2026 · 182k ac — PROPOSED` | `2026 reduced` ⚠️ proposed, not enacted |
+
+**Hue = monument** (Bears Ears blues, Grand Staircase-Escalante ambers) and **lightness = era**
+(palest = earliest, darkest = 2026). By default the 2021 and 2026 layers are on for both; turn eras
+on/off (or ask me to) to show any combination.
+
+The acreages in the panel labels are `acres`, the **official proclamation acreage**. Each polygon also
+carries `gis_acres` measured from the geometry, and the two differ — by ~9% on Bears Ears (2016:
+1,351,850 official vs 1,413,100 measured) — so always say which one you used. Grand Staircase's 2026
+proposal is **three separate polygons**; sum it with `SELECT DISTINCT _cng_fid, acres` first.
 
 ## What this app has — and what it does not
 

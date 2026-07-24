@@ -59,15 +59,23 @@ One toggleable outline per redesignation, so eras can be overlaid and compared. 
 
 | | |
 |---|---|
-| **Layers** | Bears Ears: 2016 original, 2017 reduced, 2021 restored, 2026 proposed<br>Grand Staircase-Escalante: 1996 original, 2017 reduced, 2021 restored, 2026 proposed |
+| **Layers** | Bears Ears: `2016 · 1.35M ac`, `2017 · 202k ac`, `2021 · 1.36M ac — in effect`, `2026 · 121k ac — PROPOSED`<br>Grand Staircase-Escalante: `1996 · 1.88M ac`, `2017 · 1.00M ac`, `2021 · 1.87M ac — in effect`, `2026 · 182k ac — PROPOSED` |
 | **Published by** | One source per era: **originals** from Utah SGID *BLM Monuments & NCAs Historic*; **2017 reduction** from USGS [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/pad-us-data-history) 2.1 (released Sept 2020); **2021 restoration** from PAD-US 4.1 (released Mar 2025); **2026 proposed** from the proposed-reduction boundaries |
 | **License** | Public domain |
 | **STAC** | [`benm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json) · [`gsenm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json) |
 
-Each polygon carries `acres` (the acreage stated in the proclamation) and `gis_acres`
-(measured from the boundary geometry) — these differ, and the app reports which one it used.
+These labels carry an acreage rather than a word like "reduced" or "restored", so the size change is
+stated as a figure instead of as a judgement, and legal status is its own field.
 
-⚠️ **The 2026 boundary is a *proposed* reduction (announced 13 July 2026), not enacted law.**
+**The acreage shown is `acres`, the official proclamation acreage.** Each polygon also carries
+`gis_acres` measured from the geometry, and the two differ — by ~9% on Bears Ears, where the 2016
+boundary is 1,351,850 official acres against 1,413,100 measured. Grand Staircase's 2026 proposal is
+**three separate polygons** totalling 181,591 ac, so deduplicate by `_cng_fid` before summing.
+
+⚠️ **The 2026 boundary is a *proposed* reduction (announced 13 July 2026), not enacted law.** Note that
+the source data disagrees: its 2026 features carry `era = '2026 reduced'` and `status = 'reduced'`.
+That is an upstream labelling artifact, not evidence the reduction took effect — the panel label and
+legend are the correct wording.
 
 ---
 

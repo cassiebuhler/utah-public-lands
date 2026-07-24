@@ -70,7 +70,7 @@
             "assets": [
                 {
                     "id": "benm-2016",
-                    "display_name": "2016 original",
+                    "display_name": "2016 · 1.35M ac",
                     "group": "Bears Ears boundaries",
                     "visible": false,
                     "default_style": {
@@ -84,7 +84,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2016 original",
+                            "label": "2016 · 1.35M ac",
                             "color": "#B5D4F4"
                         }
                     ],
@@ -96,7 +96,7 @@
                 },
                 {
                     "id": "benm-2017",
-                    "display_name": "2017 reduced",
+                    "display_name": "2017 · 202k ac",
                     "group": "Bears Ears boundaries",
                     "visible": false,
                     "default_style": {
@@ -110,7 +110,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2017 reduced",
+                            "label": "2017 · 202k ac",
                             "color": "#85B7EB"
                         }
                     ],
@@ -122,7 +122,7 @@
                 },
                 {
                     "id": "benm-2021",
-                    "display_name": "2021 restored",
+                    "display_name": "2021 · 1.36M ac — in effect",
                     "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
@@ -136,7 +136,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2021 restored",
+                            "label": "2021 · 1.36M ac — in effect",
                             "color": "#378ADD"
                         }
                     ],
@@ -148,7 +148,7 @@
                 },
                 {
                     "id": "benm-2026",
-                    "display_name": "2026 proposed",
+                    "display_name": "2026 · 121k ac — PROPOSED",
                     "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
@@ -162,7 +162,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 proposed",
+                            "label": "2026 · 121k ac — PROPOSED",
                             "color": "#0C447C"
                         }
                     ],
@@ -180,7 +180,7 @@
             "assets": [
                 {
                     "id": "gsenm-1996",
-                    "display_name": "1996 original",
+                    "display_name": "1996 · 1.88M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
                     "default_style": {
@@ -194,7 +194,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "1996 original",
+                            "label": "1996 · 1.88M ac",
                             "color": "#FAC775"
                         }
                     ],
@@ -206,7 +206,7 @@
                 },
                 {
                     "id": "gsenm-2017",
-                    "display_name": "2017 reduced",
+                    "display_name": "2017 · 1.00M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
                     "default_style": {
@@ -220,7 +220,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2017 reduced",
+                            "label": "2017 · 1.00M ac",
                             "color": "#EF9F27"
                         }
                     ],
@@ -232,7 +232,7 @@
                 },
                 {
                     "id": "gsenm-2021",
-                    "display_name": "2021 restored",
+                    "display_name": "2021 · 1.87M ac — in effect",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
@@ -246,7 +246,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2021 restored",
+                            "label": "2021 · 1.87M ac — in effect",
                             "color": "#BA7517"
                         }
                     ],
@@ -258,7 +258,7 @@
                 },
                 {
                     "id": "gsenm-2026",
-                    "display_name": "2026 proposed",
+                    "display_name": "2026 · 182k ac — PROPOSED",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
@@ -272,7 +272,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 proposed",
+                            "label": "2026 · 182k ac — PROPOSED",
                             "color": "#633806"
                         }
                     ],
