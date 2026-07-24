@@ -51,17 +51,17 @@
         ]
     },
     "welcome": {
-        "message": "Explore how Bears Ears and Grand Staircase-Escalante National Monuments have changed from 2016 to 2026. Try asking:",
+        "message": "Explore how the Bears Ears and Grand Staircase-Escalante boundaries have been redrawn from 1996 to 2026, and what the redrawn land holds. Every layer names its publisher — see \"About\" below for full sources. Try asking:",
         "examples": [
             "Overlay the Bears Ears boundary in 2016 and its 2026 proposed reduction.",
             "How many acres did the 2026 proposal cut from Grand Staircase-Escalante compared with its 2021 extent?",
-            "Show tribal and community lands (LandMark) around the two monuments.",
+            "How much of the Kaiparowits Plateau coal deposit falls outside the 2026 proposed Grand Staircase boundary?",
             "Which protected areas and federal trails fall inside the 2026 proposed Bears Ears boundary?"
         ]
     },
     "links": {
         "github": "https://github.com/cassiebuhler/utah-public-lands",
-        "docs": "https://boettiger-lab.github.io/geo-agent/"
+        "docs": "https://github.com/cassiebuhler/utah-public-lands/blob/main/DATA-SOURCES.md"
     },
     "collections": [
         {
@@ -71,7 +71,7 @@
                 {
                     "id": "benm-2016",
                     "display_name": "2016 original",
-                    "group": "Bears Ears",
+                    "group": "Bears Ears boundaries",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#B5D4F4",
@@ -97,7 +97,7 @@
                 {
                     "id": "benm-2017",
                     "display_name": "2017 reduced",
-                    "group": "Bears Ears",
+                    "group": "Bears Ears boundaries",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#85B7EB",
@@ -123,7 +123,7 @@
                 {
                     "id": "benm-2021",
                     "display_name": "2021 restored",
-                    "group": "Bears Ears",
+                    "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
                         "fill-color": "#378ADD",
@@ -149,7 +149,7 @@
                 {
                     "id": "benm-2026",
                     "display_name": "2026 proposed",
-                    "group": "Bears Ears",
+                    "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
                         "fill-color": "#0C447C",
@@ -181,7 +181,7 @@
                 {
                     "id": "gsenm-1996",
                     "display_name": "1996 original",
-                    "group": "Grand Staircase-Escalante",
+                    "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#FAC775",
@@ -207,7 +207,7 @@
                 {
                     "id": "gsenm-2017",
                     "display_name": "2017 reduced",
-                    "group": "Grand Staircase-Escalante",
+                    "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
                     "default_style": {
                         "fill-color": "#EF9F27",
@@ -233,7 +233,7 @@
                 {
                     "id": "gsenm-2021",
                     "display_name": "2021 restored",
-                    "group": "Grand Staircase-Escalante",
+                    "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
                         "fill-color": "#BA7517",
@@ -259,7 +259,7 @@
                 {
                     "id": "gsenm-2026",
                     "display_name": "2026 proposed",
-                    "group": "Grand Staircase-Escalante",
+                    "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
                         "fill-color": "#633806",
@@ -285,155 +285,35 @@
             ]
         },
         {
-            "collection_id": "oil-gas-leases",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
+            "collection_id": "coal-deposits",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
             "assets": [
                 {
-                    "id": "oil-gas-leases-pmtiles",
-                    "display_name": "BLM Oil & Gas Leases (2015+)",
-                    "group": "Energy & Minerals",
+                    "id": "coal-deposits-pmtiles",
+                    "display_name": "Coal deposit areas · UGS 1988",
                     "visible": false,
-                    "default_filter": [
-                        "all",
-                        [
-                            "==",
-                            [
-                                "get",
-                                "ADMIN_STATE"
-                            ],
-                            "UT"
-                        ],
-                        [
-                            ">=",
-                            [
-                                "get",
-                                "lease_year"
-                            ],
-                            2015
-                        ]
-                    ],
                     "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#E65100",
-                            "Pending",
-                            "#FBC02D",
-                            "Interim",
-                            "#8D6E63",
-                            "Closed",
-                            "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
+                        "fill-color": "#5B3A29",
+                        "fill-opacity": 0.55
                     },
                     "outline_style": {
-                        "line-color": "#7F3300",
-                        "line-width": 0.4
+                        "line-color": "#2B1A12",
+                        "line-width": 0.6
                     },
                     "tooltip_fields": [
-                        "CSE_NAME",
-                        "CSE_DISP",
-                        "RCRD_ACRS",
-                        "lease_year",
-                        "CMMDTY",
-                        "EFF_DT"
+                        "KMDA_NAME",
+                        "ACREAGE",
+                        "FAV_CODE"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Authorized (active)",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#FBC02D"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#BDBDBD"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "mining-claims",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mining-claims/stac-collection.json",
-            "assets": [
-                {
-                    "id": "mining-claims-pmtiles",
-                    "display_name": "BLM Mining Claims (lode / placer / mill / tunnel)",
-                    "group": "Energy & Minerals",
-                    "visible": false,
-                    "default_filter": [
-                        "==",
-                        [
-                            "get",
-                            "admin_state"
-                        ],
-                        "UT"
-                    ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "BLM_PROD"
-                            ],
-                            "LODE CLAIM",
-                            "#8E24AA",
-                            "LODE CLAIM - NATIONAL PARK",
-                            "#8E24AA",
-                            "PLACER CLAIM",
-                            "#00897B",
-                            "PLACER CLAIM - NATIONAL PARK",
-                            "#00897B",
-                            "MILL SITE",
-                            "#F9A825",
-                            "TUNNEL SITE",
-                            "#D81B60",
-                            "#999999"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#4A148C",
-                        "line-width": 0.3
-                    },
-                    "tooltip_fields": [
-                        "CSE_NAME",
-                        "CSE_NR",
-                        "BLM_PROD",
-                        "CSE_DISP",
-                        "status",
-                        "RCRD_ACRS"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Lode claim",
-                            "color": "#8E24AA"
-                        },
-                        {
-                            "label": "Placer claim",
-                            "color": "#00897B"
-                        },
-                        {
-                            "label": "Mill site",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Tunnel site",
-                            "color": "#D81B60"
+                            "label": "Coal deposit area",
+                            "color": "#5B3A29"
                         }
                     ]
                 }
@@ -442,11 +322,14 @@
         {
             "collection_id": "ugs-mineral-occurrences",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-mineral-occurrences/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
             "assets": [
                 {
                     "id": "ugs-mineral-occurrences-pmtiles",
-                    "display_name": "Mineral Occurrences (UGS UMOS)",
-                    "group": "Energy & Minerals",
+                    "display_name": "Mineral occurrences · Utah Geological Survey",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -524,186 +407,16 @@
             ]
         },
         {
-            "collection_id": "coal-deposits",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
-            "assets": [
-                {
-                    "id": "coal-deposits-pmtiles",
-                    "display_name": "Coal Deposit Areas (1988)",
-                    "group": "Energy & Minerals",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#5B3A29",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#2B1A12",
-                        "line-width": 0.6
-                    },
-                    "tooltip_fields": [
-                        "KMDA_NAME",
-                        "ACREAGE",
-                        "FAV_CODE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Coal deposit area (UGS 1988)",
-                            "color": "#5B3A29"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "landmark-iplc-poly",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
-            "assets": [
-                {
-                    "id": "iplc-poly-pmtiles",
-                    "display_name": "Indigenous & Community Lands (LandMark 2025)",
-                    "group": "Tribal & Cultural",
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.2
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.8
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Indigenous / community lands",
-                            "color": "#6A1B9A"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "pad-us-4.1-fee",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
-            "assets": [
-                {
-                    "id": "fee-pmtiles",
-                    "display_name": "Protected Areas \u2013 Fee (Utah, PAD-US 4.1)",
-                    "group": "Protected Areas",
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "GAP_Sts"
-                            ],
-                            "1",
-                            "#26633A",
-                            "2",
-                            "#3E9C47",
-                            "3",
-                            "#7EB3D3",
-                            "4",
-                            "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.5
-                    },
-                    "default_filter": [
-                        "==",
-                        [
-                            "get",
-                            "State_Nm"
-                        ],
-                        "UT"
-                    ],
-                    "tooltip_fields": [
-                        "Unit_Nm",
-                        "GAP_Sts",
-                        "Mang_Type"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "GAP 1 \u2013 biodiversity (strict)",
-                            "color": "#26633A"
-                        },
-                        {
-                            "label": "GAP 2 \u2013 biodiversity (multi-use)",
-                            "color": "#3E9C47"
-                        },
-                        {
-                            "label": "GAP 3 \u2013 multiple use",
-                            "color": "#7EB3D3"
-                        },
-                        {
-                            "label": "GAP 4 \u2013 no known mandate",
-                            "color": "#BDBDBD"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "federal-trails-2026",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
+            "collection_id": "usgs-mrds",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/mrds/stac-collection.json",
             "group": {
-                "name": "Trails"
+                "name": "Mineral & energy resources",
+                "collapsed": true
             },
             "assets": [
                 {
-                    "id": "federal-trails-2026-pmtiles",
-                    "display_name": "Federal Trails 2026 (USFS / NPS / BLM)",
-                    "layer_type": "line",
-                    "default_style": {
-                        "line-color": [
-                            "match",
-                            [
-                                "get",
-                                "admin_agency"
-                            ],
-                            "USFS",
-                            "#2E7D32",
-                            "NPS",
-                            "#5D4037",
-                            "BLM",
-                            "#E65100",
-                            "#888888"
-                        ],
-                        "line-width": 1.0,
-                        "line-opacity": 0.9
-                    },
-                    "tooltip_fields": [
-                        "trail_name",
-                        "admin_agency",
-                        "admin_unit",
-                        "length_miles"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "USFS",
-                            "color": "#2E7D32"
-                        },
-                        {
-                            "label": "NPS",
-                            "color": "#5D4037"
-                        },
-                        {
-                            "label": "BLM",
-                            "color": "#E65100"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "collection_id": "usgs-mrds",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/mrds/stac-collection.json",
-            "assets": [
-                {
                     "id": "mrds-pmtiles",
-                    "display_name": "Mineral Deposits (USGS MRDS)",
-                    "group": "Energy & Minerals",
+                    "display_name": "Mineral deposits · USGS MRDS",
                     "layer_type": "circle",
                     "visible": false,
                     "default_filter": [
@@ -766,19 +479,106 @@
             ]
         },
         {
-            "collection_id": "locatable-operations",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/locatable-operations/stac-collection.json",
+            "collection_id": "oil-gas-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
             "assets": [
                 {
-                    "id": "locatable-operations-pmtiles",
-                    "display_name": "Locatable-Mineral Operations (BLM)",
-                    "group": "Energy & Minerals",
+                    "id": "oil-gas-leases-pmtiles",
+                    "display_name": "Oil & gas leases, 2015+ · BLM",
+                    "visible": false,
+                    "default_filter": [
+                        "all",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "ADMIN_STATE"
+                            ],
+                            "UT"
+                        ],
+                        [
+                            ">=",
+                            [
+                                "get",
+                                "lease_year"
+                            ],
+                            2015
+                        ]
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#E65100",
+                            "Pending",
+                            "#FBC02D",
+                            "Interim",
+                            "#8D6E63",
+                            "Closed",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3300",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_DISP",
+                        "RCRD_ACRS",
+                        "lease_year",
+                        "CMMDTY",
+                        "EFF_DT"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#E65100"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#FBC02D"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "mining-claims",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mining-claims/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "mining-claims-pmtiles",
+                    "display_name": "Hard-rock mining claims · BLM",
                     "visible": false,
                     "default_filter": [
                         "==",
                         [
                             "get",
-                            "ADMIN_STATE"
+                            "admin_state"
                         ],
                         "UT"
                     ],
@@ -787,37 +587,53 @@
                             "match",
                             [
                                 "get",
-                                "op_level"
+                                "BLM_PROD"
                             ],
-                            "Notice",
-                            "#26A69A",
-                            "Plan of Operations",
-                            "#00695C",
+                            "LODE CLAIM",
+                            "#8E24AA",
+                            "LODE CLAIM - NATIONAL PARK",
+                            "#8E24AA",
+                            "PLACER CLAIM",
+                            "#00897B",
+                            "PLACER CLAIM - NATIONAL PARK",
+                            "#00897B",
+                            "MILL SITE",
+                            "#F9A825",
+                            "TUNNEL SITE",
+                            "#D81B60",
                             "#999999"
                         ],
                         "fill-opacity": 0.45
                     },
                     "outline_style": {
-                        "line-color": "#004D40",
-                        "line-width": 0.4
+                        "line-color": "#4A148C",
+                        "line-width": 0.3
                     },
                     "tooltip_fields": [
                         "CSE_NAME",
-                        "op_level",
-                        "CMMDTY",
+                        "CSE_NR",
+                        "BLM_PROD",
                         "CSE_DISP",
-                        "RCRD_ACRS",
-                        "ADMIN_STATE"
+                        "status",
+                        "RCRD_ACRS"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Notice (≤ 5-acre disturbance)",
-                            "color": "#26A69A"
+                            "label": "Lode claim",
+                            "color": "#8E24AA"
                         },
                         {
-                            "label": "Plan of Operations",
-                            "color": "#00695C"
+                            "label": "Placer claim",
+                            "color": "#00897B"
+                        },
+                        {
+                            "label": "Mill site",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Tunnel site",
+                            "color": "#D81B60"
                         }
                     ]
                 }
@@ -826,11 +642,14 @@
         {
             "collection_id": "udogm",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/udogm/stac-collection.json",
+            "group": {
+                "name": "Wells, mines & permits",
+                "collapsed": true
+            },
             "assets": [
                 {
                     "id": "udogm-wells-pmtiles",
-                    "display_name": "Oil & Gas Wells (UDOGM)",
-                    "group": "Utah DNR (UDOGM)",
+                    "display_name": "Oil & gas wells · Utah DNR (UDOGM)",
                     "layer_type": "circle",
                     "visible": false,
                     "default_style": {
@@ -892,38 +711,36 @@
                     ]
                 },
                 {
-                    "id": "udogm-mineral-mines-pmtiles",
-                    "display_name": "Mineral Mine Permits (UDOGM)",
-                    "group": "Utah DNR (UDOGM)",
-                    "layer_type": "circle",
+                    "id": "udogm-oil-gas-fields-pmtiles",
+                    "display_name": "Producing oil & gas fields · Utah DNR (UDOGM)",
                     "visible": false,
                     "default_style": {
-                        "circle-radius": 3.5,
-                        "circle-color": "#6D4C41",
-                        "circle-opacity": 0.85,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
+                        "fill-color": "#FB8C00",
+                        "fill-opacity": 0.2
+                    },
+                    "outline_style": {
+                        "line-color": "#E65100",
+                        "line-width": 0.8
                     },
                     "tooltip_fields": [
-                        "Mine_Name",
-                        "Mineral_Type",
-                        "Mine_Status",
-                        "Company",
-                        "County",
+                        "FIELDNAME",
+                        "STATUS",
+                        "PROD_FORM_",
+                        "COUNTY",
+                        "DISC_WELL",
                         "year"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Permitted mineral mine",
-                            "color": "#6D4C41"
+                            "label": "Producing oil & gas field",
+                            "color": "#FB8C00"
                         }
                     ]
                 },
                 {
                     "id": "udogm-coal-permits-pmtiles",
-                    "display_name": "Coal Mine Permits (UDOGM)",
-                    "group": "Utah DNR (UDOGM)",
+                    "display_name": "Coal mine permits · Utah DNR (UDOGM)",
                     "visible": false,
                     "default_style": {
                         "fill-color": [
@@ -969,31 +786,242 @@
                     ]
                 },
                 {
-                    "id": "udogm-oil-gas-fields-pmtiles",
-                    "display_name": "Producing Oil & Gas Fields (UDOGM)",
-                    "group": "Utah DNR (UDOGM)",
+                    "id": "udogm-mineral-mines-pmtiles",
+                    "display_name": "Mineral mine permits · Utah DNR (UDOGM)",
+                    "layer_type": "circle",
                     "visible": false,
                     "default_style": {
-                        "fill-color": "#FB8C00",
-                        "fill-opacity": 0.2
-                    },
-                    "outline_style": {
-                        "line-color": "#E65100",
-                        "line-width": 0.8
+                        "circle-radius": 3.5,
+                        "circle-color": "#6D4C41",
+                        "circle-opacity": 0.85,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
                     },
                     "tooltip_fields": [
-                        "FIELDNAME",
-                        "STATUS",
-                        "PROD_FORM_",
-                        "COUNTY",
-                        "DISC_WELL",
+                        "Mine_Name",
+                        "Mineral_Type",
+                        "Mine_Status",
+                        "Company",
+                        "County",
                         "year"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Producing oil & gas field",
-                            "color": "#FB8C00"
+                            "label": "Permitted mineral mine",
+                            "color": "#6D4C41"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "locatable-operations",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/locatable-operations/stac-collection.json",
+            "group": {
+                "name": "Wells, mines & permits",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "locatable-operations-pmtiles",
+                    "display_name": "Hard-rock operations · BLM",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "op_level"
+                            ],
+                            "Notice",
+                            "#26A69A",
+                            "Plan of Operations",
+                            "#00695C",
+                            "#999999"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#004D40",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "op_level",
+                        "CMMDTY",
+                        "CSE_DISP",
+                        "RCRD_ACRS",
+                        "ADMIN_STATE"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Notice (≤ 5-acre disturbance)",
+                            "color": "#26A69A"
+                        },
+                        {
+                            "label": "Plan of Operations",
+                            "color": "#00695C"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "pad-us-4.1-fee",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
+            "group": {
+                "name": "Protected areas & trails",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "fee-pmtiles",
+                    "display_name": "Protected areas · USGS PAD-US 4.1",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "GAP_Sts"
+                            ],
+                            "1",
+                            "#26633A",
+                            "2",
+                            "#3E9C47",
+                            "3",
+                            "#7EB3D3",
+                            "4",
+                            "#BDBDBD",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.5
+                    },
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "State_Nm"
+                        ],
+                        "UT"
+                    ],
+                    "tooltip_fields": [
+                        "Unit_Nm",
+                        "GAP_Sts",
+                        "Mang_Type"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "GAP 1 – biodiversity (strict)",
+                            "color": "#26633A"
+                        },
+                        {
+                            "label": "GAP 2 – biodiversity (multi-use)",
+                            "color": "#3E9C47"
+                        },
+                        {
+                            "label": "GAP 3 – multiple use",
+                            "color": "#7EB3D3"
+                        },
+                        {
+                            "label": "GAP 4 – no known mandate",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "federal-trails-2026",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
+            "group": {
+                "name": "Protected areas & trails",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "federal-trails-2026-pmtiles",
+                    "display_name": "Federal trails, 2026 · USFS / NPS / BLM",
+                    "layer_type": "line",
+                    "visible": false,
+                    "default_style": {
+                        "line-color": [
+                            "match",
+                            [
+                                "get",
+                                "admin_agency"
+                            ],
+                            "USFS",
+                            "#2E7D32",
+                            "NPS",
+                            "#5D4037",
+                            "BLM",
+                            "#E65100",
+                            "#888888"
+                        ],
+                        "line-width": 1.0,
+                        "line-opacity": 0.9
+                    },
+                    "tooltip_fields": [
+                        "trail_name",
+                        "admin_agency",
+                        "admin_unit",
+                        "length_miles"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "USFS trail",
+                            "color": "#2E7D32"
+                        },
+                        {
+                            "label": "NPS trail",
+                            "color": "#5D4037"
+                        },
+                        {
+                            "label": "BLM trail",
+                            "color": "#E65100"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "landmark-iplc-poly",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
+            "group": {
+                "name": "Indigenous & community lands",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "iplc-poly-pmtiles",
+                    "display_name": "Indigenous & community lands · LandMark 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.2
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.8
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Indigenous / community lands",
+                            "color": "#6A1B9A"
                         }
                     ]
                 }

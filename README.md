@@ -1,6 +1,6 @@
 # utah-public-lands
 
-An AI-powered interactive map exploring how **Bears Ears** and **Grand Staircase-Escalante National Monuments** in Southern Utah have changed from 2016 to 2026 — tracking the repeated boundary redesignations against measurable change on the land (land cover, vegetation, fire, human modification, carbon) and resource extraction.
+An AI-powered interactive map exploring how **Bears Ears** and **Grand Staircase-Escalante National Monuments** in Southern Utah have been redrawn from 1996 to 2026 — and what the land inside and outside each boundary holds: mineral and energy resources, federal leases and claims, permitted wells and mines, protected areas, trails, and Indigenous and community lands.
 
 Built on the [geo-agent / GLEN](https://github.com/boettiger-lab/geo-agent) framework. **No JavaScript to write** — the map, chat, agent, and tools load from CDN; this repo is just three config files plus deployment manifests.
 
@@ -9,18 +9,42 @@ Built on the [geo-agent / GLEN](https://github.com/boettiger-lab/geo-agent) fram
 ## Files
 
 ```
-index.html          ← HTML shell — loads GLEN core (pinned @v3.22.0) + libs from CDN
-layers-input.json   ← datasets, map view, time-series controls, LLM settings
+index.html          ← HTML shell — loads GLEN core (pinned @v3.24.0) + libs from CDN
+layers-input.json   ← datasets, grouping, map view, LLM settings
 system-prompt.md    ← monument-change analyst persona, timeline, guardrails
+DATA-SOURCES.md     ← publisher, coverage, vintage and license for every layer
 k8s/                ← Kubernetes deployment (app: utah-public-lands)
 AGENTS.md           ← configuration reference for AI coding agents
 ```
 
-## Time-series features
+## Layer organization
 
-- **Wildfire perimeters** carry an animated **year slider** (1984→2020) — press play to watch fire history accumulate across the region.
-- **Irrecoverable carbon** is a **version dropdown** (2018 / 2022 / 2023 / 2024).
-- **Per-era monument boundaries** — each redesignation (Bears Ears: 2016 original → 2017 cut → 2021 restored → 2026 proposed; Grand Staircase-Escalante: 1996 original → 2017 cut → 2021 restored → 2026 proposed) is its **own toggleable outline layer**, colored by era, so you can overlay eras and compare extents directly. Backed by the `public-utah` catalog (SGID / PAD-US 2.1 / PAD-US 4.1 / 2026 proposed boundaries).
+Layers are grouped by **what the data describes**, not by which agency publishes it, so federal
+(BLM, USGS, USFS, NPS) and state (UGS, UDOGM) sources sit together when they describe the same
+thing. Every layer label names its publisher.
+
+| Group | Layers |
+|---|---|
+| **Bears Ears boundaries** | 2016 original → 2017 reduced → 2021 restored → 2026 proposed |
+| **Grand Staircase-Escalante boundaries** | 1996 original → 2017 reduced → 2021 restored → 2026 proposed |
+| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas (UGS 1988), mineral occurrences (UGS UMOS), mineral deposits (USGS MRDS) |
+| **Leases & claims** *(who holds the rights)* | Oil & gas leases 2015+ (BLM), hard-rock mining claims (BLM) |
+| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits (Utah DNR / UDOGM); hard-rock operations (BLM) |
+| **Protected areas & trails** | Protected areas (USGS PAD-US 4.1), federal trails 2026 (USFS / NPS / BLM) |
+| **Indigenous & community lands** | LandMark 2025 |
+
+The two monument groups are expanded on load with the 2021 restored + 2026 proposed outlines
+visible; every other group starts collapsed and off, so the map opens on the boundary story rather
+than 21 layers at once.
+
+The **resource / rights / activity** split matters analytically: a coal deposit is geology, a lease
+is a right someone holds, and a permitted well is activity on the ground. They are not
+interchangeable and their counts don't add up.
+
+Full provenance — publisher, coverage, vintage, license, and which layers are filtered to Utah — is
+in **[DATA-SOURCES.md](DATA-SOURCES.md)**, which the app links as "About" in its footer. The app
+holds no land-cover, vegetation, wildfire, human-modification, carbon, economic, or demographic
+data; the layer panel is the complete inventory.
 
 ## Local development
 
@@ -35,11 +59,17 @@ python -m http.server 8000
 
 ```bash
 git add -A && git commit -m "<message>" && git push
-kubectl rollout restart deployment/utah-public-lands -n schmidtdse
-kubectl rollout status  deployment/utah-public-lands -n schmidtdse
+kubectl rollout restart -f k8s/deployment.yaml
+kubectl rollout status  -f k8s/deployment.yaml
 ```
 
 - App/Service/Deployment name: `utah-public-lands`; namespace: `schmidtdse`; host: `utah-public-lands.nrp-nautilus.io`.
 - The LLM proxy key is injected server-side from the shared `open-llm-proxy-secrets` secret (browser never sees it); the `llm` block in `layers-input.json` is only used for local dev / GitHub Pages fallback.
+
+## Data hosting
+
+No spatial data lives in this repo. Every layer is served as cloud-native GeoParquet / PMTiles / H3
+hex from the public STAC catalog at `s3-west.nrp-nautilus.io/public-data/stac/catalog.json`. Keep it
+that way — `.gitignore` blocks geospatial file types so source extracts don't get committed here.
 
 See the [deployment guide](https://boettiger-lab.github.io/geo-agent/docs/guide/deployment) for details.
