@@ -880,7 +880,7 @@
             "collection_id": "pad-us-4.1-fee",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "group": {
-                "name": "Protected areas & trails",
+                "name": "Protected areas",
                 "collapsed": true
             },
             "assets": [
@@ -943,10 +943,179 @@
             ]
         },
         {
+            "collection_id": "landmark-iplc-poly",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
+            "group": {
+                "name": "Indigenous & community lands",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "iplc-poly-pmtiles",
+                    "display_name": "Indigenous & community lands · LandMark 2025",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#6A1B9A",
+                        "fill-opacity": 0.2
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 0.8
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Indigenous / community lands",
+                            "color": "#6A1B9A"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usfws-critical-habitat-final",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
+            "group": {
+                "name": "Species & habitat",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "final-pmtiles",
+                    "display_name": "ESA critical habitat · USFWS 2026",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "listing_st"
+                            ],
+                            "Endangered",
+                            "#AD1457",
+                            "Threatened",
+                            "#EC407A",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#6A0032",
+                        "line-width": 0.6
+                    },
+                    "tooltip_fields": [
+                        "comname",
+                        "sciname",
+                        "listing_st",
+                        "spcode",
+                        "effectdate"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Endangered",
+                            "color": "#AD1457"
+                        },
+                        {
+                            "label": "Threatened",
+                            "color": "#EC407A"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-ungulate-migration-ranges",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs-ungulate-migration/ungulate-ranges/stac-collection.json",
+            "group": {
+                "name": "Species & habitat",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "ungulate-ranges-pmtiles",
+                    "display_name": "Mule deer migration range · USGS 2020–2022",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "state"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "data_type"
+                            ],
+                            "Corridors",
+                            "#827717",
+                            "WinterRange",
+                            "#C0CA33",
+                            "Stopovers",
+                            "#4527A0",
+                            "AnnualRange",
+                            "#DCE775",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#4A4410",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": [
+                        "species",
+                        "herd",
+                        "data_type",
+                        "contour",
+                        "volume",
+                        "source_release_date"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Migration corridor",
+                            "color": "#827717"
+                        },
+                        {
+                            "label": "Winter range",
+                            "color": "#C0CA33"
+                        },
+                        {
+                            "label": "Stopover",
+                            "color": "#4527A0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "mobi-species-richness-all",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+            "group": {
+                "name": "Species & habitat",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "species-richness-all-cog",
+                    "display_name": "Imperiled species richness · NatureServe 2023",
+                    "visible": false,
+                    "colormap": "viridis",
+                    "rescale": "0,10",
+                    "legend_label": "Imperiled species (count per cell)"
+                }
+            ]
+        },
+        {
             "collection_id": "federal-trails-2026",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
             "group": {
-                "name": "Protected areas & trails",
+                "name": "Rivers & recreation",
                 "collapsed": true
             },
             "assets": [
@@ -998,30 +1167,169 @@
             ]
         },
         {
-            "collection_id": "landmark-iplc-poly",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-indigenous/landmark/iplc-poly-stac.json",
+            "collection_id": "american-rivers-nri-2024",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-rivers/american-rivers/nri-2024/stac-collection.json",
             "group": {
-                "name": "Indigenous & community lands",
+                "name": "Rivers & recreation",
                 "collapsed": true
             },
             "assets": [
                 {
-                    "id": "iplc-poly-pmtiles",
-                    "display_name": "Indigenous & community lands · LandMark 2025",
+                    "id": "nri-2024-pmtiles",
+                    "display_name": "Inventoried river reaches · NPS 2024",
+                    "layer_type": "line",
                     "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "State1"
+                        ],
+                        "Utah"
+                    ],
                     "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.2
+                        "line-color": [
+                            "match",
+                            [
+                                "get",
+                                "Classifica"
+                            ],
+                            [
+                                "Wild",
+                                "Wild, Scenic",
+                                "Wild, Recreational",
+                                "Wild, Scenic, Recreational"
+                            ],
+                            "#006064",
+                            [
+                                "Scenic",
+                                "Scenic, Recreational"
+                            ],
+                            "#0097A7",
+                            "Recreational",
+                            "#4DD0E1",
+                            "#888888"
+                        ],
+                        "line-width": 1.4,
+                        "line-opacity": 0.9
                     },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.8
-                    },
+                    "tooltip_fields": [
+                        "River",
+                        "Reach",
+                        "Classifica",
+                        "ORV",
+                        "GIS_Miles",
+                        "Management",
+                        "County"
+                    ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Indigenous / community lands",
-                            "color": "#6A1B9A"
+                            "label": "Wild",
+                            "color": "#006064"
+                        },
+                        {
+                            "label": "Scenic",
+                            "color": "#0097A7"
+                        },
+                        {
+                            "label": "Recreational",
+                            "color": "#4DD0E1"
+                        },
+                        {
+                            "label": "Unclassified",
+                            "color": "#888888"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "svi-2022",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-social-vulnerability/2022/stac-collection.json",
+            "group": {
+                "name": "People",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "tract-pmtiles",
+                    "display_name": "Social vulnerability · CDC 2022",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ST_ABBR"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "<",
+                                [
+                                    "get",
+                                    "RPL_THEMES"
+                                ],
+                                0
+                            ],
+                            "#E0E0E0",
+                            [
+                                "step",
+                                [
+                                    "get",
+                                    "RPL_THEMES"
+                                ],
+                                "#F2F0F7",
+                                0.2,
+                                "#CBC9E2",
+                                0.4,
+                                "#9E9AC8",
+                                0.6,
+                                "#6A51A3",
+                                0.8,
+                                "#3F007D"
+                            ]
+                        ],
+                        "fill-opacity": 0.55
+                    },
+                    "outline_style": {
+                        "line-color": "#4A3B6B",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "COUNTY",
+                        "FIPS",
+                        "RPL_THEMES",
+                        "ST_ABBR"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "0.0–0.2 (least vulnerable)",
+                            "color": "#F2F0F7"
+                        },
+                        {
+                            "label": "0.2–0.4",
+                            "color": "#CBC9E2"
+                        },
+                        {
+                            "label": "0.4–0.6",
+                            "color": "#9E9AC8"
+                        },
+                        {
+                            "label": "0.6–0.8",
+                            "color": "#6A51A3"
+                        },
+                        {
+                            "label": "0.8–1.0 (most vulnerable)",
+                            "color": "#3F007D"
+                        },
+                        {
+                            "label": "No data",
+                            "color": "#E0E0E0"
                         }
                     ]
                 }

@@ -47,7 +47,10 @@ Acronyms are used in layer labels for space; each one means:
 | **UGRC / SGID** | [Utah Geospatial Resource Center](https://gis.utah.gov/) and the State Geographic Information Database — the state's distribution host, not the producer |
 | **UGS** | [Utah Geological Survey](https://geology.utah.gov/) |
 | **USFS** | [U.S. Forest Service](https://www.fs.usda.gov/) |
+| **USFWS** | [U.S. Fish and Wildlife Service](https://www.fws.gov/) — administers the Endangered Species Act |
 | **USGS** | [U.S. Geological Survey](https://www.usgs.gov/) |
+| **CDC** | [Centers for Disease Control and Prevention](https://www.atsdr.cdc.gov/place-health/php/svi/index.html) / ATSDR |
+| **NatureServe** | [NatureServe](https://www.natureserve.org/) — Map of Biodiversity Importance (MOBI), with Esri and The Nature Conservancy |
 | **LandMark** | [LandMark](https://landmarkmap.org) — global platform of Indigenous and community land |
 
 ---
@@ -136,12 +139,11 @@ Coal permits carry **no permit-issue date** in the source (only GIS edit timesta
 
 ---
 
-## Protected areas & trails — conservation & recreation
+## Protected areas — conservation status
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
 | Protected areas · **USGS PAD-US 4.1** | USGS [Gap Analysis Project](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview) | Fee-owned protected areas nationwide (296,456 features); **map filtered to `State_Nm = 'UT'`** | **Version 4.1, released March 2025** — the current PAD-US version; content through 2024. Converted Feb 2026. | Public domain |
-| Federal trails · **USFS / NPS / BLM 2026** | USFS National Forest System Trails + NPS Public Trails + BLM Ground Transportation Linear Features | Nationwide, one row per published trail segment | **Version 2026** (recorded as `summaries.version` in the STAC record) — a 2026 compilation of three live agency services. | Public domain |
 
 Colors on the protected-areas layer are **GAP status codes** (1–4), which describe the strength of
 the biodiversity-conservation mandate — not the managing agency. This is the *fee* layer only;
@@ -162,9 +164,67 @@ is not a legal determination of title.
 
 ---
 
+## Species & habitat
+
+| Layer | Published by | Coverage | Vintage | License |
+|---|---|---|---|---|
+| ESA critical habitat · **USFWS 2026** | USFWS [ES Critical Habitat service](https://www.fws.gov/program/endangered-species) (HQ item `794de45b9d774d21aed3bf9b5313ee24`, layer 0) | Nationwide, 728 polygons across 462 species — **not filtered to Utah** | **Snapshot, 24 Jul 2026.** Live ArcGIS service publishing no version; designations date from 1973 onward. | Public domain |
+| Mule deer migration range · **USGS 2020–2022** | USGS Fort Collins Science Center, *Ungulate Migrations of the Western United States* (Kauffman et al.) | 8 western states; **map filtered to `state = 'UT'`** | Utah content comes from **volumes 1 (2020) and 2 (2022)** of a six-volume series. | Public domain |
+| Imperiled species richness · **NatureServe 2023** | NatureServe [Map of Biodiversity Importance](https://www.natureserve.org/products/map-biodiversity-importance) (MOBI), with Esri and The Nature Conservancy | Contiguous US raster, ~2,400 imperiled and endemic species | **2023 release** | **CC-BY-NC-4.0 — non-commercial use only** |
+
+Only **final** critical-habitat designations are shown — those legally in effect under the
+Endangered Species Act. Proposed designations are a separate upstream dataset and are not mapped.
+The `unit`, `subunit` and `accuracy` columns are placeholder text in this aggregated layer.
+
+The mule deer layer covers **Grand Staircase-Escalante only**. Utah's content is two herds,
+Paunsaugunt and Kaibab North; **Bears Ears has no mapped migration range** in the USGS series, and
+there is no elk or pronghorn data for Utah. Corridor, winter-range and stopover polygons are nested
+utilization contours that overlap in space — they cannot be added together.
+
+Species richness is a **modeled** surface, not an observation count: NatureServe combines habitat
+models for about 2,400 imperiled and endemic species. It therefore covers only those species, not all
+biodiversity, and it shows predicted suitable habitat rather than recorded sightings. The raster is
+stretched **0–10** for this region rather than the national 0–32, because local values top out at 8
+(Bears Ears) and 10 (Grand Staircase-Escalante); the national range would render the map nearly flat.
+
+---
+
+## Rivers & recreation — recreation access
+
+| Layer | Published by | Coverage | Vintage | License |
+|---|---|---|---|---|
+| Federal trails · **USFS / NPS / BLM 2026** | USFS National Forest System Trails + NPS Public Trails + BLM Ground Transportation Linear Features | Nationwide, one row per published trail segment | **Version 2026** (recorded as `summaries.version` in the STAC record) — a 2026 compilation of three live agency services. | Public domain |
+| Inventoried river reaches · **NPS 2024** | NPS [Nationwide Rivers Inventory](https://www.nps.gov/subjects/rivers/nationwide-rivers-inventory.htm) | All 50 states + territories, 4,496 segments; **map filtered to `State1 = 'Utah'`** (319 Utah reaches) | **2024 update**, a substantial expansion of the 2016 version. | Public domain |
+
+The NRI lists free-flowing segments with outstanding natural, cultural or recreational values that
+are **potentially eligible** for Wild and Scenic designation. The `Classifica` field (Wild / Scenic /
+Recreational) is the inventory's proposed class — **not** legal Wild and Scenic status. Utah has only
+two designated Wild and Scenic rivers, the Virgin and the Green, and neither is in either monument.
+
+---
+
+## People — resident population
+
+| Layer | Published by | Coverage | Vintage | License |
+|---|---|---|---|---|
+| Social vulnerability · **CDC 2022** | [CDC/ATSDR Social Vulnerability Index](https://www.atsdr.cdc.gov/place-health/php/svi/index.html) | US census tracts (84,120); **map filtered to `ST_ABBR = 'UT'`** | **2022 release**, built on ACS 2018–2022 estimates. | Public domain |
+
+`RPL_THEMES` is an **overall national percentile rank from 0 to 1** — not a rate, count or
+percentage. `-999` is the nodata sentinel and must be excluded, not read as a low score. Only nine
+census tracts cover San Juan, Garfield, Kane and Wayne counties, so this layer is coarse relative to
+a monument boundary, and it describes **residents, not visitors**. The map tiles carry only `COUNTY`,
+`FIPS`, `RPL_THEMES` and `ST_ABBR`; the other 158 variables are available via SQL.
+
+---
+
 ## What is *not* in this app
 
 The app shows only the layers listed above. It has **no** land-cover, vegetation, wildfire,
-human-modification, or carbon data, and no economic or demographic data. If you ask the
-assistant a question that would need one of those, it should tell you the data is not available
-rather than substituting something else.
+human-modification, or carbon data. If you ask the assistant a question that would need one of
+those, it should tell you the data is not available rather than substituting something else.
+
+**There is no visitation or tourism-economy data.** No recreation visitor counts, no gateway-town
+spending, and no employment by industry — nothing from NPS, BLM, BEA or BLS. The CDC layer carries a
+resident unemployment rate, which is not a measure of recreation employment. Answering whether the
+boundary reductions would affect the recreation economy would require NPS visitor statistics, BLM
+recreation reporting, and BLS employment data, none of which are here.
