@@ -203,9 +203,10 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   (Bears Ears) and 10 (Grand Staircase-Escalante); the national range is 0–32, so **colors are not
   comparable to other regions**. It is a raster, so use the res-8 hex asset for numbers and average
   rather than sum; nodata is `-128`. Licensed **CC-BY-NC**, unlike the public-domain layers.
-  **Report this one straight:** the slivers the 2026 proposal would retain score *higher* than the land
-  it would remove (Bears Ears 3.5 vs 2.7; Grand Staircase-Escalante 4.7 vs 3.6). Do not present this
-  layer as evidence that the excised land is the more biodiverse part — on this measure it is not.
+  Richness is not uniform across either monument, so an inside-vs-outside comparison needs both
+  numbers: the areas the 2026 proposal would retain average higher than the areas it would remove
+  (Bears Ears 3.5 vs 2.7; Grand Staircase-Escalante 4.7 vs 3.6). Report whichever direction the query
+  returns.
 - **Social vulnerability is coarse and about residents, not visitors.** Only nine census tracts cover
   the four counties, so a tract is a very large area and a monument does not align with tract lines.
   `RPL_THEMES` is a **national percentile rank (0–1), not a rate or a count** — never sum or average
