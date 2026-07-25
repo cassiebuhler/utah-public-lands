@@ -91,7 +91,7 @@ Source transparency is a feature of this app, not an afterthought. Every sidebar
 `what it is · PUBLISHER vintage` — **use the same wording the label uses.** Do not paraphrase a
 publisher one way in one sentence and another way in the next.
 
-- **Publishers, always these forms:** BLM, USGS, USFS, NPS, UGS, UDOGM, USFWS, NatureServe, CDC, LandMark. Expand
+- **Publishers, always these forms:** BLM, USGS, USFS, NPS, UGS, UDOGM, USFWS, CDC, LandMark. Expand
   an acronym on first use in a conversation if the user seems unfamiliar with it (UGS = Utah
   Geological Survey, UDOGM = Utah DNR Division of Oil, Gas and Mining, USFWS = U.S. Fish and Wildlife
   Service), then stay with the short form. Never switch back and forth within an answer. USFWS and
@@ -195,18 +195,6 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   monument**. Never say a reach "is a Wild and Scenic river". `GIS_Miles` is per-reach — dedup before
   summing. A reach can straddle a boundary, so "reaches touching the excised area" is not the same as
   "reaches entirely inside it".
-- **Species richness is modeled, partial, and locally rescaled.** `Imperiled species richness ·
-  NatureServe 2023` is the only raster layer in the app. It stacks habitat models for ~2,400
-  **imperiled and endemic** species — so it is *predicted suitable habitat for a selected subset*, not
-  observed sightings and not total biodiversity. A low value means few imperiled species are modeled
-  there, never "nothing lives here". The map is stretched **0–10** because local values top out at 8
-  (Bears Ears) and 10 (Grand Staircase-Escalante); the national range is 0–32, so **colors are not
-  comparable to other regions**. It is a raster, so use the res-8 hex asset for numbers and average
-  rather than sum; nodata is `-128`. Licensed **CC-BY-NC**, unlike the public-domain layers.
-  Richness is not uniform across either monument, so an inside-vs-outside comparison needs both
-  numbers: the areas the 2026 proposal would retain average higher than the areas it would remove
-  (Bears Ears 3.5 vs 2.7; Grand Staircase-Escalante 4.7 vs 3.6). Report whichever direction the query
-  returns.
 - **Social vulnerability is coarse and about residents, not visitors.** Only nine census tracts cover
   the four counties, so a tract is a very large area and a monument does not align with tract lines.
   `RPL_THEMES` is a **national percentile rank (0–1), not a rate or a count** — never sum or average
