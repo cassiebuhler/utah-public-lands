@@ -108,6 +108,114 @@ anything is being extracted.
 |---|---|---|---|---|
 | Oil & gas leases (2015+) · **BLM 2026** | BLM [National MLRS / EGIS](https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-natl-mlrs-oil-and-gas-leases/about) | Nationwide (466,415 lease parcels); **map filtered to `ADMIN_STATE = 'UT'` and `lease_year >= 2015`** | **Snapshot, 22 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
 | Hard-rock mining claims · **BLM 2026** | BLM [National MLRS / EGIS](https://catalog.data.gov/dataset/blm-natl-mlrs-mining-claims-not-closed-f621b) | Nationwide (655,792 features: 575,287 not-closed + 80,505 closed); **map filtered to `admin_state = 'UT'`** | **Snapshot, 23 Jul 2026.** Live MLRS service, no version; record dates span 2021–2026. | Public domain |
+<!-- 486-mlrs-minerals -->
+| Coal cases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (3,857 cases); **map filtered to `ADMIN_STATE = 'UT'`** (414 in Utah). 971 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Geothermal leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,394 cases); **map filtered to `ADMIN_STATE = 'UT'`** (576 in Utah). 195 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Oil shale leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (42 cases); **map filtered to `ADMIN_STATE = 'UT'`** (11 in Utah). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Non-energy leasable minerals · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,106 cases); **map filtered to `ADMIN_STATE = 'UT'`** (1,182 in Utah). 212 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Mineral materials (sand & gravel) · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (35,670 cases); **map filtered to `ADMIN_STATE = 'UT'`** (2,530 in Utah). 1,393 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Oil & gas agreements · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (32,787 cases); **map filtered to `ADMIN_STATE = 'UT'`** (1,193 in Utah). 443 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Oil & gas participating areas · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (2,562 cases); **map filtered to `ADMIN_STATE = 'UT'`** (364 in Utah). 17 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+<!-- 486-mlrs-minerals -->
+
+
+
+
+The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
+— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
+(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
+group (which are the work actually authorized on the ground).
+
+All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
+that year is the case's *effective* date or its *disposition* date. They are not
+interchangeable — an effective year is when a case started, a disposition year is usually when
+it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
+with `CSE_DISP = 'Authorized'`.
+
+> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
+> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
+> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
+> other six range from under 1% to about 4%. Those cases are still in the data and the
+> assistant can answer on them, but they are absent from the map, so any acreage or overlap
+> measured on the map understates the true total.
+
+> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
+> slider filters `case_year <= value`, and that test is false for a null — so attaching one
+> would silently hide every case with no recorded year. Utah coverage is only 67% for
+> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
+> without warning. Use the assistant for time questions about them.
+
+The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
+— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
+(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
+group (which are the work actually authorized on the ground).
+
+All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
+that year is the case's *effective* date or its *disposition* date. They are not
+interchangeable — an effective year is when a case started, a disposition year is usually when
+it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
+with `CSE_DISP = 'Authorized'`.
+
+> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
+> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
+> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
+> other six range from under 1% to about 4%. Those cases are still in the data and the
+> assistant can answer on them, but they are absent from the map, so any acreage or overlap
+> measured on the map understates the true total.
+
+> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
+> slider filters `case_year <= value`, and that test is false for a null — so attaching one
+> would silently hide every case with no recorded year. Utah coverage is only 67% for
+> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
+> without warning. Use the assistant for time questions about them.
+
+The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
+— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
+(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
+group (which are the work actually authorized on the ground).
+
+All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
+that year is the case's *effective* date or its *disposition* date. They are not
+interchangeable — an effective year is when a case started, a disposition year is usually when
+it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
+with `CSE_DISP = 'Authorized'`.
+
+> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
+> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
+> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
+> other six range from under 1% to about 4%. Those cases are still in the data and the
+> assistant can answer on them, but they are absent from the map, so any acreage or overlap
+> measured on the map understates the true total.
+
+> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
+> slider filters `case_year <= value`, and that test is false for a null — so attaching one
+> would silently hide every case with no recorded year. Utah coverage is only 67% for
+> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
+> without warning. Use the assistant for time questions about them.
+
+The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
+— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
+(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
+group (which are the work actually authorized on the ground).
+
+All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
+that year is the case's *effective* date or its *disposition* date. They are not
+interchangeable — an effective year is when a case started, a disposition year is usually when
+it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
+with `CSE_DISP = 'Authorized'`.
+
+> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
+> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
+> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
+> other six range from under 1% to about 4%. Those cases are still in the data and the
+> assistant can answer on them, but they are absent from the map, so any acreage or overlap
+> measured on the map understates the true total.
+
+> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
+> slider filters `case_year <= value`, and that test is false for a null — so attaching one
+> would silently hide every case with no recorded year. Utah coverage is only 67% for
+> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
+> without warning. Use the assistant for time questions about them.
 
 The full lease history (1920 onward, all states) is queryable via the assistant even though the map
 view is filtered. `CSE_DISP = 'Authorized'` is the filter for currently active leases.

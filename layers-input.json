@@ -640,6 +640,539 @@
             ]
         },
         {
+            "collection_id": "coal-cases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/coal-cases/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "coal-cases-pmtiles",
+                    "display_name": "Coal cases · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#3E2723",
+                            "Pending",
+                            "#5D4037",
+                            "Interim",
+                            "#8D6E63",
+                            "Closed",
+                            "#D7CCC8",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#1B0000",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#3E2723"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#5D4037"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#D7CCC8"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 1921,
+                        "max": 2025,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "geothermal-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/geothermal-leases/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "geothermal-leases-pmtiles",
+                    "display_name": "Geothermal leases · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#BF360C",
+                            "Interim",
+                            "#FF8A65",
+                            "Closed",
+                            "#FFCCBC",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#870000",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#BF360C"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#FF8A65"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#FFCCBC"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "oil-shale-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-shale-leases/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "oil-shale-leases-pmtiles",
+                    "display_name": "Oil shale leases · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Closed",
+                            "#F0F4C3",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#4B4500",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Closed / expired",
+                            "color": "#F0F4C3"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 2006,
+                        "max": 2024,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "non-energy-leasables",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/non-energy-leasables/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "non-energy-leasables-pmtiles",
+                    "display_name": "Non-energy leasable minerals · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#0D47A1",
+                            "Pending",
+                            "#1976D2",
+                            "Interim",
+                            "#64B5F6",
+                            "Closed",
+                            "#BBDEFB",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#002171",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#0D47A1"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#1976D2"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#64B5F6"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#BBDEFB"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 1937,
+                        "max": 2026,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "mineral-materials",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mineral-materials/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "mineral-materials-pmtiles",
+                    "display_name": "Mineral materials (sand & gravel) · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#FF6F00",
+                            "Pending",
+                            "#FFA000",
+                            "Interim",
+                            "#FFCA28",
+                            "Closed",
+                            "#FFECB3",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#C43E00",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#FF6F00"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#FFA000"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#FFCA28"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#FFECB3"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 1971,
+                        "max": 2028,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
+            "collection_id": "oil-gas-agreements",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-agreements/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "oil-gas-agreements-pmtiles",
+                    "display_name": "Oil & gas agreements · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#4A148C",
+                            "Pending",
+                            "#7B1FA2",
+                            "Closed",
+                            "#E1BEE7",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#12005E",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "FRMTN",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#4A148C"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#7B1FA2"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#E1BEE7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "oil-gas-participating-areas",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-participating-areas/stac-collection.json",
+            "group": {
+                "name": "Leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "oil-gas-participating-areas-pmtiles",
+                    "display_name": "Oil & gas participating areas · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#004D40",
+                            "Closed",
+                            "#B2DFDB",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#00251A",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "FRMTN",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#004D40"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#B2DFDB"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 1939,
+                        "max": 2024,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
             "collection_id": "udogm",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/udogm/stac-collection.json",
             "group": {

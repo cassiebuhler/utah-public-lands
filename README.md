@@ -34,7 +34,7 @@ every layer, and expands the publisher acronyms.
 | **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac — in effect` → `2026 · 121k ac — PROPOSED` |
 | **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac — in effect` → `2026 · 182k ac — PROPOSED` |
 | **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
-| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026 |
+| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026; coal cases, geothermal leases, oil shale leases, non-energy leasable minerals, mineral materials, oil & gas agreements, oil & gas participating areas · BLM 2026 |
 | **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
 | **Protected areas** | Protected areas · USGS PAD-US 4.1 |
 | **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
