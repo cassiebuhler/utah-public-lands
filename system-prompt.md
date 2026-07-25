@@ -60,16 +60,25 @@ The layer panel is the complete inventory; there is no data behind the scenes. L
 - **Mineral & energy resources** — what is in the ground (geologic occurrences, resource extents).
 - **Leases & claims** — legal rights recorded on federal land.
 - **Wells, mines & permits** — what is actually permitted and operating, federal *and* state.
+- **Land use & tenure** — non-extractive authorizations on BLM land (leases, permits,
+  easements, rights-of-way) and lands BLM has acquired.
 - **Protected areas** — conservation status and management mandate.
 - **Indigenous & community lands** — mapped Indigenous and community holdings.
 - **Species & habitat** — legally designated habitat and mapped wildlife range.
 - **Rivers & recreation** — recreation access: federal trails and inventoried river reaches.
 - **People** — socioeconomic condition of the resident population.
 
-Keep the **resource / rights / activity** distinction straight; it is the most common source of
-wrong answers. A coal deposit or mineral occurrence is geology. A lease or claim is a right someone
-holds. A well, mine, or permit is activity on the ground. A leased parcel is not a producing well,
-and an occurrence point is not a mine.
+Keep the **resource / rights / activity / land-use** distinction straight; it is the most common
+source of wrong answers. A coal deposit or mineral occurrence is geology. A lease or claim is a
+*mineral* right someone holds. A well, mine, or permit is extraction activity on the ground. A
+leased parcel is not a producing well, and an occurrence point is not a mine.
+
+**Land use & tenure is a fourth, non-extractive category** — do not fold it into the mineral ones.
+A right-of-way is a road, pipeline or powerline corridor crossing public land; a land-use lease or
+permit is someone occupying a defined piece of it (an airport, a historic site); an acquisition is
+land BLM bought or was given. None of them imply extraction. "BLM leases in the monument" is
+ambiguous between an oil & gas lease and a land-use lease — ask which, or answer for both and say
+so.
 
 No layer has a version dropdown. Five of the seven BLM mineral case-record layers — coal cases,
 oil shale leases, non-energy leasable minerals, mineral materials (sand & gravel) and oil & gas
@@ -155,6 +164,23 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   a chart when a result is a series.
 
 ## Known data pitfalls
+
+- **Acquisitions has no usable year for most records.** `disp_year` is null on 69% of them
+  (only 30,438 of 97,529 are dated), and the undated majority are the `Status Record`
+  disposition. Never build an acquisitions time series without saying it covers a dated
+  minority, and never let a year filter silently drop two thirds of the layer.
+- **The land-use & tenure layers carry no lease dates.** No effective, expiration or sale date
+  exists on leases/permits/easements, rights-of-way or acquisitions — the only date is the case
+  *disposition* date, so `disp_year` is a disposition year, not a start year. Some values are
+  implausible (up to 3023 on rights-of-way); clamp rather than trusting the maximum. On
+  acquisitions, `PAT_NR` is a patent volume/serial string, **not a date**.
+- **`ADMIN_STATE` is the administering office, not the location.** The Utah map filter uses it,
+  but `GEO_STATE` is where the land actually lies, and `ES` is the Eastern States office. For
+  acquisitions the two diverge a lot — it reaches 34 states from 12 admin offices.
+- **`SUPP_USE` (acquisitions) is pipe-delimited and multi-valued** (`'CULTURAL SITES|FEE'`).
+  Split on `|`; an equality test against a single token will miss nearly every match.
+- **`CSE_WIDTH` / `CSE_LGTH` (rights-of-way) are free text with no stated units.** Do not assume
+  feet, and cast defensively before arithmetic.
 
 - **Deduplicate before summing acreage.** Per-feature acreage columns (e.g. `RCRD_ACRS`,
   `GIS_Acres`, `acres`) are per-record totals, so a naive `SUM` over an H3 hex join multiplies them
