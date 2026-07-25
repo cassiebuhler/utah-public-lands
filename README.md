@@ -36,8 +36,11 @@ every layer, and expands the publisher acronyms.
 | **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
 | **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026 |
 | **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
-| **Protected areas & trails** | Protected areas · USGS PAD-US 4.1; federal trails · USFS / NPS / BLM 2026 |
+| **Protected areas** | Protected areas · USGS PAD-US 4.1 |
 | **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
+| **Species & habitat** | ESA critical habitat · USFWS 2026; mule deer migration range · USGS 2020–2022 *(GSENM only)*; imperiled species richness · NatureServe 2023 *(raster)* |
+| **Rivers & recreation** | Federal trails · USFS / NPS / BLM 2026; inventoried river reaches · NPS 2024 |
+| **People** | Social vulnerability · CDC 2022 |
 
 The two monument groups are expanded on load with the 2021 and 2026 outlines visible; every other
 group starts collapsed and off, so the map opens on the boundary story rather than 21 layers at once.
