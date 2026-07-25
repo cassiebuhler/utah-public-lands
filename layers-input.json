@@ -1410,6 +1410,220 @@
             ]
         },
         {
+            "collection_id": "lua-leases-permits-easements",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/lua-leases-permits-easements/stac-collection.json",
+            "group": {
+                "name": "Land use & tenure",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "lua-leases-permits-easements-pmtiles",
+                    "display_name": "Leases, permits & easements · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#00838F",
+                            "Pending",
+                            "#FBC02D",
+                            "Interim",
+                            "#8D6E63",
+                            "Closed",
+                            "#B0BEC5",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#004D40",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NR",
+                        "BLM_PROD",
+                        "CSE_DISP",
+                        "disp_year",
+                        "RCRD_ACRS",
+                        "CSE_JURIS_DESC"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (in effect)",
+                            "color": "#00838F"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#FBC02D"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Closed / terminated",
+                            "color": "#B0BEC5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "lua-row",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/lua-row/stac-collection.json",
+            "group": {
+                "name": "Land use & tenure",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "lua-row-pmtiles",
+                    "display_name": "Rights-of-way · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#1565C0",
+                            "Pending",
+                            "#F9A825",
+                            "Interim",
+                            "#6A1B9A",
+                            "Closed",
+                            "#B0BEC5",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#0D47A1",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NR",
+                        "BLM_PROD",
+                        "CSE_DISP",
+                        "disp_year",
+                        "CSE_WIDTH",
+                        "CSE_LGTH",
+                        "RCRD_ACRS"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (in effect)",
+                            "color": "#1565C0"
+                        },
+                        {
+                            "label": "Pending",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#6A1B9A"
+                        },
+                        {
+                            "label": "Closed / terminated",
+                            "color": "#B0BEC5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "acquisitions",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/acquisitions/stac-collection.json",
+            "group": {
+                "name": "Land use & tenure",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "acquisitions-pmtiles",
+                    "display_name": "Acquired lands & interests · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#2E7D32",
+                            "Interim",
+                            "#8D6E63",
+                            "Status Record",
+                            "#A5D6A7",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#1B5E20",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NR",
+                        "BLM_PROD",
+                        "CSE_DISP",
+                        "REC_TYPE_CSE_GRP",
+                        "RCRD_ACRS",
+                        "SUPP_USE"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (in effect)",
+                            "color": "#2E7D32"
+                        },
+                        {
+                            "label": "Interim",
+                            "color": "#8D6E63"
+                        },
+                        {
+                            "label": "Status Record (historical entry)",
+                            "color": "#A5D6A7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "pad-us-4.1-fee",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-padus/padus-4-1/fee/stac-collection.json",
             "group": {

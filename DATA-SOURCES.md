@@ -247,6 +247,38 @@ Coal permits carry **no permit-issue date** in the source (only GIS edit timesta
 
 ---
 
+## Land use & tenure — how the land is used and held
+
+Non-extractive authorizations on BLM land, and how BLM came to hold the land in the first
+place. Distinct from **Leases & claims** (which is mineral rights) and from **Wells, mines &
+permits** (which is extraction activity): a right-of-way is a road or powerline crossing public
+land, and an acquisition is a parcel BLM bought or was given.
+
+| Layer | Published by | Coverage | Vintage | License |
+|---|---|---|---|---|
+| Leases, permits & easements · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (39,598 case records; 37,477 geocoded); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1911–2026. | Public domain |
+| Rights-of-way · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (196,751 case records; 191,959 geocoded) — the largest MLRS layer; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1866–2026. | Public domain |
+| Acquired lands & interests · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (97,529 case records; 96,777 geocoded), reaching 34 states; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1855–2026. | Public domain |
+
+These three layers carry **no lease dates** — no effective, expiration or sale date. Their only
+date is the *case disposition* date, so the derived `disp_year` is a disposition year, not the
+year an authorization began. It is near-complete on the two land-use layers (99.8% and 99.5%)
+but ⚠️ **null on 69% of acquisitions records** (only 30,438 of 97,529 are dated), so a time
+series over acquisitions covers a dated minority. A few disposition dates are also implausible
+(up to 3023 on rights-of-way) and are kept verbatim rather than silently corrected.
+
+Rights-of-way footprints are long, thin corridors recorded as a width × length; `CSE_WIDTH` and
+`CSE_LGTH` are populated on about two thirds of them but are **free text with no stated units**.
+
+On acquisitions, `PAT_NR` is a General Land Office patent volume/serial string (`'3 1206'`) —
+**not a date**, and present on only 150 records — so no acquisition or patent year is derivable.
+
+`ADMIN_STATE` (used for the Utah map filter) is the *administering* BLM office, not where the
+land lies; `GEO_STATE` is the location. They usually agree in Utah but diverge for the Eastern
+States office.
+
+---
+
 ## Protected areas — conservation status
 
 | Layer | Published by | Coverage | Vintage | License |
