@@ -49,6 +49,7 @@ Acronyms are used in layer labels for space; each one means:
 | **USFS** | [U.S. Forest Service](https://www.fs.usda.gov/) |
 | **USFWS** | [U.S. Fish and Wildlife Service](https://www.fws.gov/) — administers the Endangered Species Act |
 | **USGS** | [U.S. Geological Survey](https://www.usgs.gov/) |
+| **NatureServe** | [NatureServe](https://www.natureserve.org/) — Map of Biodiversity Importance (MOBI), with Esri and The Nature Conservancy |
 | **CDC** | [Centers for Disease Control and Prevention](https://www.atsdr.cdc.gov/place-health/php/svi/index.html) / ATSDR |
 | **LandMark** | [LandMark](https://landmarkmap.org) — global platform of Indigenous and community land |
 
@@ -169,6 +170,7 @@ is not a legal determination of title.
 |---|---|---|---|---|
 | ESA critical habitat · **USFWS 2026** | USFWS [ES Critical Habitat service](https://www.fws.gov/program/endangered-species) (HQ item `794de45b9d774d21aed3bf9b5313ee24`, layer 0) | Nationwide, 728 polygons across 462 species — **not filtered to Utah** | **Snapshot, 24 Jul 2026.** Live ArcGIS service publishing no version; designations date from 1973 onward. | Public domain |
 | Mule deer migration range · **USGS 2020–2022** | USGS Fort Collins Science Center, *Ungulate Migrations of the Western United States* (Kauffman et al.) | 8 western states; **map filtered to `state = 'UT'`** | Utah content comes from **volumes 1 (2020) and 2 (2022)** of a six-volume series. | Public domain |
+| Imperiled species richness · **NatureServe 2023** | NatureServe [Map of Biodiversity Importance](https://www.natureserve.org/products/map-biodiversity-importance) (MOBI), with Esri and The Nature Conservancy | Contiguous US raster, ~2,400 imperiled and endemic species — **not clipped to Utah** | **2023 release** | **CC-BY-NC-4.0 — non-commercial use only** |
 
 Only **final** critical-habitat designations are shown — those legally in effect under the
 Endangered Species Act. Proposed designations are a separate upstream dataset and are not mapped.
@@ -178,6 +180,17 @@ The mule deer layer covers **Grand Staircase-Escalante only**. Utah's content is
 Paunsaugunt and Kaibab North; **Bears Ears has no mapped migration range** in the USGS series, and
 there is no elk or pronghorn data for Utah. Corridor, winter-range and stopover polygons are nested
 utilization contours that overlap in space — they cannot be added together.
+
+Species richness is a **modeled** surface, not an observation count: NatureServe combines habitat
+models for about 2,400 imperiled and endemic species. It covers only those species, not all
+biodiversity, and shows predicted suitable habitat rather than recorded sightings. The raster is
+stretched **0–10** for this region rather than the national 0–32, because local values top out at 8
+(Bears Ears) and 10 (Grand Staircase-Escalante); the national range would render the map nearly flat.
+
+Unlike every other layer here, this one is **not filtered to Utah** — a raster carries no attributes
+to filter on, and the tile server cannot clip to a polygon. It is instead **faded out below zoom 5**,
+so the nationwide surface only draws once you are zoomed in near the monuments. Pan far enough east
+at a close zoom and you will see neighbouring states.
 
 ---
 

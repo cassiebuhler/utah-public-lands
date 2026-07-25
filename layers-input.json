@@ -1094,6 +1094,39 @@
             ]
         },
         {
+            "collection_id": "mobi-species-richness-all",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+            "group": {
+                "name": "Species & habitat",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "species-richness-all-cog",
+                    "display_name": "Imperiled species richness · NatureServe 2023",
+                    "visible": false,
+                    "colormap": "viridis",
+                    "rescale": "0,10",
+                    "legend_label": "Imperiled species (count per cell)",
+                    "paint": {
+                        "raster-opacity": [
+                            "interpolate",
+                            [
+                                "linear"
+                            ],
+                            [
+                                "zoom"
+                            ],
+                            5,
+                            0,
+                            6.5,
+                            0.7
+                        ]
+                    }
+                }
+            ]
+        },
+        {
             "collection_id": "federal-trails-2026",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-trails/federal-trails-2026/stac-collection.json",
             "group": {

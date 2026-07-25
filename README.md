@@ -38,7 +38,7 @@ every layer, and expands the publisher acronyms.
 | **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
 | **Protected areas** | Protected areas · USGS PAD-US 4.1 |
 | **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
-| **Species & habitat** | ESA critical habitat · USFWS 2026; mule deer migration range · USGS 2020–2022 *(GSENM only)* |
+| **Species & habitat** | ESA critical habitat · USFWS 2026; mule deer migration range · USGS 2020–2022 *(GSENM only)*; imperiled species richness · NatureServe 2023 *(raster, appears at zoom ≥ 5)* |
 | **Rivers & recreation** | Federal trails · USFS / NPS / BLM 2026; inventoried river reaches · NPS 2024 |
 | **People** | Social vulnerability · CDC 2022 |
 
