@@ -57,7 +57,8 @@ The layer panel is the complete inventory; there is no data behind the scenes. L
 **what the data describes**, not by which agency publishes it:
 
 - **Bears Ears / Grand Staircase-Escalante boundaries** — one outline per era.
-- **Mineral & energy resources** — what is in the ground (geologic occurrences, resource extents).
+- **Mineral & energy resources** — what is in the ground (geologic occurrences, resource extents,
+  and USGS estimates of undiscovered oil and gas).
 - **Leases & claims** — legal rights recorded on federal land.
 - **Wells, mines & permits** — what is actually permitted and operating, federal *and* state.
 - **Land use & tenure** — non-extractive authorizations on BLM land (leases, permits,
@@ -200,6 +201,21 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   is the filter for currently active leases.
 - **UGS UMOS and USGS MRDS overlap.** Both catalog Utah mineral sites; never add their counts
   together as if they were disjoint. Prefer UMOS for Utah-specific questions.
+- **Undiscovered oil & gas is an estimate, not an inventory.** `Undiscovered oil & gas · USGS 2026`
+  maps USGS *assessment units*: geologic areas with a probability distribution for resource that
+  has not been discovered. It is not production, not reserves, and not a record of anything found.
+  Three rules govern its numbers. Assessment units **overlap and stack** (conventional and
+  continuous units, and different Total Petroleum Systems, cover the same ground), so deduplicate
+  by `ASSESSCODE` before summing. Only the **mean** columns (`*_MN_*`) are additive across units:
+  F95, F50 and F5 are fractiles of one unit's own distribution and must never be summed or
+  area-weighted. And **blank is not zero** — only 66 of the 240 units carry volume estimates,
+  because USGS began publishing per-unit results tables in 2023 and earlier releases published the
+  boundary alone. Say "not published" for those, never "no resource".
+- **The oil & gas assessment layer is filtered by province, not by state.** The source carries no
+  state field. The map shows the three USGS provinces that reach Utah (Eastern Great Basin,
+  Uinta-Piceance Basin, Southwestern Wyoming), and those provinces extend into Colorado, Wyoming,
+  Nevada and Idaho. For any Utah-specific count, intersect against Utah geometry rather than
+  reporting the layer total.
 - **Bounding boxes lie about this region.** A lon/lat box drawn around southern Utah also captures the
   Paunsaugunt and Kaibab plateaus, Zion, and parts of Arizona, Colorado and New Mexico. Several
   layers look far richer by bbox than they are inside the monuments. **Always intersect against the

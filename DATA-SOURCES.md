@@ -92,10 +92,34 @@ holds a right to it or who is operating.
 | Coal deposit areas · **UGS 1988** | UGS, hosted by UGRC / SGID | Utah statewide, 94 polygons across 12 coal deposit areas — includes the Kaiparowits Plateau field | Areas **as defined in 1988**; SGID layer `CoalDepositAreas1988`. Converted 23 Jul 2026. | CC-BY-4.0 |
 | Mineral occurrences · **UGS 2026** | UGS [Utah Mineral Occurrence System (UMOS)](https://webmaps.geology.utah.gov/arcgis/rest/services/Energy_Mineral/UMOS/MapServer/0), hosted by UGRC / SGID | Utah only, 7,388 points (occurrences, prospects, mines, some energy resources) | **Snapshot, 23 Jul 2026.** Live MapServer feed publishing no version or release date. | CC-BY-4.0 |
 | Mineral deposits · **USGS MRDS 2011** | USGS [Mineral Resources Data System](https://mrdata.usgs.gov/mrds/) | US-wide (266,593 points); **map filtered to `state = 'Utah'`** | **Systematic updates ceased 2011** — USGS states it "has ceased systematic updates to MRDS". Converted 23 Jul 2026. | Public domain |
+| Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
 
 UMOS is *itself* undated at the feature level — it has no uniform occurrence-date field, so there
 is no per-feature year to trend on. MRDS is a legacy compilation last released in 2011; prefer UMOS
 for Utah-specific questions. The two overlap, so do not add their counts together.
+
+The **undiscovered oil & gas** layer is a different kind of thing from the other three: it is not a
+record of anything found, it is an estimate of what USGS believes is probably present but has not
+been discovered. Each polygon is an *assessment unit*, a geologic area assessed as a whole, and its
+numbers are a probability distribution — F95 (low), F50 (median), F5 (high) and the mean, for oil
+(million barrels), gas (billion cubic feet) and natural gas liquids (million barrels). There is no
+finer geometry upstream: USGS does not map individual undiscovered accumulations.
+
+Three things about it change how the numbers may be used:
+
+- **Assessment units overlap and stack.** Conventional and continuous units, and different Total
+  Petroleum Systems, cover the same ground, so several polygons sit over one location. Deduplicate
+  by `ASSESSCODE` before summing anything.
+- **Only the mean is additive.** F95, F50 and F5 describe one unit's own range; adding them across
+  units, or area-weighting them, produces a number that means nothing.
+- **Blank is not zero.** Only 66 of the 240 units carry volume estimates at all. USGS began
+  publishing per-unit results tables in 2023, and the earlier releases publish the boundary plus
+  the assessment input forms and no results. On the map those units are grey: the boundary is real,
+  the estimate simply was not published with it.
+
+The province filter is not a Utah clip — the source carries no state field, and the three provinces
+extend into Colorado, Wyoming, Nevada and Idaho. Intersect against Utah geometry for any
+Utah-specific count.
 
 ---
 
