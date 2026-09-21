@@ -479,6 +479,78 @@
             ]
         },
         {
+            "collection_id": "usgs-noga-assessment-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/noga-assessment-units/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "noga-assessment-units-pmtiles",
+                    "display_name": "Undiscovered oil & gas · USGS 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "match",
+                        [
+                            "get",
+                            "PROVCODE"
+                        ],
+                        [
+                            "5019",
+                            "5020",
+                            "5037"
+                        ],
+                        true,
+                        false
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "ASSESSMETHOD"
+                            ],
+                            "Continuous",
+                            "#B2182B",
+                            "Conventional",
+                            "#EF8A62",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3B08",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": [
+                        "ASSESSNAME",
+                        "PROVNAME",
+                        "TPSNAME",
+                        "ASSESSMETHOD",
+                        "ACCUMTYPE",
+                        "OIL_MN_MMB",
+                        "GAS_MN_BCF"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Continuous (shale, tight, coalbed)",
+                            "color": "#B2182B"
+                        },
+                        {
+                            "label": "Conventional",
+                            "color": "#EF8A62"
+                        },
+                        {
+                            "label": "Boundary only — no volume estimates",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "oil-gas-leases",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
             "group": {
