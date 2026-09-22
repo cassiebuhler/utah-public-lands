@@ -392,6 +392,261 @@
             ]
         },
         {
+            "collection_id": "usgs-kaiparowits-csb",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/csb/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "csb-pmtiles",
+                    "display_name": "Kaiparowits coal assessment area · USGS 1997",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#000000",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#6B4226",
+                        "line-width": 1.6,
+                        "line-dasharray": [
+                            3,
+                            2
+                        ]
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Assessment area outline",
+                            "color": "#6B4226"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-kaiparowits-allcoal",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/allcoal/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "allcoal-pmtiles",
+                    "display_name": "Kaiparowits net coal thickness · USGS 1997",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "THICK"
+                                ],
+                                0
+                            ],
+                            "#E0E0E0",
+                            [
+                                "step",
+                                [
+                                    "get",
+                                    "THICK"
+                                ],
+                                "#F6E8C3",
+                                10,
+                                "#DFC27D",
+                                30,
+                                "#BF812D",
+                                60,
+                                "#8C510A",
+                                100,
+                                "#4A2C06"
+                            ]
+                        ],
+                        "fill-opacity": 0.6
+                    },
+                    "outline_style": {
+                        "line-color": "#3D2408",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": [
+                        "THICK",
+                        "SHTONS_MIL",
+                        "OVERB",
+                        "REL",
+                        "COAL_OWN",
+                        "SURF",
+                        "CNTY"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Under 10 ft net coal",
+                            "color": "#F6E8C3"
+                        },
+                        {
+                            "label": "10–30 ft",
+                            "color": "#DFC27D"
+                        },
+                        {
+                            "label": "30–60 ft",
+                            "color": "#BF812D"
+                        },
+                        {
+                            "label": "60–100 ft",
+                            "color": "#8C510A"
+                        },
+                        {
+                            "label": "100 ft or more",
+                            "color": "#4A2C06"
+                        },
+                        {
+                            "label": "No coal mapped / no data",
+                            "color": "#E0E0E0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-kaiparowits-fig22",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/fig22/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "fig22-pmtiles",
+                    "display_name": "Kaiparowits ground favorable for mining · USGS 1997",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#E6842A",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#8A4A0B",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": [
+                        "OVERB",
+                        "DIP",
+                        "REL",
+                        "COAL_OWN",
+                        "SURF",
+                        "CNTY"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Favorable for underground mining (1996 criteria)",
+                            "color": "#E6842A"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-kaiparowits-m-adit",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/m_adit/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "m_adit-pmtiles",
+                    "display_name": "Kaiparowits coal mine adits · USGS 1997",
+                    "layer_type": "line",
+                    "visible": false,
+                    "default_style": {
+                        "line-color": "#B71C1C",
+                        "line-width": 2.2,
+                        "line-opacity": 0.9
+                    },
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Historic coal mine adit",
+                            "color": "#B71C1C"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "usgs-kaiparowits-kaipcoal",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/kaipcoal/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "kaipcoal-pmtiles",
+                    "display_name": "Kaiparowits coal drill holes · USGS 1997",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 4,
+                        "circle-color": [
+                            "step",
+                            [
+                                "get",
+                                "TOTALCOAL"
+                            ],
+                            "#F6E8C3",
+                            10,
+                            "#DFC27D",
+                            30,
+                            "#BF812D",
+                            60,
+                            "#8C510A",
+                            100,
+                            "#4A2C06"
+                        ],
+                        "circle-opacity": 0.9,
+                        "circle-stroke-width": 0.6,
+                        "circle-stroke-color": "#FFFFFF"
+                    },
+                    "tooltip_fields": [
+                        "PTID",
+                        "TOTALCOAL",
+                        "NUMBEDSTOTALC",
+                        "SURFELEV",
+                        "DEPTHCOALTOP",
+                        "DEPTHCOALBOT"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Under 10 ft total coal",
+                            "color": "#F6E8C3"
+                        },
+                        {
+                            "label": "10–30 ft",
+                            "color": "#DFC27D"
+                        },
+                        {
+                            "label": "30–60 ft",
+                            "color": "#BF812D"
+                        },
+                        {
+                            "label": "60–100 ft",
+                            "color": "#8C510A"
+                        },
+                        {
+                            "label": "100 ft or more",
+                            "color": "#4A2C06"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "ugs-mineral-occurrences",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-mineral-occurrences/stac-collection.json",
             "group": {

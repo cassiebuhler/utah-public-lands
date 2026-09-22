@@ -91,12 +91,45 @@ holds a right to it or who is operating.
 |---|---|---|---|---|
 | Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
 | Coal deposit areas · **UGS 1988** | UGS, hosted by UGRC / SGID | Utah statewide, 94 polygons across 12 coal deposit areas — includes the Kaiparowits Plateau field | Areas **as defined in 1988**; SGID layer `CoalDepositAreas1988`. Converted 23 Jul 2026. | CC-BY-4.0 |
+| Kaiparowits coal assessment area · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`csb` coverage) | Kaiparowits Plateau, southern Utah — 6 polygons outlining the outcrop of the Calico sequence boundary. This is the extent every other coverage in the report was clipped to. | **Fixed vintage, 1997.** Coverage files dated 7 Nov 1997; upstream labels it version 1 and has never revised it. Converted 22 Sep 2026. | Public domain |
+| Kaiparowits net coal thickness · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`allcoal` coverage) | Kaiparowits Plateau — 5,222 polygons carrying **72,129.6 million short tons of coal in place** in the John Henry Member of the Straight Cliffs Formation, attributed by net coal thickness, overburden, reliability, dip, coal and surface ownership, county, quadrangle and township-range | **Fixed vintage, 1997.** As above. | Public domain |
+| Kaiparowits ground favorable for mining · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`fig22` coverage) | Kaiparowits Plateau — 815 polygons meeting the report's geologic criteria for mid-1990s underground mining: beds over 3.5 ft thick, under 3,000 ft deep, dipping under 12° | **Fixed vintage, 1997.** As above. | Public domain |
+| Kaiparowits coal mine adits · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`m_adit` coverage) | Kaiparowits Plateau — 50 lines marking historic coal mine adits. **No attributes at all** in the source: no mine name, date or status. | **Fixed vintage, 1997.** As above. | Public domain |
+| Kaiparowits coal drill holes · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`kaipcoal` coverage) | Kaiparowits Plateau — the 209 drill holes and measured sections every thickness and tonnage figure in the report is interpolated from | **Fixed vintage, 1997.** As above. | Public domain |
 | Mineral occurrences · **UGS 2026** | UGS [Utah Mineral Occurrence System (UMOS)](https://webmaps.geology.utah.gov/arcgis/rest/services/Energy_Mineral/UMOS/MapServer/0), hosted by UGRC / SGID | Utah only, 7,388 points (occurrences, prospects, mines, some energy resources) | **Snapshot, 23 Jul 2026.** Live MapServer feed publishing no version or release date. | CC-BY-4.0 |
 | Mineral deposits · **USGS MRDS 2011** | USGS [Mineral Resources Data System](https://mrdata.usgs.gov/mrds/) | US-wide (266,593 points); **map filtered to `state = 'Utah'`** | **Systematic updates ceased 2011** — USGS states it "has ceased systematic updates to MRDS". Converted 23 Jul 2026. | Public domain |
 
 UMOS is *itself* undated at the feature level — it has no uniform occurrence-date field, so there
 is no per-feature year to trend on. MRDS is a legacy compilation last released in 2011; prefer UMOS
 for Utah-specific questions. The two overlap, so do not add their counts together.
+
+The five **Kaiparowits** layers are one 1997 USGS report, not five independent sources. They cover
+only the Kaiparowits Plateau, and they describe the John Henry Member of the Straight Cliffs
+Formation — the coal body that sat inside the original 1996 Grand Staircase-Escalante boundary.
+They are a different thing from `Coal deposit areas · UGS 1988`, which draws coarse field outlines
+for the whole state; the two overlap over the plateau and must not be counted together.
+
+Four things about them change how the numbers may be used:
+
+- **These are in-place resources, not reserves.** The 72,129.6 million short tons estimate coal in
+  the ground at the report's thickness and overburden cutoffs, with nothing deducted for what is
+  recoverable, mineable or economic, and the total spans every overburden class including more than
+  6,000 ft. The authors state the data set "cannot be used for mine planning or to calculate
+  reserves".
+- **Identified and hypothetical are not interchangeable.** The `REL` column separates resources
+  within three miles of a data point (`iden`, 54,878.8 million short tons) from those further away
+  (`hypo`). A single total that mixes them should say so.
+- **`-99` and blank are no-data markers, not zeroes.** Five `allcoal` polygons are map holes where
+  no coal exists (`REL = 'hole'`, `OVERB = '-99'`, blank ownership), and eight of the seventeen
+  numeric columns on the drill-hole layer use `-99` for missing values. An unfiltered average over
+  those columns is wrong.
+- **"Favorable" is geologic, not economic.** The favorable-for-mining layer applies mid-1990s
+  longwall criteria and says nothing about present-day economics or permitting. It also carries no
+  tonnage — intersect it with the thickness layer for that.
+
+Each polygon in the thickness layer is an intersection of ten mapped attributes, so tonnage sums
+directly with no deduplication. The adit and assessment-area layers carry no attributes at all and
+are map context only.
 
 The **undiscovered oil & gas** layer is a different kind of thing from the other three: it is not a
 record of anything found, it is an estimate of what USGS believes is probably present but has not

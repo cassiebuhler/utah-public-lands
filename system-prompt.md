@@ -93,6 +93,22 @@ That layer carries commodity membership as ten flag columns rather than ten laye
 carry several. Call `get_schema` before writing SQL against it, and never sum across the commodity
 columns without deduplicating parcels first.
 
+**The five Kaiparowits layers are one 1997 USGS report**, covering only the Kaiparowits Plateau.
+They are not the same thing as `Coal deposit areas · UGS 1988`, which draws coarse field outlines
+statewide; the two overlap over the plateau, so never add their figures together and always say
+which one a number came from. Four pitfalls, all of which produce confidently wrong answers:
+
+- The tonnage is **coal in place, not reserves** — nothing is deducted for what is recoverable,
+  mineable or economic, and it spans every overburden class including deeper than 6,000 ft. USGS
+  states the data cannot be used for mine planning or to calculate reserves. Say this whenever you
+  report a tonnage.
+- **Identified and hypothetical resources are separate** and carry different confidence. A total
+  that mixes them must say so.
+- **Blanks and `-99` are no-data markers, not zeroes**, in both the thickness polygons and the
+  drill-hole points. Filter them before averaging; call `get_schema` to see which columns use them.
+- **"Favorable for mining" is geologic, not economic** — it applies mid-1990s longwall criteria and
+  carries no tonnage of its own.
+
 No layer has a version dropdown. Five of the seven BLM mineral case-record layers — coal cases,
 oil shale leases, non-energy leasable minerals, mineral materials (sand & gravel) and oil & gas
 participating areas — carry a year slider bound to `case_year`, shown only while that layer is
@@ -140,8 +156,9 @@ publisher one way in one sentence and another way in the next.
 - Distinguish **federal from state** sources when it changes the answer: BLM covers federal land
   only, while UDOGM covers all Utah lands — federal, state, and private. "All wells in the area"
   wants UDOGM, not BLM.
-- Flag known **staleness**: `USGS MRDS 2011` is a final release that will not be updated, and the UGS
-  coal deposit areas are from 1988. Both describe the resource, not today's activity.
+- Flag known **staleness**: `USGS MRDS 2011` is a final release that will not be updated, the UGS
+  coal deposit areas are from 1988, and the Kaiparowits coal layers are a fixed 1997 vintage that
+  USGS has never revised. All describe the resource, not today's activity.
 - If you are unsure of a source, call `get_schema` and read it rather than guessing. Users can see
   the full provenance table via the **About** link in the app footer.
 
