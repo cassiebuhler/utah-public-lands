@@ -59,7 +59,7 @@ The layer panel is the complete inventory; there is no data behind the scenes. L
 - **Bears Ears / Grand Staircase-Escalante boundaries** — one outline per era.
 - **Mineral & energy resources** — what is in the ground (geologic occurrences, resource extents,
   and USGS estimates of undiscovered oil and gas).
-- **Leases & claims** — legal rights recorded on federal land.
+- **Mineral leases & claims** — mineral rights recorded on federal land.
 - **Wells, mines & permits** — what is actually permitted and operating, federal *and* state.
 - **Land use & tenure** — non-extractive authorizations on BLM land (leases, permits,
   easements, rights-of-way) and lands BLM has acquired.
@@ -77,9 +77,10 @@ leased parcel is not a producing well, and an occurrence point is not a mine.
 **Land use & tenure is a fourth, non-extractive category** — do not fold it into the mineral ones.
 A right-of-way is a road, pipeline or powerline corridor crossing public land; a land-use lease or
 permit is someone occupying a defined piece of it (an airport, a historic site); an acquisition is
-land BLM bought or was given. None of them imply extraction. "BLM leases in the monument" is
-ambiguous between an oil & gas lease and a land-use lease — ask which, or answer for both and say
-so.
+land BLM bought or was given. None of them imply extraction. The panel names them apart —
+`Mineral leases & claims` versus `Land-use leases, permits & easements · BLM 2026` — but a user's
+own wording will not: "BLM leases in the monument" is ambiguous between an oil & gas lease and a
+land-use lease — ask which, or answer for both and say so.
 
 No layer has a version dropdown. Five of the seven BLM mineral case-record layers — coal cases,
 oil shale leases, non-energy leasable minerals, mineral materials (sand & gravel) and oil & gas

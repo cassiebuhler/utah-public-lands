@@ -285,6 +285,78 @@
             ]
         },
         {
+            "collection_id": "usgs-noga-assessment-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/noga-assessment-units/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "noga-assessment-units-pmtiles",
+                    "display_name": "Undiscovered oil & gas · USGS 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "match",
+                        [
+                            "get",
+                            "PROVCODE"
+                        ],
+                        [
+                            "5019",
+                            "5020",
+                            "5037"
+                        ],
+                        true,
+                        false
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "ASSESSMETHOD"
+                            ],
+                            "Continuous",
+                            "#B2182B",
+                            "Conventional",
+                            "#EF8A62",
+                            "#BDBDBD"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3B08",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": [
+                        "ASSESSNAME",
+                        "PROVNAME",
+                        "TPSNAME",
+                        "ASSESSMETHOD",
+                        "ACCUMTYPE",
+                        "OIL_MN_MMB",
+                        "GAS_MN_BCF"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Continuous (shale, tight, coalbed)",
+                            "color": "#B2182B"
+                        },
+                        {
+                            "label": "Conventional",
+                            "color": "#EF8A62"
+                        },
+                        {
+                            "label": "Boundary only — no volume estimates",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "coal-deposits",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
             "group": {
@@ -479,82 +551,10 @@
             ]
         },
         {
-            "collection_id": "usgs-noga-assessment-units",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/noga-assessment-units/stac-collection.json",
-            "group": {
-                "name": "Mineral & energy resources",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "noga-assessment-units-pmtiles",
-                    "display_name": "Undiscovered oil & gas · USGS 2026",
-                    "visible": false,
-                    "default_filter": [
-                        "match",
-                        [
-                            "get",
-                            "PROVCODE"
-                        ],
-                        [
-                            "5019",
-                            "5020",
-                            "5037"
-                        ],
-                        true,
-                        false
-                    ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "ASSESSMETHOD"
-                            ],
-                            "Continuous",
-                            "#B2182B",
-                            "Conventional",
-                            "#EF8A62",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#7F3B08",
-                        "line-width": 0.8
-                    },
-                    "tooltip_fields": [
-                        "ASSESSNAME",
-                        "PROVNAME",
-                        "TPSNAME",
-                        "ASSESSMETHOD",
-                        "ACCUMTYPE",
-                        "OIL_MN_MMB",
-                        "GAS_MN_BCF"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Continuous (shale, tight, coalbed)",
-                            "color": "#B2182B"
-                        },
-                        {
-                            "label": "Conventional",
-                            "color": "#EF8A62"
-                        },
-                        {
-                            "label": "Boundary only — no volume estimates",
-                            "color": "#BDBDBD"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "collection_id": "oil-gas-leases",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-leases/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
@@ -635,22 +635,22 @@
             ]
         },
         {
-            "collection_id": "mining-claims",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mining-claims/stac-collection.json",
+            "collection_id": "oil-gas-agreements",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-agreements/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
                 {
-                    "id": "mining-claims-pmtiles",
-                    "display_name": "Hard-rock mining claims · BLM 2026",
+                    "id": "oil-gas-agreements-pmtiles",
+                    "display_name": "Oil & gas agreements · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
                         [
                             "get",
-                            "admin_state"
+                            "ADMIN_STATE"
                         ],
                         "UT"
                     ],
@@ -659,55 +659,121 @@
                             "match",
                             [
                                 "get",
-                                "BLM_PROD"
+                                "CSE_DISP"
                             ],
-                            "LODE CLAIM",
-                            "#8E24AA",
-                            "LODE CLAIM - NATIONAL PARK",
-                            "#8E24AA",
-                            "PLACER CLAIM",
-                            "#00897B",
-                            "PLACER CLAIM - NATIONAL PARK",
-                            "#00897B",
-                            "MILL SITE",
-                            "#F9A825",
-                            "TUNNEL SITE",
-                            "#D81B60",
-                            "#999999"
+                            "Authorized",
+                            "#4A148C",
+                            "Pending",
+                            "#7B1FA2",
+                            "Closed",
+                            "#E1BEE7",
+                            "#888888"
                         ],
-                        "fill-opacity": 0.45
+                        "fill-opacity": 0.4
                     },
                     "outline_style": {
-                        "line-color": "#4A148C",
-                        "line-width": 0.3
+                        "line-color": "#12005E",
+                        "line-width": 0.4
                     },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
-                        "BLM_PROD",
                         "CSE_DISP",
-                        "status",
-                        "RCRD_ACRS"
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "FRMTN",
+                        "RCRD_ACRS",
+                        "case_year"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Lode claim",
-                            "color": "#8E24AA"
+                            "label": "Authorized (active)",
+                            "color": "#4A148C"
                         },
                         {
-                            "label": "Placer claim",
-                            "color": "#00897B"
+                            "label": "Pending",
+                            "color": "#7B1FA2"
                         },
                         {
-                            "label": "Mill site",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Tunnel site",
-                            "color": "#D81B60"
+                            "label": "Closed / expired",
+                            "color": "#E1BEE7"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "collection_id": "oil-gas-participating-areas",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-participating-areas/stac-collection.json",
+            "group": {
+                "name": "Mineral leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "oil-gas-participating-areas-pmtiles",
+                    "display_name": "Oil & gas participating areas · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Authorized",
+                            "#004D40",
+                            "Closed",
+                            "#B2DFDB",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#00251A",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "FRMTN",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Authorized (active)",
+                            "color": "#004D40"
+                        },
+                        {
+                            "label": "Closed / expired",
+                            "color": "#B2DFDB"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 1939,
+                        "max": 2024,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
                 }
             ]
         },
@@ -715,7 +781,7 @@
             "collection_id": "coal-cases",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/coal-cases/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
@@ -797,10 +863,77 @@
             ]
         },
         {
+            "collection_id": "oil-shale-leases",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-shale-leases/stac-collection.json",
+            "group": {
+                "name": "Mineral leases & claims",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "oil-shale-leases-pmtiles",
+                    "display_name": "Oil shale leases · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_STATE"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "CSE_DISP"
+                            ],
+                            "Closed",
+                            "#F0F4C3",
+                            "#888888"
+                        ],
+                        "fill-opacity": 0.4
+                    },
+                    "outline_style": {
+                        "line-color": "#4B4500",
+                        "line-width": 0.4
+                    },
+                    "tooltip_fields": [
+                        "CSE_NAME",
+                        "CSE_NR",
+                        "CSE_DISP",
+                        "BLM_PROD",
+                        "CMMDTY",
+                        "RCRD_ACRS",
+                        "case_year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Closed / expired",
+                            "color": "#F0F4C3"
+                        }
+                    ],
+                    "control": {
+                        "type": "slider",
+                        "field": "case_year",
+                        "label": "Case year (≤)",
+                        "min": 2006,
+                        "max": 2024,
+                        "step": 1,
+                        "mode": "cumulative",
+                        "animate": true,
+                        "duration_seconds": 25
+                    }
+                }
+            ]
+        },
+        {
             "collection_id": "geothermal-leases",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/geothermal-leases/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
@@ -865,77 +998,10 @@
             ]
         },
         {
-            "collection_id": "oil-shale-leases",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-shale-leases/stac-collection.json",
-            "group": {
-                "name": "Leases & claims",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "oil-shale-leases-pmtiles",
-                    "display_name": "Oil shale leases · BLM 2026",
-                    "visible": false,
-                    "default_filter": [
-                        "==",
-                        [
-                            "get",
-                            "ADMIN_STATE"
-                        ],
-                        "UT"
-                    ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Closed",
-                            "#F0F4C3",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#4B4500",
-                        "line-width": 0.4
-                    },
-                    "tooltip_fields": [
-                        "CSE_NAME",
-                        "CSE_NR",
-                        "CSE_DISP",
-                        "BLM_PROD",
-                        "CMMDTY",
-                        "RCRD_ACRS",
-                        "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Closed / expired",
-                            "color": "#F0F4C3"
-                        }
-                    ],
-                    "control": {
-                        "type": "slider",
-                        "field": "case_year",
-                        "label": "Case year (≤)",
-                        "min": 2006,
-                        "max": 2024,
-                        "step": 1,
-                        "mode": "cumulative",
-                        "animate": true,
-                        "duration_seconds": 25
-                    }
-                }
-            ]
-        },
-        {
             "collection_id": "non-energy-leasables",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/non-energy-leasables/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
@@ -1020,7 +1086,7 @@
             "collection_id": "mineral-materials",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mineral-materials/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
@@ -1102,22 +1168,22 @@
             ]
         },
         {
-            "collection_id": "oil-gas-agreements",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-agreements/stac-collection.json",
+            "collection_id": "mining-claims",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/mining-claims/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Mineral leases & claims",
                 "collapsed": true
             },
             "assets": [
                 {
-                    "id": "oil-gas-agreements-pmtiles",
-                    "display_name": "Oil & gas agreements · BLM 2026",
+                    "id": "mining-claims-pmtiles",
+                    "display_name": "Hard-rock mining claims · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
                         [
                             "get",
-                            "ADMIN_STATE"
+                            "admin_state"
                         ],
                         "UT"
                     ],
@@ -1126,61 +1192,69 @@
                             "match",
                             [
                                 "get",
-                                "CSE_DISP"
+                                "BLM_PROD"
                             ],
-                            "Authorized",
-                            "#4A148C",
-                            "Pending",
-                            "#7B1FA2",
-                            "Closed",
-                            "#E1BEE7",
-                            "#888888"
+                            "LODE CLAIM",
+                            "#8E24AA",
+                            "LODE CLAIM - NATIONAL PARK",
+                            "#8E24AA",
+                            "PLACER CLAIM",
+                            "#00897B",
+                            "PLACER CLAIM - NATIONAL PARK",
+                            "#00897B",
+                            "MILL SITE",
+                            "#F9A825",
+                            "TUNNEL SITE",
+                            "#D81B60",
+                            "#999999"
                         ],
-                        "fill-opacity": 0.4
+                        "fill-opacity": 0.45
                     },
                     "outline_style": {
-                        "line-color": "#12005E",
-                        "line-width": 0.4
+                        "line-color": "#4A148C",
+                        "line-width": 0.3
                     },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
-                        "CSE_DISP",
                         "BLM_PROD",
-                        "CMMDTY",
-                        "FRMTN",
-                        "RCRD_ACRS",
-                        "case_year"
+                        "CSE_DISP",
+                        "status",
+                        "RCRD_ACRS"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Authorized (active)",
-                            "color": "#4A148C"
+                            "label": "Lode claim",
+                            "color": "#8E24AA"
                         },
                         {
-                            "label": "Pending",
-                            "color": "#7B1FA2"
+                            "label": "Placer claim",
+                            "color": "#00897B"
                         },
                         {
-                            "label": "Closed / expired",
-                            "color": "#E1BEE7"
+                            "label": "Mill site",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Tunnel site",
+                            "color": "#D81B60"
                         }
                     ]
                 }
             ]
         },
         {
-            "collection_id": "oil-gas-participating-areas",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/oil-gas-participating-areas/stac-collection.json",
+            "collection_id": "locatable-operations",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/locatable-operations/stac-collection.json",
             "group": {
-                "name": "Leases & claims",
+                "name": "Wells, mines & permits",
                 "collapsed": true
             },
             "assets": [
                 {
-                    "id": "oil-gas-participating-areas-pmtiles",
-                    "display_name": "Oil & gas participating areas · BLM 2026",
+                    "id": "locatable-operations-pmtiles",
+                    "display_name": "Hard-rock operations · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -1195,52 +1269,39 @@
                             "match",
                             [
                                 "get",
-                                "CSE_DISP"
+                                "op_level"
                             ],
-                            "Authorized",
-                            "#004D40",
-                            "Closed",
-                            "#B2DFDB",
-                            "#888888"
+                            "Notice",
+                            "#26A69A",
+                            "Plan of Operations",
+                            "#00695C",
+                            "#999999"
                         ],
-                        "fill-opacity": 0.4
+                        "fill-opacity": 0.45
                     },
                     "outline_style": {
-                        "line-color": "#00251A",
+                        "line-color": "#004D40",
                         "line-width": 0.4
                     },
                     "tooltip_fields": [
                         "CSE_NAME",
-                        "CSE_NR",
-                        "CSE_DISP",
-                        "BLM_PROD",
+                        "op_level",
                         "CMMDTY",
-                        "FRMTN",
+                        "CSE_DISP",
                         "RCRD_ACRS",
-                        "case_year"
+                        "ADMIN_STATE"
                     ],
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "Authorized (active)",
-                            "color": "#004D40"
+                            "label": "Notice (≤ 5-acre disturbance)",
+                            "color": "#26A69A"
                         },
                         {
-                            "label": "Closed / expired",
-                            "color": "#B2DFDB"
+                            "label": "Plan of Operations",
+                            "color": "#00695C"
                         }
-                    ],
-                    "control": {
-                        "type": "slider",
-                        "field": "case_year",
-                        "label": "Case year (≤)",
-                        "min": 1939,
-                        "max": 2024,
-                        "step": 1,
-                        "mode": "cumulative",
-                        "animate": true,
-                        "duration_seconds": 25
-                    }
+                    ]
                 }
             ]
         },
@@ -1252,69 +1313,6 @@
                 "collapsed": true
             },
             "assets": [
-                {
-                    "id": "udogm-wells-pmtiles",
-                    "display_name": "Oil & gas wells · UDOGM 2026",
-                    "layer_type": "circle",
-                    "visible": false,
-                    "default_style": {
-                        "circle-radius": 2.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "welltype"
-                            ],
-                            "OW",
-                            "#43A047",
-                            "GW",
-                            "#E53935",
-                            "D",
-                            "#9E9E9E",
-                            [
-                                "WI",
-                                "WD"
-                            ],
-                            "#1E88E5",
-                            "#757575"
-                        ],
-                        "circle-opacity": 0.75,
-                        "circle-stroke-width": 0.2,
-                        "circle-stroke-color": "#333333"
-                    },
-                    "tooltip_fields": [
-                        "wellname",
-                        "operator",
-                        "welltype",
-                        "wellstatus",
-                        "fieldname",
-                        "county",
-                        "year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Oil well",
-                            "color": "#43A047"
-                        },
-                        {
-                            "label": "Gas well",
-                            "color": "#E53935"
-                        },
-                        {
-                            "label": "Dry hole",
-                            "color": "#9E9E9E"
-                        },
-                        {
-                            "label": "Injection / disposal",
-                            "color": "#1E88E5"
-                        },
-                        {
-                            "label": "Other well type",
-                            "color": "#757575"
-                        }
-                    ]
-                },
                 {
                     "id": "udogm-oil-gas-fields-pmtiles",
                     "display_name": "Producing oil & gas fields · UDOGM 2026",
@@ -1391,6 +1389,69 @@
                     ]
                 },
                 {
+                    "id": "udogm-wells-pmtiles",
+                    "display_name": "Oil & gas wells · UDOGM 2026",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 2.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "welltype"
+                            ],
+                            "OW",
+                            "#43A047",
+                            "GW",
+                            "#E53935",
+                            "D",
+                            "#9E9E9E",
+                            [
+                                "WI",
+                                "WD"
+                            ],
+                            "#1E88E5",
+                            "#757575"
+                        ],
+                        "circle-opacity": 0.75,
+                        "circle-stroke-width": 0.2,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "wellname",
+                        "operator",
+                        "welltype",
+                        "wellstatus",
+                        "fieldname",
+                        "county",
+                        "year"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Oil well",
+                            "color": "#43A047"
+                        },
+                        {
+                            "label": "Gas well",
+                            "color": "#E53935"
+                        },
+                        {
+                            "label": "Dry hole",
+                            "color": "#9E9E9E"
+                        },
+                        {
+                            "label": "Injection / disposal",
+                            "color": "#1E88E5"
+                        },
+                        {
+                            "label": "Other well type",
+                            "color": "#757575"
+                        }
+                    ]
+                },
+                {
                     "id": "udogm-mineral-mines-pmtiles",
                     "display_name": "Mineral mine permits · UDOGM 2026",
                     "layer_type": "circle",
@@ -1421,67 +1482,6 @@
             ]
         },
         {
-            "collection_id": "locatable-operations",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/locatable-operations/stac-collection.json",
-            "group": {
-                "name": "Wells, mines & permits",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "locatable-operations-pmtiles",
-                    "display_name": "Hard-rock operations · BLM 2026",
-                    "visible": false,
-                    "default_filter": [
-                        "==",
-                        [
-                            "get",
-                            "ADMIN_STATE"
-                        ],
-                        "UT"
-                    ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "op_level"
-                            ],
-                            "Notice",
-                            "#26A69A",
-                            "Plan of Operations",
-                            "#00695C",
-                            "#999999"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#004D40",
-                        "line-width": 0.4
-                    },
-                    "tooltip_fields": [
-                        "CSE_NAME",
-                        "op_level",
-                        "CMMDTY",
-                        "CSE_DISP",
-                        "RCRD_ACRS",
-                        "ADMIN_STATE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Notice (≤ 5-acre disturbance)",
-                            "color": "#26A69A"
-                        },
-                        {
-                            "label": "Plan of Operations",
-                            "color": "#00695C"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "collection_id": "lua-leases-permits-easements",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/lua-leases-permits-easements/stac-collection.json",
             "group": {
@@ -1491,7 +1491,7 @@
             "assets": [
                 {
                     "id": "lua-leases-permits-easements-pmtiles",
-                    "display_name": "Leases, permits & easements · BLM 2026",
+                    "display_name": "Land-use leases, permits & easements · BLM 2026",
                     "visible": false,
                     "default_filter": [
                         "==",
@@ -1792,6 +1792,24 @@
             ]
         },
         {
+            "collection_id": "mobi-species-richness-all",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
+            "group": {
+                "name": "Species & habitat",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "species-richness-all-cog",
+                    "display_name": "Imperiled species richness · NatureServe 2023",
+                    "visible": false,
+                    "colormap": "viridis",
+                    "rescale": "0,10",
+                    "legend_label": "Imperiled species (count per cell)"
+                }
+            ]
+        },
+        {
             "collection_id": "usfws-critical-habitat-final",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-usfws/critical-habitat/final/stac-collection.json",
             "group": {
@@ -1909,24 +1927,6 @@
                             "color": "#4527A0"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "collection_id": "mobi-species-richness-all",
-            "collection_url": "https://s3-west.nrp-nautilus.io/public-mobi/mobi-species-richness-all/stac-collection.json",
-            "group": {
-                "name": "Species & habitat",
-                "collapsed": true
-            },
-            "assets": [
-                {
-                    "id": "species-richness-all-cog",
-                    "display_name": "Imperiled species richness · NatureServe 2023",
-                    "visible": false,
-                    "colormap": "viridis",
-                    "rescale": "0,10",
-                    "legend_label": "Imperiled species (count per cell)"
                 }
             ]
         },
