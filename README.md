@@ -33,17 +33,18 @@ every layer, and expands the publisher acronyms.
 |---|---|
 | **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac — in effect` → `2026 · 121k ac — PROPOSED` |
 | **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac — in effect` → `2026 · 182k ac — PROPOSED` |
-| **Mineral & energy resources** *(what's in the ground)* | Coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
-| **Leases & claims** *(who holds the rights)* | Oil & gas leases (2015+) · BLM 2026; hard-rock mining claims · BLM 2026; coal cases, geothermal leases, oil shale leases, non-energy leasable minerals, mineral materials, oil & gas agreements, oil & gas participating areas · BLM 2026 |
-| **Wells, mines & permits** *(what's operating)* | Oil & gas wells, producing fields, coal permits, mineral mine permits · UDOGM 2026; hard-rock operations · BLM 2026 |
+| **Mineral & energy resources** *(what's in the ground)* | Undiscovered oil & gas · USGS 2026; coal deposit areas · UGS 1988; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
+| **Mineral leases & claims** *(who holds the rights)* | Oil & gas leases (2015+), oil & gas agreements, oil & gas participating areas, coal cases, oil shale leases, geothermal leases, non-energy leasable minerals, mineral materials, hard-rock mining claims · BLM 2026 |
+| **Wells, mines & permits** *(what's operating)* | Hard-rock operations · BLM 2026; producing oil & gas fields, coal mine permits, oil & gas wells, mineral mine permits · UDOGM 2026 |
+| **Land use & tenure** *(non-extractive authorizations)* | Land-use leases, permits & easements; rights-of-way; acquired lands & interests · BLM 2026 |
 | **Protected areas** | Protected areas · USGS PAD-US 4.1 |
 | **Indigenous & community lands** | Indigenous & community lands · LandMark 2025 |
-| **Species & habitat** | ESA critical habitat · USFWS 2026; mule deer migration range · USGS 2020–2022 *(GSENM only)*; imperiled species richness · NatureServe 2023 *(raster)* |
+| **Species & habitat** | Imperiled species richness · NatureServe 2023 *(raster)*; ESA critical habitat · USFWS 2026; mule deer migration range · USGS 2020–2022 *(GSENM only)* |
 | **Rivers & recreation** | Federal trails · USFS / NPS / BLM 2026; inventoried river reaches · NPS 2024 |
 | **People** | Social vulnerability · CDC 2022 |
 
 The two monument groups are expanded on load with the 2021 and 2026 outlines visible; every other
-group starts collapsed and off, so the map opens on the boundary story rather than 21 layers at once.
+group starts collapsed and off, so the map opens on the boundary story rather than 29 layers at once.
 
 Boundary labels carry an acreage rather than a word like "reduced" or "restored", so the size change
 reads as a figure instead of a judgement, and legal status is its own field: **2021 is the boundary in

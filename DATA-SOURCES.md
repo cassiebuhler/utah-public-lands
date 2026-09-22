@@ -89,10 +89,10 @@ holds a right to it or who is operating.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
+| Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
 | Coal deposit areas · **UGS 1988** | UGS, hosted by UGRC / SGID | Utah statewide, 94 polygons across 12 coal deposit areas — includes the Kaiparowits Plateau field | Areas **as defined in 1988**; SGID layer `CoalDepositAreas1988`. Converted 23 Jul 2026. | CC-BY-4.0 |
 | Mineral occurrences · **UGS 2026** | UGS [Utah Mineral Occurrence System (UMOS)](https://webmaps.geology.utah.gov/arcgis/rest/services/Energy_Mineral/UMOS/MapServer/0), hosted by UGRC / SGID | Utah only, 7,388 points (occurrences, prospects, mines, some energy resources) | **Snapshot, 23 Jul 2026.** Live MapServer feed publishing no version or release date. | CC-BY-4.0 |
 | Mineral deposits · **USGS MRDS 2011** | USGS [Mineral Resources Data System](https://mrdata.usgs.gov/mrds/) | US-wide (266,593 points); **map filtered to `state = 'Utah'`** | **Systematic updates ceased 2011** — USGS states it "has ceased systematic updates to MRDS". Converted 23 Jul 2026. | Public domain |
-| Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
 
 UMOS is *itself* undated at the feature level — it has no uniform occurrence-date field, so there
 is no per-feature year to trend on. MRDS is a legacy compilation last released in 2011; prefer UMOS
@@ -123,7 +123,7 @@ Utah-specific count.
 
 ---
 
-## Leases & claims — who holds the rights
+## Mineral leases & claims — who holds the rights
 
 Legal interests recorded on federal land. A lease or claim is a *right*, not evidence that
 anything is being extracted.
@@ -131,96 +131,21 @@ anything is being extracted.
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
 | Oil & gas leases (2015+) · **BLM 2026** | BLM [National MLRS / EGIS](https://gbp-blm-egis.hub.arcgis.com/datasets/BLM-EGIS::blm-natl-mlrs-oil-and-gas-leases/about) | Nationwide (466,415 lease parcels); **map filtered to `ADMIN_STATE = 'UT'` and `lease_year >= 2015`** | **Snapshot, 22 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
-| Hard-rock mining claims · **BLM 2026** | BLM [National MLRS / EGIS](https://catalog.data.gov/dataset/blm-natl-mlrs-mining-claims-not-closed-f621b) | Nationwide (655,792 features: 575,287 not-closed + 80,505 closed); **map filtered to `admin_state = 'UT'`** | **Snapshot, 23 Jul 2026.** Live MLRS service, no version; record dates span 2021–2026. | Public domain |
 <!-- 486-mlrs-minerals -->
-| Coal cases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (3,857 cases); **map filtered to `ADMIN_STATE = 'UT'`** (414 in Utah). 971 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
-| Geothermal leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,394 cases); **map filtered to `ADMIN_STATE = 'UT'`** (576 in Utah). 195 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
-| Oil shale leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (42 cases); **map filtered to `ADMIN_STATE = 'UT'`** (11 in Utah). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
-| Non-energy leasable minerals · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,106 cases); **map filtered to `ADMIN_STATE = 'UT'`** (1,182 in Utah). 212 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
-| Mineral materials (sand & gravel) · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (35,670 cases); **map filtered to `ADMIN_STATE = 'UT'`** (2,530 in Utah). 1,393 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
 | Oil & gas agreements · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (32,787 cases); **map filtered to `ADMIN_STATE = 'UT'`** (1,193 in Utah). 443 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
 | Oil & gas participating areas · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (2,562 cases); **map filtered to `ADMIN_STATE = 'UT'`** (364 in Utah). 17 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Coal cases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (3,857 cases); **map filtered to `ADMIN_STATE = 'UT'`** (414 in Utah). 971 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Oil shale leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (42 cases); **map filtered to `ADMIN_STATE = 'UT'`** (11 in Utah). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Geothermal leases · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,394 cases); **map filtered to `ADMIN_STATE = 'UT'`** (576 in Utah). 195 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Non-energy leasable minerals · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (7,106 cases); **map filtered to `ADMIN_STATE = 'UT'`** (1,182 in Utah). 212 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
+| Mineral materials (sand & gravel) · **BLM 2026** | BLM [National MLRS / EGIS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (35,670 cases); **map filtered to `ADMIN_STATE = 'UT'`** (2,530 in Utah). 1,393 of them have no geometry and so do not appear on the map (see note below). | **Snapshot, 24 Jul 2026.** Live MLRS service publishing no version or release date. | Public domain |
 <!-- 486-mlrs-minerals -->
+| Hard-rock mining claims · **BLM 2026** | BLM [National MLRS / EGIS](https://catalog.data.gov/dataset/blm-natl-mlrs-mining-claims-not-closed-f621b) | Nationwide (655,792 features: 575,287 not-closed + 80,505 closed); **map filtered to `admin_state = 'UT'`** | **Snapshot, 23 Jul 2026.** Live MLRS service, no version; record dates span 2021–2026. | Public domain |
 
-
-
-
-The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
-— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
-(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
-group (which are the work actually authorized on the ground).
-
-All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
-that year is the case's *effective* date or its *disposition* date. They are not
-interchangeable — an effective year is when a case started, a disposition year is usually when
-it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
-with `CSE_DISP = 'Authorized'`.
-
-> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
-> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
-> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
-> other six range from under 1% to about 4%. Those cases are still in the data and the
-> assistant can answer on them, but they are absent from the map, so any acreage or overlap
-> measured on the map understates the true total.
-
-> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
-> slider filters `case_year <= value`, and that test is false for a null — so attaching one
-> would silently hide every case with no recorded year. Utah coverage is only 67% for
-> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
-> without warning. Use the assistant for time questions about them.
-
-The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
-— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
-(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
-group (which are the work actually authorized on the ground).
-
-All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
-that year is the case's *effective* date or its *disposition* date. They are not
-interchangeable — an effective year is when a case started, a disposition year is usually when
-it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
-with `CSE_DISP = 'Authorized'`.
-
-> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
-> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
-> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
-> other six range from under 1% to about 4%. Those cases are still in the data and the
-> assistant can answer on them, but they are absent from the map, so any acreage or overlap
-> measured on the map understates the true total.
-
-> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
-> slider filters `case_year <= value`, and that test is false for a null — so attaching one
-> would silently hide every case with no recorded year. Utah coverage is only 67% for
-> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
-> without warning. Use the assistant for time questions about them.
-
-The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
-— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
-(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
-group (which are the work actually authorized on the ground).
-
-All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
-that year is the case's *effective* date or its *disposition* date. They are not
-interchangeable — an effective year is when a case started, a disposition year is usually when
-it closed — so "cases active in year X" should filter `case_year_src = 'effective'` together
-with `CSE_DISP = 'Authorized'`.
-
-> **Geocoding gaps — read acreage off the map with care.** BLM derives these polygons from each
-> case's Legal Land Description via the PLSS, and where that fails the case has no geometry at
-> all. By far the worst is **Coal cases, where 971 of 3,857 cases (25%) are unmapped**; the
-> other six range from under 1% to about 4%. Those cases are still in the data and the
-> assistant can answer on them, but they are absent from the map, so any acreage or overlap
-> measured on the map understates the true total.
-
-> **Geothermal leases and Oil & gas agreements deliberately have no year slider.** A cumulative
-> slider filters `case_year <= value`, and that test is false for a null — so attaching one
-> would silently hide every case with no recorded year. Utah coverage is only 67% for
-> geothermal leases and 88% for oil & gas agreements, too large a share to drop from the map
-> without warning. Use the assistant for time questions about them.
-
-The seven MLRS mineral case-record layers above are the *leasable* and *salable* mineral estate
-— the rights BLM grants to extract a mineral, as opposed to the mining claims immediately above
-(which are *located* by a claimant under the 1872 Mining Law) and the operations in the next
-group (which are the work actually authorized on the ground).
+The seven MLRS mineral case-record layers between the two markers above are the *leasable* and
+*salable* mineral estate — the rights BLM grants to extract a mineral, as opposed to the mining
+claims in the last row (which are *located* by a claimant under the 1872 Mining Law) and the
+operations in the next group (which are the work actually authorized on the ground).
 
 All seven carry a uniform numeric **`case_year`** and a **`case_year_src`** flag saying whether
 that year is the case's *effective* date or its *disposition* date. They are not
@@ -257,11 +182,11 @@ the BLM layer covers only federal hard-rock operations.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
-| Oil & gas wells · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 40,344 well surface locations | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
+| Hard-rock operations · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | 11 western states (2,399 features: 1,264 Notices + 1,135 Plans of Operations); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 23 Jul 2026.** Live MLRS service, no version; records span 1975–2026. | Public domain |
 | Producing oil & gas fields · **UDOGM 2026** | UDOGM & UGRC, hosted by SGID | Utah, 153 producing field outlines | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
 | Coal mine permits · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 32 coal permit boundaries | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
+| Oil & gas wells · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 40,344 well surface locations | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
 | Mineral mine permits · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 1,504 permitted non-coal mineral mines | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
-| Hard-rock operations · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | 11 western states (2,399 features: 1,264 Notices + 1,135 Plans of Operations); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 23 Jul 2026.** Live MLRS service, no version; records span 1975–2026. | Public domain |
 
 Under the General Mining Law of 1872, a BLM *Notice* covers ≤ 5 acres of disturbance and a *Plan of
 Operations* covers more — the distinction is the `op_level` column.
@@ -274,13 +199,13 @@ Coal permits carry **no permit-issue date** in the source (only GIS edit timesta
 ## Land use & tenure — how the land is used and held
 
 Non-extractive authorizations on BLM land, and how BLM came to hold the land in the first
-place. Distinct from **Leases & claims** (which is mineral rights) and from **Wells, mines &
+place. Distinct from **Mineral leases & claims** (which is mineral rights) and from **Wells, mines &
 permits** (which is extraction activity): a right-of-way is a road or powerline crossing public
 land, and an acquisition is a parcel BLM bought or was given.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
-| Leases, permits & easements · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (39,598 case records; 37,477 geocoded); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1911–2026. | Public domain |
+| Land-use leases, permits & easements · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (39,598 case records; 37,477 geocoded); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1911–2026. | Public domain |
 | Rights-of-way · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (196,751 case records; 191,959 geocoded) — the largest MLRS layer; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1866–2026. | Public domain |
 | Acquired lands & interests · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (97,529 case records; 96,777 geocoded), reaching 34 states; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1855–2026. | Public domain |
 
@@ -332,9 +257,9 @@ is not a legal determination of title.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
+| Imperiled species richness · **NatureServe 2023** | NatureServe [Map of Biodiversity Importance](https://www.natureserve.org/products/map-biodiversity-importance) (MOBI), with Esri and The Nature Conservancy | Contiguous US raster, ~2,400 imperiled and endemic species | **2023 release** | **CC-BY-NC-4.0 — non-commercial use only** |
 | ESA critical habitat · **USFWS 2026** | USFWS [ES Critical Habitat service](https://www.fws.gov/program/endangered-species) (HQ item `794de45b9d774d21aed3bf9b5313ee24`, layer 0) | Nationwide, 728 polygons across 462 species — **not filtered to Utah** | **Snapshot, 24 Jul 2026.** Live ArcGIS service publishing no version; designations date from 1973 onward. | Public domain |
 | Mule deer migration range · **USGS 2020–2022** | USGS Fort Collins Science Center, *Ungulate Migrations of the Western United States* (Kauffman et al.) | 8 western states; **map filtered to `state = 'UT'`** | Utah content comes from **volumes 1 (2020) and 2 (2022)** of a six-volume series. | Public domain |
-| Imperiled species richness · **NatureServe 2023** | NatureServe [Map of Biodiversity Importance](https://www.natureserve.org/products/map-biodiversity-importance) (MOBI), with Esri and The Nature Conservancy | Contiguous US raster, ~2,400 imperiled and endemic species | **2023 release** | **CC-BY-NC-4.0 — non-commercial use only** |
 
 Only **final** critical-habitat designations are shown — those legally in effect under the
 Endangered Species Act. Proposed designations are a separate upstream dataset and are not mapped.
