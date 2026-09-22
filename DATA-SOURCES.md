@@ -198,18 +198,44 @@ Coal permits carry **no permit-issue date** in the source (only GIS edit timesta
 
 ## Land use & tenure — how the land is used and held
 
-Non-extractive authorizations on BLM land, and how BLM came to hold the land in the first
-place. Distinct from **Mineral leases & claims** (which is mineral rights) and from **Wells, mines &
-permits** (which is extraction activity): a right-of-way is a road or powerline crossing public
-land, and an acquisition is a parcel BLM bought or was given.
+Who owns the mineral estate, what non-extractive authorizations sit on BLM land, and how BLM came
+to hold the land in the first place. Distinct from **Mineral leases & claims** (which is mineral
+*rights granted*) and from **Wells, mines & permits** (which is extraction activity): the mineral
+estate is who owns the minerals before any right is granted, a right-of-way is a road or powerline
+crossing public land, and an acquisition is a parcel BLM bought or was given.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
+| Federal mineral estate · **BLM 2026** | BLM [Utah State Office](https://gis.blm.gov/utarcgis/rest/services/Lands/BLM_Utah_Federal_Minerals_Map_Service/FeatureServer) | Utah statewide, 101,585 PLSS parcels — **no filter needed, the source is Utah-only** | **Snapshot, 22 Sep 2026.** Live FeatureServer publishing no version; publisher metadata states content current as of 1 Mar 2026. | Public domain |
 | Land-use leases, permits & easements · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (39,598 case records; 37,477 geocoded); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1911–2026. | Public domain |
 | Rights-of-way · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (196,751 case records; 191,959 geocoded) — the largest MLRS layer; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1866–2026. | Public domain |
 | Acquired lands & interests · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (97,529 case records; 96,777 geocoded), reaching 34 states; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1855–2026. | Public domain |
 
-These three layers carry **no lease dates** — no effective, expiration or sale date. Their only
+The **federal mineral estate** layer is the odd one out in this group and the only layer in the app
+that describes *ownership* rather than an authorization. Its grain is the PLSS survey subdivision —
+each parcel is an aliquot part identified by `GCDBDIVID`, commonly about 40 acres — not a case or a
+lease. Utah is heavily split estate: **12,183 parcels carry federally owned minerals under surface
+administered by someone other than the federal government or BLM**, so a parcel appearing here says
+nothing about who manages the surface above it.
+
+Commodity membership is carried as **ten flag columns**, not ten layers. BLM publishes one feature
+class through eleven definition-query views, and a parcel can appear in several of them — the
+per-commodity view counts total 106,444 against 101,585 parcels because 3,247 parcels carry more
+than one flag. A flag is `X` for **Federal Minerals** or `I` for **Indian Minerals**, and null when
+the parcel is not flagged for that commodity; 158 parcels carry no flag at all. Filtering one column
+reproduces BLM's own layer exactly — `WHERE Coal IS NOT NULL` returns the 4,041 parcels in BLM's
+Coal layer.
+
+The map colours parcels by whether the whole mineral estate is federal (`ALL_MIN`, 86,271 parcels /
+36.0M ac), whole-estate Indian minerals (5,071 / 2.1M ac), specific commodities only (10,085 / 765k
+ac), or unflagged (158 / 76k ac).
+
+⚠️ One parcel has **no geometry** in the source. It is present in the GeoParquet with a null geometry
+but absent from the map and the hex, so the map covers 101,584 of the 101,585 parcels. `GIS_Acres`
+is a per-parcel total repeated on every hex cell the parcel covers — deduplicate by `_cng_fid`
+before summing it on the hex asset.
+
+The three MLRS layers below carry **no lease dates** — no effective, expiration or sale date. Their only
 date is the *case disposition* date, so the derived `disp_year` is a disposition year, not the
 year an authorization began. It is near-complete on the two land-use layers (99.8% and 99.5%)
 but ⚠️ **null on 69% of acquisitions records** (only 30,438 of 97,529 are dated), so a time

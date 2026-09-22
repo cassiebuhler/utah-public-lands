@@ -61,8 +61,8 @@ The layer panel is the complete inventory; there is no data behind the scenes. L
   and USGS estimates of undiscovered oil and gas).
 - **Mineral leases & claims** — mineral rights recorded on federal land.
 - **Wells, mines & permits** — what is actually permitted and operating, federal *and* state.
-- **Land use & tenure** — non-extractive authorizations on BLM land (leases, permits,
-  easements, rights-of-way) and lands BLM has acquired.
+- **Land use & tenure** — who owns the mineral estate, non-extractive authorizations on BLM land
+  (leases, permits, easements, rights-of-way), and lands BLM has acquired.
 - **Protected areas** — conservation status and management mandate.
 - **Indigenous & community lands** — mapped Indigenous and community holdings.
 - **Species & habitat** — legally designated habitat and mapped wildlife range.
@@ -81,6 +81,17 @@ land BLM bought or was given. None of them imply extraction. The panel names the
 `Mineral leases & claims` versus `Land-use leases, permits & easements · BLM 2026` — but a user's
 own wording will not: "BLM leases in the monument" is ambiguous between an oil & gas lease and a
 land-use lease — ask which, or answer for both and say so.
+
+**Ownership is not a right, and mineral estate is not surface.** `Federal mineral estate · BLM 2026`
+is the only layer describing who *owns* minerals; every layer in `Mineral leases & claims` describes
+a right *granted on* that ownership. A parcel in the mineral estate layer is not leased, claimed or
+drilled — it is only federally owned. Utah is heavily split estate, so a federal mineral parcel says
+nothing about who manages the surface above it, and a surface-ownership layer such as PAD-US says
+nothing about the minerals beneath. Never read one as evidence of the other.
+
+That layer carries commodity membership as ten flag columns rather than ten layers, and a parcel can
+carry several. Call `get_schema` before writing SQL against it, and never sum across the commodity
+columns without deduplicating parcels first.
 
 No layer has a version dropdown. Five of the seven BLM mineral case-record layers — coal cases,
 oil shale leases, non-energy leasable minerals, mineral materials (sand & gravel) and oil & gas

@@ -1482,6 +1482,124 @@
             ]
         },
         {
+            "collection_id": "utah-federal-mineral-estate",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/utah-federal-mineral-estate/stac-collection.json",
+            "group": {
+                "name": "Land use & tenure",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "utah-federal-mineral-estate-pmtiles",
+                    "display_name": "Federal mineral estate · BLM 2026",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "ALL_MIN"
+                                ],
+                                "X"
+                            ],
+                            "#4E342E",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "ALL_MIN"
+                                ],
+                                "I"
+                            ],
+                            "#C2185B",
+                            [
+                                "any",
+                                [
+                                    "has",
+                                    "Oil_Gas"
+                                ],
+                                [
+                                    "has",
+                                    "Coal"
+                                ],
+                                [
+                                    "has",
+                                    "Oil_Shale"
+                                ],
+                                [
+                                    "has",
+                                    "Gilsonite"
+                                ],
+                                [
+                                    "has",
+                                    "Potash_Pot"
+                                ],
+                                [
+                                    "has",
+                                    "Sodium"
+                                ],
+                                [
+                                    "has",
+                                    "Phosphate"
+                                ],
+                                [
+                                    "has",
+                                    "Geo_Steam"
+                                ],
+                                [
+                                    "has",
+                                    "Unknown_"
+                                ]
+                            ],
+                            "#EF6C00",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#3E2723",
+                        "line-width": 0.3
+                    },
+                    "tooltip_fields": [
+                        "County",
+                        "GIS_Acres",
+                        "Admin",
+                        "ALL_MIN",
+                        "Oil_Gas",
+                        "Coal",
+                        "Oil_Shale",
+                        "Gilsonite",
+                        "Potash_Pot",
+                        "Sodium",
+                        "Phosphate",
+                        "Geo_Steam",
+                        "Unknown_"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "All minerals — federal (86,271)",
+                            "color": "#4E342E"
+                        },
+                        {
+                            "label": "All minerals — Indian (5,071)",
+                            "color": "#C2185B"
+                        },
+                        {
+                            "label": "Specific commodities only (10,085)",
+                            "color": "#EF6C00"
+                        },
+                        {
+                            "label": "No commodity flag (158)",
+                            "color": "#9E9E9E"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "lua-leases-permits-easements",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/lua-leases-permits-easements/stac-collection.json",
             "group": {
