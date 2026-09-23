@@ -53,10 +53,10 @@
     "welcome": {
         "message": "Explore how the Bears Ears and Grand Staircase-Escalante boundaries have been redrawn from 1996 to 2026, and what the redrawn land holds. Every layer names its publisher and vintage — see \"About\" below for full sources. Try asking:",
         "examples": [
-            "Overlay the Bears Ears boundary in 2016 and its 2026 proposed reduction.",
-            "How many acres did the 2026 proposal cut from Grand Staircase-Escalante compared with its 2021 extent?",
-            "How much of the Kaiparowits Plateau coal deposit falls outside the 2026 proposed Grand Staircase boundary?",
-            "Which protected areas and federal trails fall inside the 2026 proposed Bears Ears boundary?"
+            "Overlay the Bears Ears boundary in 2016 and its 2026 reduction.",
+            "How many acres did the 2026 reduction cut from Grand Staircase-Escalante compared with its 2021 extent?",
+            "How much of the Kaiparowits Plateau coal deposit falls outside the 2026 Grand Staircase boundary?",
+            "Which protected areas and federal trails fall inside the 2026 Bears Ears boundary?"
         ]
     },
     "links": {
@@ -122,7 +122,7 @@
                 },
                 {
                     "id": "benm-2021",
-                    "display_name": "2021 · 1.36M ac — in effect",
+                    "display_name": "2021 · 1.36M ac",
                     "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
@@ -136,7 +136,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2021 · 1.36M ac — in effect",
+                            "label": "2021 · 1.36M ac",
                             "color": "#378ADD"
                         }
                     ],
@@ -148,7 +148,7 @@
                 },
                 {
                     "id": "benm-2026",
-                    "display_name": "2026 · 121k ac — PROPOSED",
+                    "display_name": "2026 · 121k ac — in effect",
                     "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
@@ -162,7 +162,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 · 121k ac — PROPOSED",
+                            "label": "2026 · 121k ac — in effect",
                             "color": "#0C447C"
                         }
                     ],
@@ -232,7 +232,7 @@
                 },
                 {
                     "id": "gsenm-2021",
-                    "display_name": "2021 · 1.87M ac — in effect",
+                    "display_name": "2021 · 1.87M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
@@ -246,7 +246,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2021 · 1.87M ac — in effect",
+                            "label": "2021 · 1.87M ac",
                             "color": "#BA7517"
                         }
                     ],
@@ -258,7 +258,7 @@
                 },
                 {
                     "id": "gsenm-2026",
-                    "display_name": "2026 · 182k ac — PROPOSED",
+                    "display_name": "2026 · 182k ac — in effect",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
@@ -272,7 +272,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 · 182k ac — PROPOSED",
+                            "label": "2026 · 182k ac — in effect",
                             "color": "#633806"
                         }
                     ],

@@ -62,8 +62,8 @@ One toggleable outline per redesignation, so eras can be overlaid and compared. 
 
 | | |
 |---|---|
-| **Layers** | Bears Ears: `2016 · 1.35M ac`, `2017 · 202k ac`, `2021 · 1.36M ac — in effect`, `2026 · 121k ac — PROPOSED`<br>Grand Staircase-Escalante: `1996 · 1.88M ac`, `2017 · 1.00M ac`, `2021 · 1.87M ac — in effect`, `2026 · 182k ac — PROPOSED` |
-| **Published by** | One source per era: **originals** from Utah SGID *BLM Monuments & NCAs Historic*; **2017 reduction** from USGS [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/pad-us-data-history) 2.1 (released Sept 2020); **2021 restoration** from PAD-US 4.1 (released Mar 2025); **2026 proposed** from the proposed-reduction boundaries |
+| **Layers** | Bears Ears: `2016 · 1.35M ac`, `2017 · 202k ac`, `2021 · 1.36M ac`, `2026 · 121k ac — in effect`<br>Grand Staircase-Escalante: `1996 · 1.88M ac`, `2017 · 1.00M ac`, `2021 · 1.87M ac`, `2026 · 182k ac — in effect` |
+| **Published by** | One source per era: **originals** from Utah SGID *BLM Monuments & NCAs Historic*; **2017 reduction** from USGS [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/pad-us-data-history) 2.1 (released Sept 2020); **2021 restoration** from PAD-US 4.1 (released Mar 2025); **2026 reduction** from the Proclamation 11043 / 11044 boundaries |
 | **License** | Public domain |
 | **STAC** | [`benm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json) · [`gsenm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json) |
 
@@ -72,13 +72,28 @@ stated as a figure instead of as a judgement, and legal status is its own field.
 
 **The acreage shown is `acres`, the official proclamation acreage.** Each polygon also carries
 `gis_acres` measured from the geometry, and the two differ — by ~9% on Bears Ears, where the 2016
-boundary is 1,351,850 official acres against 1,413,100 measured. Grand Staircase's 2026 proposal is
+boundary is 1,351,850 official acres against 1,413,100 measured. Grand Staircase's 2026 boundary is
 **three separate polygons** totalling 181,591 ac, so deduplicate by `_cng_fid` before summing.
 
-⚠️ **The 2026 boundary is a *proposed* reduction (announced 13 July 2026), not enacted law.** Note that
-the source data disagrees: its 2026 features carry `era = '2026 reduced'` and `status = 'reduced'`.
-That is an upstream labelling artifact, not evidence the reduction took effect — the panel label and
-legend are the correct wording.
+**The 2026 boundary is the one in effect.** Proclamation 11043 (Bears Ears, 121,096 ac in the Indian
+Creek and Shash Jáa units) and Proclamation 11044 (Grand Staircase-Escalante, 181,541 ac in the
+Canyons of the Escalante and Kaiparowits Horizon units) were issued 13 July 2026 and published in the
+Federal Register on 17 July 2026. Each delayed the consequences by 60 days: at 9:00 a.m. EDT on
+**11 September 2026** the excised lands opened to entry, location, selection and sale under the public
+land laws, to mineral and geothermal leasing, and to location and patent under the mining laws.
+
+The source data's `era = '2026 reduced'` and `status = 'reduced'` therefore match the legal position,
+and the panel label reads `— in effect`.
+
+⚠️ **The reduction is being litigated and the boundaries could change again.** Plaintiffs moved on
+2 September 2026 to revive the 2017 Antiquities Act challenge and contest the 2026 proclamations; the
+Tenth Circuit had remanded that case to the district court on 23 June 2026. No court has stayed or
+enjoined the proclamations, so the 2026 boundaries are in force while the case is unresolved. This
+file records the position as of its last edit — check the docket before relying on it.
+
+The acreage this app shows for the 2026 Grand Staircase boundary is **181,591 ac**, measured as the
+`acres` column over the layer's three polygons; Proclamation 11044 states approximately 181,541 ac.
+The ~50-acre difference is in the source data and is not corrected here.
 
 ---
 
