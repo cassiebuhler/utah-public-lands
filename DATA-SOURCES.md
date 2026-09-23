@@ -62,13 +62,14 @@ One toggleable outline per redesignation, so eras can be overlaid and compared. 
 
 | | |
 |---|---|
-| **Layers** | Bears Ears: `2016 · 1.35M ac`, `2017 · 202k ac`, `2021 · 1.36M ac`, `2026 · 121k ac — in effect`<br>Grand Staircase-Escalante: `1996 · 1.88M ac`, `2017 · 1.00M ac`, `2021 · 1.87M ac`, `2026 · 182k ac — in effect` |
+| **Layers** | Bears Ears: `2016 · 1.35M ac`, `2017 · 202k ac`, `2021 · 1.36M ac`, `2026 · 121k ac`<br>Grand Staircase-Escalante: `1996 · 1.88M ac`, `2017 · 1.00M ac`, `2021 · 1.87M ac`, `2026 · 182k ac` |
 | **Published by** | One source per era: **originals** from Utah SGID *BLM Monuments & NCAs Historic*; **2017 reduction** from USGS [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/pad-us-data-history) 2.1 (released Sept 2020); **2021 restoration** from PAD-US 4.1 (released Mar 2025); **2026 reduction** from the Proclamation 11043 / 11044 boundaries |
 | **License** | Public domain |
 | **STAC** | [`benm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/bears-ears/stac-collection.json) · [`gsenm-boundaries`](https://s3-west.nrp-nautilus.io/public-utah/grand-staircase-escalante/stac-collection.json) |
 
 These labels carry an acreage rather than a word like "reduced" or "restored", so the size change is
-stated as a figure instead of as a judgement, and legal status is its own field.
+stated as a figure instead of as a judgement. No label carries a legal-status marker: which boundary
+is in force is recorded below and in the system prompt, not in the panel.
 
 **The acreage shown is `acres`, the official proclamation acreage.** Each polygon also carries
 `gis_acres` measured from the geometry, and the two differ — by ~9% on Bears Ears, where the 2016
@@ -82,8 +83,7 @@ Federal Register on 17 July 2026. Each delayed the consequences by 60 days: at 9
 **11 September 2026** the excised lands opened to entry, location, selection and sale under the public
 land laws, to mineral and geothermal leasing, and to location and patent under the mining laws.
 
-The source data's `era = '2026 reduced'` and `status = 'reduced'` therefore match the legal position,
-and the panel label reads `— in effect`.
+The source data's `era = '2026 reduced'` and `status = 'reduced'` therefore match the legal position.
 
 ⚠️ **The reduction is being litigated and the boundaries could change again.** Plaintiffs moved on
 2 September 2026 to revive the 2017 Antiquities Act challenge and contest the 2026 proclamations; the

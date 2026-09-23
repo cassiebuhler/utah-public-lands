@@ -148,7 +148,7 @@
                 },
                 {
                     "id": "benm-2026",
-                    "display_name": "2026 · 121k ac — in effect",
+                    "display_name": "2026 · 121k ac",
                     "group": "Bears Ears boundaries",
                     "visible": true,
                     "default_style": {
@@ -162,7 +162,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 · 121k ac — in effect",
+                            "label": "2026 · 121k ac",
                             "color": "#0C447C"
                         }
                     ],
@@ -258,7 +258,7 @@
                 },
                 {
                     "id": "gsenm-2026",
-                    "display_name": "2026 · 182k ac — in effect",
+                    "display_name": "2026 · 182k ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
                     "default_style": {
@@ -272,7 +272,7 @@
                     "legend_type": "categorical",
                     "legend_classes": [
                         {
-                            "label": "2026 · 182k ac — in effect",
+                            "label": "2026 · 182k ac",
                             "color": "#633806"
                         }
                     ],

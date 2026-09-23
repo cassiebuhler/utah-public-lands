@@ -46,7 +46,11 @@ eras can be overlaid to compare extents. Panel label ↔ `era` value:
 | `2016 · 1.35M ac` / `1996 · 1.88M ac` | `2016 original` / `1996 original` |
 | `2017 · 202k ac` / `2017 · 1.00M ac` | `2017 reduced` |
 | `2021 · 1.36M ac` / `2021 · 1.87M ac` | `2021 restored` |
-| `2026 · 121k ac — in effect` / `2026 · 182k ac — in effect` | `2026 reduced` |
+| `2026 · 121k ac` / `2026 · 182k ac` | `2026 reduced` |
+
+Every label is `year · acreage` and none carries a legal-status marker, so **the panel does not
+say which boundary is in force** — that is the section above, and it is yours to state when it
+matters to the answer.
 
 **Hue = monument** (Bears Ears blues, Grand Staircase-Escalante ambers) and **lightness = era**
 (palest = earliest, darkest = 2026). By default the 2021 and 2026 layers are on for both; turn eras
