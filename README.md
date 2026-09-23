@@ -31,8 +31,8 @@ every layer, and expands the publisher acronyms.
 
 | Group | Layers |
 |---|---|
-| **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac` → `2026 · 121k ac — in effect` |
-| **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac` → `2026 · 182k ac — in effect` |
+| **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac` → `2026 · 121k ac` |
+| **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac` → `2026 · 182k ac` |
 | **Mineral & energy resources** *(what's in the ground)* | Undiscovered oil & gas · USGS 2026; coal deposit areas · UGS 1988; the five Kaiparowits Plateau coal layers · USGS 1997; uranium areas, uranium districts, past uranium producers · UGS 2026; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
 | **Mineral leases & claims** *(who holds the rights)* | Oil & gas leases (2015+), oil & gas agreements, oil & gas participating areas, coal cases, oil shale leases, geothermal leases, non-energy leasable minerals, mineral materials, hard-rock mining claims · BLM 2026 |
 | **Wells, mines & permits** *(what's operating)* | Hard-rock operations · BLM 2026; producing oil & gas fields, coal mine permits, oil & gas wells, mineral mine permits, permitted uranium mines, uranium mills · UDOGM 2026 |
@@ -46,13 +46,14 @@ every layer, and expands the publisher acronyms.
 The two monument groups are expanded on load with the 2021 and 2026 outlines visible; every other
 group starts collapsed and off, so the map opens on the boundary story rather than 41 layers at once.
 
-Boundary labels carry an acreage rather than a word like "reduced" or "restored", so the size change
-reads as a figure instead of a judgement, and legal status is its own field: **the 2026 boundary is
-the one in effect.** Proclamations 11043 and 11044 were issued 13 July 2026 and the excised lands
-opened to mining location and mineral leasing at 9:00 a.m. EDT on 11 September 2026. The reduction is
-under litigation — plaintiffs moved on 2 September 2026 to revive the 2017 Antiquities Act challenge —
-but no court has stayed it, so the system prompt has the agent report the boundaries as in force and
-the case as unresolved.
+Boundary labels are uniformly `year · acreage` — an acreage rather than a word like "reduced" or
+"restored", so the size change reads as a figure instead of a judgement, and no label carries a
+legal-status marker. **The 2026 boundary is the one in effect**: Proclamations 11043 and 11044 were
+issued 13 July 2026 and the excised lands opened to mining location and mineral leasing at 9:00 a.m.
+EDT on 11 September 2026. The reduction is under litigation — plaintiffs moved on 2 September 2026 to
+revive the 2017 Antiquities Act challenge — but no court has stayed it. That status lives in the
+system prompt rather than in a label, so the agent states it when it matters to the answer and the
+panel stays a plain list of extents.
 
 The **resource / rights / activity** split matters analytically: a coal deposit is geology, a lease
 is a right someone holds, and a permitted well is activity on the ground. They are not
