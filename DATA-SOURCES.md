@@ -85,11 +85,19 @@ land laws, to mineral and geothermal leasing, and to location and patent under t
 
 The source data's `era = '2026 reduced'` and `status = 'reduced'` therefore match the legal position.
 
-⚠️ **The reduction is being litigated and the boundaries could change again.** Plaintiffs moved on
-2 September 2026 to revive the 2017 Antiquities Act challenge and contest the 2026 proclamations; the
-Tenth Circuit had remanded that case to the district court on 23 June 2026. No court has stayed or
-enjoined the proclamations, so the 2026 boundaries are in force while the case is unresolved. This
-file records the position as of its last edit — check the docket before relying on it.
+⚠️ **The reduction is being litigated and the boundaries could change again.** Two *separate*
+cases are running in parallel and should not be conflated:
+
+- **The Antiquities Act challenge to the reductions**, in the U.S. District Court for the District
+  of Columbia. Conservation groups filed supplemental complaints on 2 September 2026, reviving the
+  2017 challenge to the first Trump reduction and extending it to the 2026 proclamations.
+- **Utah's own suit against the 2021 restoration**, in the Tenth Circuit. On 23 June 2026 the Tenth
+  Circuit reversed the district court's dismissal of the challenges brought by Utah and other
+  plaintiffs and remanded that case to federal district court.
+
+No court has stayed or enjoined the 2026 proclamations, so the 2026 boundaries are in force while
+both cases are unresolved. This file records the position as of its last edit — check the dockets
+before relying on it.
 
 The acreage this app shows for the 2026 Grand Staircase boundary is **181,591 ac**, measured as the
 `acres` column over the layer's three polygons; Proclamation 11044 states approximately 181,541 ac.
@@ -248,6 +256,14 @@ view is filtered. `CSE_DISP = 'Authorized'` is the filter for currently active l
 
 The claims layer has **no claim-staking date** — its only dates are MLRS record-management
 timestamps from the digital-migration window, not when a claim was located.
+
+> **This snapshot predates the reopening.** It was pulled 23 July 2026, before the excised lands
+> opened to mining location on 11 September 2026, so it contains **nothing staked since** — the 16
+> claims located in San Juan County included. A later pull would still lag: a claimant has 90 days
+> from location to record a claim with BLM, so claims staked at the reopening need not appear in
+> BLM's database until early December 2026. Conversely, every claim this layer shows inside an
+> excised area was located **before** the reduction and stands under the valid existing rights the
+> proclamations carve out — it is not a response to the reduction.
 
 ---
 

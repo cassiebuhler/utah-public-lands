@@ -12,15 +12,18 @@ asks "before/after" or "which administration":
 | Monument | Original | 2017 reduction (Trump) | 2021 restoration (Biden) | 2026 reduction (Trump, Jul 13 2026) |
 |---|---|---|---|---|
 | Bears Ears | 1,351,849 ac (Dec 28 2016) | 201,876 ac (~85% cut) | ~1,362,000 ac (Oct 8 2021) | 121,096 ac — **in effect** |
-| Grand Staircase-Escalante | 1,880,461 ac (Sep 18 1996) | 1,003,863 ac | ~1,870,800 ac (Oct 8 2021) | 181,591 ac — **in effect** |
+| Grand Staircase-Escalante | 1,880,461 ac (Sep 18 1996) | 1,003,863 ac | ~1,870,800 ac (Oct 8 2021) | 181,541 ac — **in effect** |
 
 The 2017 and 2026 cuts excised **different** geographies (not simple scalings), so "the excised
 area" depends on which era you mean — always name the era.
 
 ### Which boundary is actually in force
 
-- **The 2026 boundary is the one in effect today.** When a user asks how big a monument "is", that is
-  the answer: Bears Ears 121,096 ac, Grand Staircase-Escalante 181,591 ac.
+- **The 2026 boundary is the one in effect today.** When a user asks how big a monument "is", give
+  the **proclamation** acreage: Bears Ears 121,096 ac, Grand Staircase-Escalante 181,541 ac.
+  Summing the Grand Staircase layer's three polygons gives 181,591 ac instead — a ~50-acre
+  discrepancy that is in the source data and is not corrected here. Report 181,591 only as what the
+  layer measures, never as the size of the monument.
 - **The reduction is enacted, not proposed.** Proclamations 11043 (Bears Ears) and 11044 (Grand
   Staircase-Escalante) were issued Jul 13 2026 and published in the Federal Register Jul 17 2026;
   the excised lands opened to entry, location, mineral and geothermal leasing, and location and
@@ -59,7 +62,9 @@ on/off (or ask me to) to show any combination.
 The acreages in the panel labels are `acres`, the **official proclamation acreage**. Each polygon also
 carries `gis_acres` measured from the geometry, and the two differ — by ~9% on Bears Ears (2016:
 1,351,850 official vs 1,413,100 measured) — so always say which one you used. Grand Staircase's 2026
-boundary is **three separate polygons**; sum it with `SELECT DISTINCT _cng_fid, acres` first.
+boundary is **three separate polygons**; sum it with `SELECT DISTINCT _cng_fid, acres` first. That sum
+is 181,591 ac against the proclamation's 181,541 ac — say it is the layer's total, not the
+proclamation figure.
 
 ## What this app has — and what it does not
 
@@ -241,6 +246,15 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   build "claims staked over time" trends. Use `status` (`not_closed` / `closed`) for active-vs-closed
   and `BLM_PROD` for claim type. A few records carry placeholder acreage far above the ~21 ac
   median; filter outliers before area accounting.
+- **The claims layer is a 23 Jul 2026 snapshot — it predates the reopening, and cannot answer
+  "what has been staked since".** Two mistakes to avoid:
+  - **It shows nothing located after the excised lands opened on Sep 11 2026**, including the 16
+    claims staked in San Juan County. Do not read the absence of new claims as evidence none were
+    staked. BLM's own database may not show them until early December either — a claimant has 90
+    days from location to record the claim with BLM — so even a fresh pull would lag.
+  - **Every claim this layer shows inside an excised area was located *before* the reduction.**
+    Those claims stand under the **valid existing rights** the proclamations expressly carve out;
+    they are not a response to the reduction, and must not be described as one.
 - **Lease years can be null or in the future.** BLM `lease_year` derives from an effective date that
   may be missing, and reissued leases can carry years past the present (to ~2040). Exclude nulls
   from year trends, and don't call the filtered lease layer "to present". `CSE_DISP = 'Authorized'`
