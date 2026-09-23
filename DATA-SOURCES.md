@@ -26,7 +26,7 @@ every layer:
   (`UGS 1988`, `USGS MRDS 2011`);
 - a **snapshot** — the source is a continuously-updated live service that publishes no version or
   release date, so the year is when this copy was pulled (`BLM 2026`, `UDOGM 2026`). The tables give
-  the exact date; every snapshot here was pulled 22–23 July 2026.
+  the exact date; the snapshots here were pulled in July and September 2026.
 
 The difference changes how you read a number: `USGS MRDS 2011` is as current as that dataset will
 ever get, while `UDOGM 2026` is a snapshot of a feed that has kept moving since.
@@ -97,6 +97,9 @@ holds a right to it or who is operating.
 | Kaiparowits coal mine adits · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`m_adit` coverage) | Kaiparowits Plateau — 50 lines marking historic coal mine adits. **No attributes at all** in the source: no mine name, date or status. | **Fixed vintage, 1997.** As above. | Public domain |
 | Kaiparowits coal drill holes · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`kaipcoal` coverage) | Kaiparowits Plateau — the 209 drill holes and measured sections every thickness and tonnage figure in the report is interpolated from | **Fixed vintage, 1997.** As above. | Public domain |
 | Mineral occurrences · **UGS 2026** | UGS [Utah Mineral Occurrence System (UMOS)](https://webmaps.geology.utah.gov/arcgis/rest/services/Energy_Mineral/UMOS/MapServer/0), hosted by UGRC / SGID | Utah only, 7,388 points (occurrences, prospects, mines, some energy resources) | **Snapshot, 23 Jul 2026.** Live MapServer feed publishing no version or release date. | CC-BY-4.0 |
+| Uranium areas · **UGS 2026** | UGS, hosted by UGRC / SGID ([SGID Energy theme](https://gis.utah.gov/products/sgid/energy/)) | Utah, 15 broad Colorado Plateau uranium areas | **Snapshot, 22 Sep 2026.** Live feature service publishing no version; the underlying compilation is UGS Map 215 (2005). | CC-BY-4.0 |
+| Uranium districts · **UGS 2026** | UGS, hosted by UGRC / SGID | Utah statewide, 58 districts carrying the survey's uranium potential class | **Snapshot, 22 Sep 2026.** As above — UGS Map 215 (2005). | CC-BY-4.0 |
+| Past uranium producers · **UGS 2026** | UGS, hosted by UGRC / SGID; attributes in USGS [CRIB](https://doi.org/10.3133/cir755B) record format | Utah, 748 past producing sites — **722 carry attributes, 26 are position-only** | **Snapshot, 22 Sep 2026.** Live feature service publishing no version or release date. | CC-BY-4.0 |
 | Mineral deposits · **USGS MRDS 2011** | USGS [Mineral Resources Data System](https://mrdata.usgs.gov/mrds/) | US-wide (266,593 points); **map filtered to `state = 'Utah'`** | **Systematic updates ceased 2011** — USGS states it "has ceased systematic updates to MRDS". Converted 23 Jul 2026. | Public domain |
 
 UMOS is *itself* undated at the feature level — it has no uniform occurrence-date field, so there
@@ -130,6 +133,32 @@ Four things about them change how the numbers may be used:
 Each polygon in the thickness layer is an intersection of ten mapped attributes, so tonnage sums
 directly with no deduplication. The adit and assessment-area layers carry no attributes at all and
 are map context only.
+
+The three **uranium** layers come from the same UGS/UDOGM release as the two in *Wells, mines &
+permits* below, and they are not a hierarchy. Districts and areas share no key and no name: 47 of
+the 58 districts sit wholly inside one area and 4 more sit 93–98% inside one, but 7 districts (Spor
+Mountain, Honeycomb Hills, East Erickson, Blawn Mountain, Silver Reef, Marysvale, Newton) lie
+outside every area, because the areas cover the Colorado Plateau and those districts are in western
+Utah. Rolling districts up to areas silently drops those seven — relate them with a spatial join.
+
+The map colours districts by `POTENTIAL`, the survey's own judgement of uranium potential: High
+(7), Moderate (12), Low (29) and `None` (7). ⚠️ **`None` means no potential was assigned, not zero
+potential**, and it is distinct from the 3 districts that are genuinely `NULL`. The criteria behind
+the classes are not published anywhere — not in the ArcGIS item metadata, the FGDC record, the UGRC
+product page, or Map 215 itself.
+
+Past-producer **production and reserve figures need parsing before any arithmetic.** The `*_AMT`,
+`*_U`, `*_ITEM`, `*_ACC`, `*_YEAR` and `*_GRADE` columns follow the USGS CRIB record format: each
+holds several entries packed into one string separated by `ý` (U+00FD), each amount is in
+*thousands* of the unit named in the parallel `*_U` entry, units and spellings vary within and
+between records (`LB`, `LBS`, `ST`, `TONS`), and entries cover different commodities (`U`, `V`,
+`ORE U`, `CON U`). Reserves appear in three overlapping tables — `RPR_*` is the total, `R_*` its
+reserves part and `PR_*` its potential-resources part — so adding all three double-counts the same
+material. Dates are nearly absent: only 55 of the 748 records carry a first-production year and one
+carries a last-production year, so **there is no uranium production time series here**.
+
+Past producers overlap `Mineral occurrences · UGS 2026` and `Mineral deposits · USGS MRDS 2011`
+with no shared identifier — one mine can appear in all three. Never add counts across them.
 
 The **undiscovered oil & gas** layer is a different kind of thing from the other three: it is not a
 record of anything found, it is an estimate of what USGS believes is probably present but has not
@@ -220,6 +249,8 @@ the BLM layer covers only federal hard-rock operations.
 | Coal mine permits · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 32 coal permit boundaries | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
 | Oil & gas wells · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 40,344 well surface locations | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
 | Mineral mine permits · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID | Utah, 1,504 permitted non-coal mineral mines | **Snapshot, 23 Jul 2026.** Live FeatureServer publishing no version or release date. | CC-BY-4.0 |
+| Permitted uranium mines · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID, published in the UGS uranium release | Utah, 25 permitted uranium / uranium-vanadium mines | **Snapshot, 22 Sep 2026.** Live feature service publishing no version or release date. | CC-BY-4.0 |
+| Uranium mills · **UDOGM 2026** | UDOGM, hosted by UGRC / SGID, published in the UGS uranium release | Utah, both of the state's uranium processing mills — White Mesa (San Juan) and Shootaring Canyon (Garfield) | **Snapshot, 22 Sep 2026.** Live feature service publishing no version or release date. | CC-BY-4.0 |
 
 Under the General Mining Law of 1872, a BLM *Notice* covers ≤ 5 acres of disturbance and a *Plan of
 Operations* covers more — the distinction is the `op_level` column.
@@ -227,22 +258,59 @@ Operations* covers more — the distinction is the `op_level` column.
 Coal permits carry **no permit-issue date** in the source (only GIS edit timestamps), so their
 `year` column is null for every feature.
 
+⚠️ **The two uranium layers here are a subset of `Mineral mine permits · UDOGM 2026`, not an
+addition to it.** They are the same UDOGM permit database read through a different SGID service —
+the mineral mine permit layer holds 115 uranium- or vanadium-bearing permits across all permit
+statuses, and both mills appear in it as well. `MINEID` / `MILL_ID` are the same permit numbers as
+its `Permit` column but zero-padded differently (`S370103` vs `M0350004`), so a naive equality join
+returns nothing. Never add the uranium counts to the mineral mine permit count.
+
+Mine `STATUS` is `ACT` (active, 2 mines) or `SUS` (suspended, 23). `PERM_STAT` is `APP`
+(approved) on 7 records and null on the other 18, and `MIN_TYPE` distinguishes `BM` (large mining
+operation) from `EM` (small mining operation).
+
 ---
 
 ## Land use & tenure — how the land is used and held
 
-Who owns the mineral estate, what non-extractive authorizations sit on BLM land, and how BLM came
-to hold the land in the first place. Distinct from **Mineral leases & claims** (which is mineral
-*rights granted*) and from **Wells, mines & permits** (which is extraction activity): the mineral
-estate is who owns the minerals before any right is granted, a right-of-way is a road or powerline
+Who owns the mineral estate, where livestock grazing is authorised, what other non-extractive
+authorizations sit on BLM land, and how BLM came to hold the land in the first place. Distinct from
+**Mineral leases & claims** (which is mineral *rights granted*) and from **Wells, mines & permits**
+(which is extraction activity): the mineral estate is who owns the minerals before any right is
+granted, a grazing allotment is a rangeland management unit, a right-of-way is a road or powerline
 crossing public land, and an acquisition is a parcel BLM bought or was given.
 
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
+| Grazing allotments · **BLM 2026** | BLM [National Grazing Allotment MapServer](https://gis.blm.gov/arcgis/rest/services/range/BLM_Natl_Grazing_Allotment/MapServer/12), layer 12 | Ten western state offices (21,252 polygons / 20,974 allotments); **map filtered to `ADMIN_ST = 'UT'`** — 1,414 polygons, 1,401 allotments, 27.5M acres | **Snapshot, 22 Sep 2026.** Live map service publishing no version; edit stamps in this snapshot run 13 Aug – 21 Sep 2026. | Public domain |
 | Federal mineral estate · **BLM 2026** | BLM [Utah State Office](https://gis.blm.gov/utarcgis/rest/services/Lands/BLM_Utah_Federal_Minerals_Map_Service/FeatureServer) | Utah statewide, 101,585 PLSS parcels — **no filter needed, the source is Utah-only** | **Snapshot, 22 Sep 2026.** Live FeatureServer publishing no version; publisher metadata states content current as of 1 Mar 2026. | Public domain |
 | Land-use leases, permits & easements · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (39,598 case records; 37,477 geocoded); **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1911–2026. | Public domain |
 | Rights-of-way · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (196,751 case records; 191,959 geocoded) — the largest MLRS layer; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1866–2026. | Public domain |
 | Acquired lands & interests · **BLM 2026** | BLM [National MLRS](https://www.blm.gov/services/land-records/mlrs) | Nationwide (97,529 case records; 96,777 geocoded), reaching 34 states; **map filtered to `ADMIN_STATE = 'UT'`** | **Snapshot, 24 Jul 2026.** Live MLRS service, no version; disposition dates span 1855–2026. | Public domain |
+
+⚠️ **A grazing allotment is a management unit, not a parcel of federal land.** An allotment
+boundary can enclose private, state and other federal land alongside the BLM land inside it, so its
+area is not the area of public land being grazed. Answering how much federal land an allotment
+covers means intersecting it with a surface-ownership layer such as PAD-US.
+
+**Animal unit months, permittees and seasons of use are not in this layer.** BLM describes it as
+supplemental to the Rangeland Administration System (RAS), which is authoritative; what is released
+publicly is geometry and administrative identifiers only. The stocking and permittee figures live
+in RAS as tabular reports at [reports.blm.gov](https://reports.blm.gov), joined on `ST_ALLOT`
+(equivalently `ALLOT_NO` with `ADMIN_ST`). This app does not carry them, so it cannot answer how
+many cattle graze anywhere.
+
+`ADMIN_ST` — used for the Utah map filter — is the administering state office, not where the land
+lies. It is close in Utah but not exact: 1,401 allotments are administered by the Utah office,
+while about 1,427 allotments actually sit inside Utah, the remainder administered from the Idaho,
+Arizona, Colorado and Wyoming offices. A precise Utah figure needs an intersection with Utah
+geometry.
+
+Two more quirks worth knowing before counting: 135 allotment identifiers span 404 polygons, each
+carrying its own `GIS_ACRES`, so an allotment's acreage is the **sum** over its polygons and
+deduplicating by `ST_ALLOT` undercounts; and ⚠️ **`ACTIVE_DT` is not a per-allotment date** — 11,892
+polygons have none, 4,648 carry 1934-06-28 (the Taylor Grazing Act), 3,493 carry 1899-12-30 and 237
+carry 1946-01-01, leaving roughly 1,000 with a plausible date. There is no grazing time series here.
 
 The **federal mineral estate** layer is the odd one out in this group and the only layer in the app
 that describes *ownership* rather than an authorization. Its grain is the PLSS survey subdivision —
@@ -370,6 +438,11 @@ a monument boundary, and it describes **residents, not visitors**. The map tiles
 The app shows only the layers listed above. It has **no** land-cover, vegetation, wildfire,
 human-modification, or carbon data. If you ask the assistant a question that would need one of
 those, it should tell you the data is not available rather than substituting something else.
+
+**There are no grazing stocking figures.** The grazing allotment layer is boundaries and
+identifiers only — animal unit months, permittees and seasons of use are held in BLM's Rangeland
+Administration System and are not published in this feature class, so the app cannot say how much
+livestock any allotment carries.
 
 **There is no visitation or tourism-economy data.** No recreation visitor counts, no gateway-town
 spending, and no employment by industry — nothing from NPS, BLM, BEA or BLS. The CDC layer carries a

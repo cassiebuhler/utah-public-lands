@@ -1737,6 +1737,276 @@
             ]
         },
         {
+            "collection_id": "ugs-uranium",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/ugs-uranium/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "ugs-uranium-area-boundaries-pmtiles",
+                    "display_name": "Uranium areas · UGS 2026",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#000000",
+                        "fill-opacity": 0
+                    },
+                    "outline_style": {
+                        "line-color": "#6A1B9A",
+                        "line-width": 1.4
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "ID"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Colorado Plateau uranium area",
+                            "color": "#6A1B9A"
+                        }
+                    ]
+                },
+                {
+                    "id": "ugs-uranium-districts-pmtiles",
+                    "display_name": "Uranium districts · UGS 2026",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "match",
+                            [
+                                "get",
+                                "POTENTIAL"
+                            ],
+                            "High",
+                            "#4A148C",
+                            "Moderate",
+                            "#9575CD",
+                            "Low",
+                            "#D1C4E9",
+                            "None",
+                            "#D9D9D9",
+                            "#9E9E9E"
+                        ],
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#311B92",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "POTENTIAL",
+                        "NUMBER"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "High uranium potential",
+                            "color": "#4A148C"
+                        },
+                        {
+                            "label": "Moderate",
+                            "color": "#9575CD"
+                        },
+                        {
+                            "label": "Low",
+                            "color": "#D1C4E9"
+                        },
+                        {
+                            "label": "No potential assigned",
+                            "color": "#D9D9D9"
+                        },
+                        {
+                            "label": "Unclassified",
+                            "color": "#9E9E9E"
+                        }
+                    ]
+                },
+                {
+                    "id": "ugs-uranium-past-producers-pmtiles",
+                    "display_name": "Past uranium producers · UGS 2026",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 3.2,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "DEP_SIZE"
+                            ],
+                            [
+                                "LARGE",
+                                "LGE"
+                            ],
+                            "#B71C1C",
+                            "MEDIUM",
+                            "#F57C00",
+                            [
+                                "SMALL",
+                                "SML"
+                            ],
+                            "#FDD835",
+                            "#9E9E9E"
+                        ],
+                        "circle-opacity": 0.85,
+                        "circle-stroke-width": 0.4,
+                        "circle-stroke-color": "#333333"
+                    },
+                    "tooltip_fields": [
+                        "SITE_NAME",
+                        "DIST",
+                        "COUNTY",
+                        "DEP_SIZE",
+                        "COMMOD",
+                        "OWNER"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Large deposit",
+                            "color": "#B71C1C"
+                        },
+                        {
+                            "label": "Medium",
+                            "color": "#F57C00"
+                        },
+                        {
+                            "label": "Small",
+                            "color": "#FDD835"
+                        },
+                        {
+                            "label": "Size not recorded",
+                            "color": "#9E9E9E"
+                        }
+                    ]
+                },
+                {
+                    "id": "ugs-uranium-permitted-mines-pmtiles",
+                    "display_name": "Permitted uranium mines · UDOGM 2026",
+                    "group": "Wells, mines & permits",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 4.5,
+                        "circle-color": [
+                            "match",
+                            [
+                                "get",
+                                "STATUS"
+                            ],
+                            "ACT",
+                            "#1B5E20",
+                            "SUS",
+                            "#F9A825",
+                            "#9E9E9E"
+                        ],
+                        "circle-opacity": 0.9,
+                        "circle-stroke-width": 0.8,
+                        "circle-stroke-color": "#FFFFFF"
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "OPERATOR",
+                        "COUNTY",
+                        "PRODUCT",
+                        "STATUS",
+                        "MINEID"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Active",
+                            "color": "#1B5E20"
+                        },
+                        {
+                            "label": "Suspended",
+                            "color": "#F9A825"
+                        },
+                        {
+                            "label": "Other / not recorded",
+                            "color": "#9E9E9E"
+                        }
+                    ]
+                },
+                {
+                    "id": "ugs-uranium-mills-pmtiles",
+                    "display_name": "Uranium mills · UDOGM 2026",
+                    "group": "Wells, mines & permits",
+                    "layer_type": "circle",
+                    "visible": false,
+                    "default_style": {
+                        "circle-radius": 6,
+                        "circle-color": "#D81B60",
+                        "circle-opacity": 0.95,
+                        "circle-stroke-width": 1.2,
+                        "circle-stroke-color": "#FFFFFF"
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "OPERATOR",
+                        "COUNTY",
+                        "MILL_ID"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Uranium mill",
+                            "color": "#D81B60"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "collection_id": "grazing-allotments",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/grazing-allotments/stac-collection.json",
+            "group": {
+                "name": "Land use & tenure",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "grazing-allotments-pmtiles",
+                    "display_name": "Grazing allotments · BLM 2026",
+                    "visible": false,
+                    "default_filter": [
+                        "==",
+                        [
+                            "get",
+                            "ADMIN_ST"
+                        ],
+                        "UT"
+                    ],
+                    "default_style": {
+                        "fill-color": "#827717",
+                        "fill-opacity": 0.22
+                    },
+                    "outline_style": {
+                        "line-color": "#556B2F",
+                        "line-width": 0.5
+                    },
+                    "tooltip_fields": [
+                        "ALLOT_NAME",
+                        "ALLOT_NO",
+                        "ST_ALLOT",
+                        "ADM_UNIT_CD",
+                        "GIS_ACRES",
+                        "ADMIN_ST"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "BLM grazing allotment",
+                            "color": "#827717"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "utah-federal-mineral-estate",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/utah-federal-mineral-estate/stac-collection.json",
             "group": {
