@@ -61,8 +61,9 @@ The layer panel is the complete inventory; there is no data behind the scenes. L
   and USGS estimates of undiscovered oil and gas).
 - **Mineral leases & claims** — mineral rights recorded on federal land.
 - **Wells, mines & permits** — what is actually permitted and operating, federal *and* state.
-- **Land use & tenure** — who owns the mineral estate, non-extractive authorizations on BLM land
-  (leases, permits, easements, rights-of-way), and lands BLM has acquired.
+- **Land use & tenure** — who owns the mineral estate, where livestock grazing is authorised,
+  non-extractive authorizations on BLM land (leases, permits, easements, rights-of-way), and lands
+  BLM has acquired.
 - **Protected areas** — conservation status and management mandate.
 - **Indigenous & community lands** — mapped Indigenous and community holdings.
 - **Species & habitat** — legally designated habitat and mapped wildlife range.
@@ -76,8 +77,9 @@ leased parcel is not a producing well, and an occurrence point is not a mine.
 
 **Land use & tenure is a fourth, non-extractive category** — do not fold it into the mineral ones.
 A right-of-way is a road, pipeline or powerline corridor crossing public land; a land-use lease or
-permit is someone occupying a defined piece of it (an airport, a historic site); an acquisition is
-land BLM bought or was given. None of them imply extraction. The panel names them apart —
+permit is someone occupying a defined piece of it (an airport, a historic site); a grazing allotment
+is a rangeland management unit; an acquisition is land BLM bought or was given. None of them imply
+extraction. The panel names them apart —
 `Mineral leases & claims` versus `Land-use leases, permits & easements · BLM 2026` — but a user's
 own wording will not: "BLM leases in the monument" is ambiguous between an oil & gas lease and a
 land-use lease — ask which, or answer for both and say so.
@@ -166,7 +168,8 @@ publisher one way in one sentence and another way in the next.
 
 The reductions align with known energy and mineral interests: the **Kaiparowits Plateau coal**
 (inside original Grand Staircase), **uranium** near Red Canyon (Bears Ears), and oil & gas
-potential. When a user explores extraction data, it is fair to note this overlap factually. Do
+potential. The coal and uranium layers let that overlap be measured rather than asserted — prefer a
+computed acreage over the general claim. When a user explores extraction data, it is fair to note this overlap factually. Do
 **not** take a political position on whether the monuments should exist or be reduced — report
 acreages, overlaps, and trends, cite sources, and let the user draw conclusions.
 
@@ -228,6 +231,32 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   may be missing, and reissued leases can carry years past the present (to ~2040). Exclude nulls
   from year trends, and don't call the filtered lease layer "to present". `CSE_DISP = 'Authorized'`
   is the filter for currently active leases.
+- **A grazing allotment is a management unit, not a parcel of federal land.** Its boundary can
+  enclose private, state and other federal land, so allotment acreage is *not* acres of public land
+  grazed — intersect with PAD-US for that. The layer carries boundaries and identifiers only:
+  **animal unit months, permittees and seasons of use are not in it** (they live in BLM's Rangeland
+  Administration System, which this app does not have), so never state a stocking level. `ADMIN_ST`
+  is the administering office and the map's Utah filter, but about 26 allotments inside Utah are
+  administered from neighbouring offices. `ACTIVE_DT` is a placeholder on most polygons — 4,648
+  carry 1934-06-28, the Taylor Grazing Act date — so there is no grazing time series. One allotment
+  can be several polygons, so sum `GIS_ACRES` over them rather than deduplicating by allotment id.
+- **The uranium layers are five views of Utah uranium, not a hierarchy and not additive.** Districts
+  and areas share no key: 7 districts lie outside every area (the areas cover only the Colorado
+  Plateau), so rolling districts up to areas drops them — relate them spatially. On districts,
+  `POTENTIAL = 'None'` means **no potential was assigned**, not zero potential, and is distinct from
+  the three unclassified (`NULL`) districts; the criteria behind High/Moderate/Low are not published
+  anywhere, so describe the class, never justify it.
+- **Uranium past producers carry no usable production numbers or dates.** The CRIB amount, unit,
+  item and year columns pack several entries into one string separated by `ý`, amounts are in
+  *thousands* of a unit that varies between entries, and reserves are reported in three overlapping
+  tables (`RPR_*` total, `R_*` reserves, `PR_*` potential resources) that double-count if added.
+  Only 55 of 748 records carry a first-production year. Report counts and locations, not tonnages,
+  unless you have parsed the strings and said so. Past producers also overlap UMOS and MRDS with no
+  shared id — never add across them.
+- **Permitted uranium mines and uranium mills are a subset of `Mineral mine permits · UDOGM 2026`,
+  not an addition to it.** Same UDOGM permit database, read through a different service; both mills
+  appear in the mineral mine permit layer too. Never add the counts. A joining attempt on permit
+  number needs normalising — the two services zero-pad it differently.
 - **UGS UMOS and USGS MRDS overlap.** Both catalog Utah mineral sites; never add their counts
   together as if they were disjoint. Prefer UMOS for Utah-specific questions.
 - **Undiscovered oil & gas is an estimate, not an inventory.** `Undiscovered oil & gas · USGS 2026`
