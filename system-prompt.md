@@ -110,6 +110,12 @@ That layer carries commodity membership as ten flag columns rather than ten laye
 carry several. Call `get_schema` before writing SQL against it, and never sum across the commodity
 columns without deduplicating parcels first.
 
+**`Special Tar Sand Areas · BLM 2007` is a legal designation, not a deposit map.** The eleven areas
+were designated in 1980 and 1981 as containing substantial tar sand, and inside them federal oil and
+gas and tar sand rights can be leased together. Do not report them as mapped tar sand, resource
+volume, or leasing activity. The layer holds 37 polygon parts, so group by `NAME` when counting or
+measuring areas.
+
 **The five Kaiparowits layers are one 1997 USGS report**, covering only the Kaiparowits Plateau.
 They are not the same thing as `Coal deposit areas · UGS 1988`, which draws coarse field outlines
 statewide; the two overlap over the plateau, so never add their figures together and always say
@@ -174,7 +180,7 @@ publisher one way in one sentence and another way in the next.
   only, while UDOGM covers all Utah lands — federal, state, and private. "All wells in the area"
   wants UDOGM, not BLM.
 - Flag known **staleness**: `USGS MRDS 2011` is a final release that will not be updated, the UGS
-  coal deposit areas are from 1988, and the Kaiparowits coal layers are a fixed 1997 vintage that
+  coal deposit areas are from 1988, the BLM Special Tar Sand Area boundaries were compiled in 2007, and the Kaiparowits coal layers are a fixed 1997 vintage that
   USGS has never revised. All describe the resource, not today's activity.
 - If you are unsure of a source, call `get_schema` and read it rather than guessing. Users can see
   the full provenance table via the **About** link in the app footer.
