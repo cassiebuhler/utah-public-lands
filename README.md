@@ -33,7 +33,7 @@ every layer, and expands the publisher acronyms.
 |---|---|
 | **Bears Ears boundaries** | `2016 · 1.35M ac` → `2017 · 202k ac` → `2021 · 1.36M ac` → `2026 · 121k ac` |
 | **Grand Staircase-Escalante boundaries** | `1996 · 1.88M ac` → `2017 · 1.00M ac` → `2021 · 1.87M ac` → `2026 · 182k ac` |
-| **Mineral & energy resources** *(what's in the ground)* | Undiscovered oil & gas · USGS 2026; coal deposit areas · UGS 1988; the five Kaiparowits Plateau coal layers · USGS 1997; uranium areas, uranium districts, past uranium producers · UGS 2026; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
+| **Mineral & energy resources** *(what's in the ground)* | Undiscovered oil & gas · USGS 2026; coal deposit areas · UGS 1988; Special Tar Sand Areas · BLM 2007; the five Kaiparowits Plateau coal layers · USGS 1997; uranium areas, uranium districts, past uranium producers · UGS 2026; mineral occurrences · UGS 2026; mineral deposits · USGS MRDS 2011 |
 | **Mineral leases & claims** *(who holds the rights)* | Oil & gas leases (2015+), oil & gas agreements, oil & gas participating areas, coal cases, oil shale leases, geothermal leases, non-energy leasable minerals, mineral materials, hard-rock mining claims · BLM 2026 |
 | **Wells, mines & permits** *(what's operating)* | Hard-rock operations · BLM 2026; producing oil & gas fields, coal mine permits, oil & gas wells, mineral mine permits, permitted uranium mines, uranium mills · UDOGM 2026 |
 | **Land use & tenure** *(non-extractive authorizations)* | Grazing allotments; federal mineral estate; land-use leases, permits & easements; rights-of-way; acquired lands & interests · BLM 2026 |

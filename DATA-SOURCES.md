@@ -114,6 +114,7 @@ holds a right to it or who is operating.
 |---|---|---|---|---|
 | Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
 | Coal deposit areas · **UGS 1988** | UGS, hosted by UGRC / SGID | Utah statewide, 94 polygons across 12 coal deposit areas — includes the Kaiparowits Plateau field | Areas **as defined in 1988**; SGID layer `CoalDepositAreas1988`. Converted 23 Jul 2026. | CC-BY-4.0 |
+| Special Tar Sand Areas · **BLM 2007** | BLM, distributed in the 2012 [Oil Shale and Tar Sands PEIS](https://web.archive.org/web/20130216005950/http://ostseis.anl.gov/guide/maps/gis/2012_OSTS_PEIS_Geospatial_Data.zip) geospatial package (Argonne National Laboratory) | Utah, the 11 areas designated in 1980–81 as containing substantial tar sand deposits, about 1,026,000 acres. **37 polygon parts, not 11 rows**: seven areas have several parts. | **Fixed vintage, 2007.** Boundaries as compiled by BLM for the PEIS. The Argonne site is offline; retrieved 24 Sep 2026 from the Internet Archive capture, with the package kept unmodified beside the data. | Public domain |
 | Kaiparowits coal assessment area · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`csb` coverage) | Kaiparowits Plateau, southern Utah — 6 polygons outlining the outcrop of the Calico sequence boundary. This is the extent every other coverage in the report was clipped to. | **Fixed vintage, 1997.** Coverage files dated 7 Nov 1997; upstream labels it version 1 and has never revised it. Converted 22 Sep 2026. | Public domain |
 | Kaiparowits net coal thickness · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`allcoal` coverage) | Kaiparowits Plateau — 5,222 polygons carrying **72,129.6 million short tons of coal in place** in the John Henry Member of the Straight Cliffs Formation, attributed by net coal thickness, overburden, reliability, dip, coal and surface ownership, county, quadrangle and township-range | **Fixed vintage, 1997.** As above. | Public domain |
 | Kaiparowits ground favorable for mining · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`fig22` coverage) | Kaiparowits Plateau — 815 polygons meeting the report's geologic criteria for mid-1990s underground mining: beds over 3.5 ft thick, under 3,000 ft deep, dipping under 12° | **Fixed vintage, 1997.** As above. | Public domain |
@@ -128,6 +129,11 @@ holds a right to it or who is operating.
 UMOS is *itself* undated at the feature level — it has no uniform occurrence-date field, so there
 is no per-feature year to trend on. MRDS is a legacy compilation last released in 2011; prefer UMOS
 for Utah-specific questions. The two overlap, so do not add their counts together.
+
+`Special Tar Sand Areas · BLM 2007` is a **designation**, not a deposit map. Interior designated
+these areas in 1980 and 1981 as containing substantial tar sand, and within them federal oil and gas
+and tar sand rights can be leased together under the Combined Hydrocarbon Leasing Act of 1981. The
+boundaries show where that leasing framework applies, not where tar sand is present or how much.
 
 The five **Kaiparowits** layers are one 1997 USGS report, not five independent sources. They cover
 only the Kaiparowits Plateau, and they describe the John Henry Member of the Straight Cliffs

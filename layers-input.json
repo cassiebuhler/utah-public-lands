@@ -392,6 +392,41 @@
             ]
         },
         {
+            "collection_id": "special-tar-sand-areas",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-blm/special-tar-sand-areas/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "special-tar-sand-areas-pmtiles",
+                    "display_name": "Special Tar Sand Areas · BLM 2007",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": "#A0522D",
+                        "fill-opacity": 0.45
+                    },
+                    "outline_style": {
+                        "line-color": "#4A2410",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": [
+                        "NAME",
+                        "ID",
+                        "area_ac"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Special Tar Sand Area",
+                            "color": "#A0522D"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "usgs-kaiparowits-csb",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/kaiparowits-coal-resources/csb/stac-collection.json",
             "group": {
