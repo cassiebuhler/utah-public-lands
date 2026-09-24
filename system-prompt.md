@@ -303,7 +303,15 @@ or column codes** — get them from the tools. If a lookup fails, say so rather 
   area-weighted. And **blank is not zero** — only 66 of the 240 units carry volume estimates,
   because USGS began publishing per-unit results tables in 2023 and earlier releases published the
   boundary alone. Say "not published" for those, never "no resource".
-- **The oil & gas assessment layer is filtered by province, not by state.** The source carries no
+- **The Paradox Basin is a separate oil & gas assessment layer.** `Undiscovered oil & gas, Paradox
+  Basin · USGS 2011` covers the province under Bears Ears and the Kaiparowits Plateau, which is not in
+  the national layer. Same rules (units overlap, only the means are additive), but different column
+  names: total gas is `ADGASMEAN + NAGASMEAN`, total NGL is `NGLMEAN + NAGLMEAN`, and `OILLG_*` /
+  `GASLG_*` describe a single largest accumulation and are never summed. It stores **0, not blank**:
+  a 0 can mean "does not apply to this unit type" or "not assessed" (Manning Canyon), so check
+  `ASSESSTYPE` and `ASSESSPROB` before calling a 0 "no resource". The units extend into Colorado,
+  New Mexico and Arizona; intersect against Utah or monument geometry for any Utah figure.
+- **The national oil & gas assessment layer is filtered by province, not by state.** The source carries no
   state field. The map shows the three USGS provinces that reach Utah (Eastern Great Basin,
   Uinta-Piceance Basin, Southwestern Wyoming), and those provinces extend into Colorado, Wyoming,
   Nevada and Idaho. For any Utah-specific count, intersect against Utah geometry rather than

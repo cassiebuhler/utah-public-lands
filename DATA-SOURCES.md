@@ -113,6 +113,7 @@ holds a right to it or who is operating.
 | Layer | Published by | Coverage | Vintage | License |
 |---|---|---|---|---|
 | Undiscovered oil & gas · **USGS 2026** | USGS [National and Global Oil and Gas Assessment Project](https://www.usgs.gov/centers/central-energy-resources-science-center/science/united-states-assessments-undiscovered-oil), via ScienceBase | US-wide (240 assessment units); **map filtered to the three USGS provinces that reach Utah** — Eastern Great Basin, Uinta-Piceance Basin and Southwestern Wyoming, 14 units | **Snapshot, 21 Sep 2026.** Merged from 57 per-province releases published 2018–2026; USGS publishes no national compilation and no version, so each unit carries its own release date. | Public domain |
+| Undiscovered oil & gas, Paradox Basin · **USGS 2011** | USGS [Paradox Basin Oil and Gas Assessments](https://www.usgs.gov/centers/central-energy-resources-science-center/science/paradox-basin-oil-and-gas-assessments), data release [10.5066/P9PAEXLB](https://doi.org/10.5066/P9PAEXLB) | Paradox Basin Province (5021), 10 assessment units across southeastern Utah, southwestern Colorado, northwestern New Mexico and northeastern Arizona, one of them the Kaiparowits Plateau coalbed gas unit; not clipped to Utah | **Fixed vintage, 2011 assessment** (USGS Fact Sheet 2012-3031), the current USGS assessment of the province. Converted 24 Sep 2026. | Public domain |
 | Coal deposit areas · **UGS 1988** | UGS, hosted by UGRC / SGID | Utah statewide, 94 polygons across 12 coal deposit areas — includes the Kaiparowits Plateau field | Areas **as defined in 1988**; SGID layer `CoalDepositAreas1988`. Converted 23 Jul 2026. | CC-BY-4.0 |
 | Special Tar Sand Areas · **BLM 2007** | BLM, distributed in the 2012 [Oil Shale and Tar Sands PEIS](https://web.archive.org/web/20130216005950/http://ostseis.anl.gov/guide/maps/gis/2012_OSTS_PEIS_Geospatial_Data.zip) geospatial package (Argonne National Laboratory) | Utah, the 11 areas designated in 1980–81 as containing substantial tar sand deposits, about 1,026,000 acres. **37 polygon parts, not 11 rows**: seven areas have several parts. | **Fixed vintage, 2007.** Boundaries as compiled by BLM for the PEIS. The Argonne site is offline; retrieved 24 Sep 2026 from the Internet Archive capture, with the package kept unmodified beside the data. | Public domain |
 | Kaiparowits coal assessment area · **USGS 1997** | USGS [Open-File Report 97-709](https://pubs.usgs.gov/of/1997/ofr-97-0709/) (`csb` coverage) | Kaiparowits Plateau, southern Utah — 6 polygons outlining the outcrop of the Calico sequence boundary. This is the extent every other coverage in the report was clipped to. | **Fixed vintage, 1997.** Coverage files dated 7 Nov 1997; upstream labels it version 1 and has never revised it. Converted 22 Sep 2026. | Public domain |
@@ -211,6 +212,24 @@ Three things about it change how the numbers may be used:
 The province filter is not a Utah clip — the source carries no state field, and the three provinces
 extend into Colorado, Wyoming, Nevada and Idaho. Intersect against Utah geometry for any
 Utah-specific count.
+
+The **Paradox Basin** layer is the same kind of estimate for the province that covers Bears Ears
+and the Kaiparowits Plateau. It is a separate layer because USGS published it outside the national
+project's release series, so the national layer has no Paradox units. It differs from the national
+layer in three ways:
+
+- **Columns are named differently.** Means are `OILMEAN`, `ADGASMEAN` (gas dissolved in oil
+  accumulations), `NAGASMEAN` (gas in gas accumulations), `NGLMEAN` and `NAGLMEAN`; total gas is
+  `ADGASMEAN + NAGASMEAN`. It also carries a standard deviation and the size of the largest expected
+  conventional accumulation (`OILLG_*`, `GASLG_*`), which describes one accumulation and is never
+  summed. Province totals are 560 million barrels of oil, 12,699 billion cubic feet of gas and 491
+  million barrels of NGL.
+- **Zero, not blank.** Every unit has a value in every column. A 0 means the quantity does not apply
+  to the unit's type (oil in a shale gas unit), or that the unit was not assessed at all: Manning
+  Canyon was defined but not quantitatively assessed, and is grey on the map. A 0 at F95 where the
+  mean is positive is a real low estimate.
+- **Units overlap here too.** Conventional, shale oil and shale gas units stack over the same
+  ground, up to six deep. Six of the ten units reach into the Bears Ears boundaries.
 
 ---
 

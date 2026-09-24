@@ -357,6 +357,73 @@
             ]
         },
         {
+            "collection_id": "usgs-paradox-basin-assessment-units",
+            "collection_url": "https://s3-west.nrp-nautilus.io/public-usgs/paradox-basin-assessment-units/stac-collection.json",
+            "group": {
+                "name": "Mineral & energy resources",
+                "collapsed": true
+            },
+            "assets": [
+                {
+                    "id": "paradox-basin-assessment-units-pmtiles",
+                    "display_name": "Undiscovered oil & gas, Paradox Basin · USGS 2011",
+                    "visible": false,
+                    "default_style": {
+                        "fill-color": [
+                            "case",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "ASSESSPROB"
+                                ],
+                                "Not quantitatively assessed"
+                            ],
+                            "#BDBDBD",
+                            [
+                                "==",
+                                [
+                                    "get",
+                                    "ASSESSTYPE"
+                                ],
+                                "Conventional"
+                            ],
+                            "#EF8A62",
+                            "#B2182B"
+                        ],
+                        "fill-opacity": 0.35
+                    },
+                    "outline_style": {
+                        "line-color": "#7F3B08",
+                        "line-width": 0.8
+                    },
+                    "tooltip_fields": [
+                        "ASSESSNAME",
+                        "TPSNAME",
+                        "ASSESSTYPE",
+                        "OILMEAN",
+                        "ADGASMEAN",
+                        "NAGASMEAN"
+                    ],
+                    "legend_type": "categorical",
+                    "legend_classes": [
+                        {
+                            "label": "Continuous (shale oil, shale gas, coalbed gas)",
+                            "color": "#B2182B"
+                        },
+                        {
+                            "label": "Conventional",
+                            "color": "#EF8A62"
+                        },
+                        {
+                            "label": "Not quantitatively assessed",
+                            "color": "#BDBDBD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "collection_id": "coal-deposits",
             "collection_url": "https://s3-west.nrp-nautilus.io/public-utah/coal-deposits/stac-collection.json",
             "group": {
