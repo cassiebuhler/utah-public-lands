@@ -2,9 +2,9 @@
 
 An AI-powered interactive map exploring how **Bears Ears** and **Grand Staircase-Escalante National Monuments** in Southern Utah have been redrawn from 1996 to 2026 — and what the land inside and outside each boundary holds: mineral and energy resources, federal leases and claims, permitted wells and mines, protected areas, trails, and Indigenous and community lands.
 
-Built on the [geo-agent / GLEN](https://github.com/boettiger-lab/geo-agent) framework. **No JavaScript to write** — the map, chat, agent, and tools load from CDN; this repo is just three config files plus deployment manifests.
+Built on the [GLEN](https://github.com/SchmidtDSE/glen) framework. **No JavaScript to write** — the map, chat, agent, and tools load from CDN; this repo is just three config files plus deployment manifests.
 
-**Framework docs:** [boettiger-lab.github.io/geo-agent](https://boettiger-lab.github.io/geo-agent/)
+**Framework docs:** [schmidtdse.github.io/glen](https://schmidtdse.github.io/glen/)
 
 ## Files
 
@@ -90,4 +90,4 @@ No spatial data lives in this repo. Every layer is served as cloud-native GeoPar
 hex from the public STAC catalog at `s3-west.nrp-nautilus.io/public-data/stac/catalog.json`. Keep it
 that way — `.gitignore` blocks geospatial file types so source extracts don't get committed here.
 
-See the [deployment guide](https://boettiger-lab.github.io/geo-agent/docs/guide/deployment) for details.
+See the [deployment guide](https://schmidtdse.github.io/glen/guide/deployment) for details.
