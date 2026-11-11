@@ -73,21 +73,6 @@
                     "display_name": "2016 · 1.35M ac",
                     "group": "Bears Ears boundaries",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#B5D4F4",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#B5D4F4",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2016 · 1.35M ac",
-                            "color": "#B5D4F4"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -99,21 +84,6 @@
                     "display_name": "2017 · 202k ac",
                     "group": "Bears Ears boundaries",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#85B7EB",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#85B7EB",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2017 · 202k ac",
-                            "color": "#85B7EB"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -125,21 +95,6 @@
                     "display_name": "2021 · 1.36M ac",
                     "group": "Bears Ears boundaries",
                     "visible": true,
-                    "default_style": {
-                        "fill-color": "#378ADD",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#378ADD",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2021 · 1.36M ac",
-                            "color": "#378ADD"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -151,21 +106,6 @@
                     "display_name": "2026 · 121k ac",
                     "group": "Bears Ears boundaries",
                     "visible": true,
-                    "default_style": {
-                        "fill-color": "#0C447C",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#0C447C",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2026 · 121k ac",
-                            "color": "#0C447C"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -183,21 +123,6 @@
                     "display_name": "1996 · 1.88M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#FAC775",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#FAC775",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "1996 · 1.88M ac",
-                            "color": "#FAC775"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -209,21 +134,6 @@
                     "display_name": "2017 · 1.00M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#EF9F27",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#EF9F27",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2017 · 1.00M ac",
-                            "color": "#EF9F27"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -235,21 +145,6 @@
                     "display_name": "2021 · 1.87M ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
-                    "default_style": {
-                        "fill-color": "#BA7517",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#BA7517",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2021 · 1.87M ac",
-                            "color": "#BA7517"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -261,21 +156,6 @@
                     "display_name": "2026 · 182k ac",
                     "group": "Grand Staircase-Escalante boundaries",
                     "visible": true,
-                    "default_style": {
-                        "fill-color": "#633806",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#633806",
-                        "line-width": 2.5
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "2026 · 182k ac",
-                            "color": "#633806"
-                        }
-                    ],
                     "tooltip_fields": [
                         "name",
                         "acres",
@@ -310,25 +190,6 @@
                         true,
                         false
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "ASSESSMETHOD"
-                            ],
-                            "Continuous",
-                            "#B2182B",
-                            "Conventional",
-                            "#EF8A62",
-                            "#BDBDBD"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#7F3B08",
-                        "line-width": 0.8
-                    },
                     "tooltip_fields": [
                         "ASSESSNAME",
                         "PROVNAME",
@@ -337,21 +198,6 @@
                         "ACCUMTYPE",
                         "OIL_MN_MMB",
                         "GAS_MN_BCF"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Continuous (shale, tight, coalbed)",
-                            "color": "#B2182B"
-                        },
-                        {
-                            "label": "Conventional",
-                            "color": "#EF8A62"
-                        },
-                        {
-                            "label": "Boundary only — no volume estimates",
-                            "color": "#BDBDBD"
-                        }
                     ]
                 }
             ]
@@ -368,35 +214,6 @@
                     "id": "paradox-basin-assessment-units-pmtiles",
                     "display_name": "Undiscovered oil & gas, Paradox Basin · USGS 2011",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "ASSESSPROB"
-                                ],
-                                "Not quantitatively assessed"
-                            ],
-                            "#BDBDBD",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "ASSESSTYPE"
-                                ],
-                                "Conventional"
-                            ],
-                            "#EF8A62",
-                            "#B2182B"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#7F3B08",
-                        "line-width": 0.8
-                    },
                     "tooltip_fields": [
                         "ASSESSNAME",
                         "TPSNAME",
@@ -404,21 +221,6 @@
                         "OILMEAN",
                         "ADGASMEAN",
                         "NAGASMEAN"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Continuous (shale oil, shale gas, coalbed gas)",
-                            "color": "#B2182B"
-                        },
-                        {
-                            "label": "Conventional",
-                            "color": "#EF8A62"
-                        },
-                        {
-                            "label": "Not quantitatively assessed",
-                            "color": "#BDBDBD"
-                        }
                     ]
                 }
             ]
@@ -435,25 +237,10 @@
                     "id": "coal-deposits-pmtiles",
                     "display_name": "Coal deposit areas · UGS 1988",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#5B3A29",
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#2B1A12",
-                        "line-width": 0.6
-                    },
                     "tooltip_fields": [
                         "KMDA_NAME",
                         "ACREAGE",
                         "FAV_CODE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Coal deposit area",
-                            "color": "#5B3A29"
-                        }
                     ]
                 }
             ]
@@ -470,25 +257,10 @@
                     "id": "special-tar-sand-areas-pmtiles",
                     "display_name": "Special Tar Sand Areas · BLM 2007",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#A0522D",
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#4A2410",
-                        "line-width": 0.8
-                    },
                     "tooltip_fields": [
                         "NAME",
                         "ID",
                         "area_ac"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Special Tar Sand Area",
-                            "color": "#A0522D"
-                        }
                     ]
                 }
             ]
@@ -504,26 +276,7 @@
                 {
                     "id": "csb-pmtiles",
                     "display_name": "Kaiparowits coal assessment area · USGS 1997",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#000000",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#6B4226",
-                        "line-width": 1.6,
-                        "line-dasharray": [
-                            3,
-                            2
-                        ]
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Assessment area outline",
-                            "color": "#6B4226"
-                        }
-                    ]
+                    "visible": false
                 }
             ]
         },
@@ -539,41 +292,6 @@
                     "id": "allcoal-pmtiles",
                     "display_name": "Kaiparowits net coal thickness · USGS 1997",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "THICK"
-                                ],
-                                0
-                            ],
-                            "#E0E0E0",
-                            [
-                                "step",
-                                [
-                                    "get",
-                                    "THICK"
-                                ],
-                                "#F6E8C3",
-                                10,
-                                "#DFC27D",
-                                30,
-                                "#BF812D",
-                                60,
-                                "#8C510A",
-                                100,
-                                "#4A2C06"
-                            ]
-                        ],
-                        "fill-opacity": 0.6
-                    },
-                    "outline_style": {
-                        "line-color": "#3D2408",
-                        "line-width": 0.3
-                    },
                     "tooltip_fields": [
                         "THICK",
                         "SHTONS_MIL",
@@ -582,33 +300,6 @@
                         "COAL_OWN",
                         "SURF",
                         "CNTY"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Under 10 ft net coal",
-                            "color": "#F6E8C3"
-                        },
-                        {
-                            "label": "10–30 ft",
-                            "color": "#DFC27D"
-                        },
-                        {
-                            "label": "30–60 ft",
-                            "color": "#BF812D"
-                        },
-                        {
-                            "label": "60–100 ft",
-                            "color": "#8C510A"
-                        },
-                        {
-                            "label": "100 ft or more",
-                            "color": "#4A2C06"
-                        },
-                        {
-                            "label": "No coal mapped / no data",
-                            "color": "#E0E0E0"
-                        }
                     ]
                 }
             ]
@@ -625,14 +316,6 @@
                     "id": "fig22-pmtiles",
                     "display_name": "Kaiparowits ground favorable for mining · USGS 1997",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#E6842A",
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#8A4A0B",
-                        "line-width": 0.5
-                    },
                     "tooltip_fields": [
                         "OVERB",
                         "DIP",
@@ -640,13 +323,6 @@
                         "COAL_OWN",
                         "SURF",
                         "CNTY"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Favorable for underground mining (1996 criteria)",
-                            "color": "#E6842A"
-                        }
                     ]
                 }
             ]
@@ -663,19 +339,7 @@
                     "id": "m_adit-pmtiles",
                     "display_name": "Kaiparowits coal mine adits · USGS 1997",
                     "layer_type": "line",
-                    "visible": false,
-                    "default_style": {
-                        "line-color": "#B71C1C",
-                        "line-width": 2.2,
-                        "line-opacity": 0.9
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Historic coal mine adit",
-                            "color": "#B71C1C"
-                        }
-                    ]
+                    "visible": false
                 }
             ]
         },
@@ -692,28 +356,6 @@
                     "display_name": "Kaiparowits coal drill holes · USGS 1997",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 4,
-                        "circle-color": [
-                            "step",
-                            [
-                                "get",
-                                "TOTALCOAL"
-                            ],
-                            "#F6E8C3",
-                            10,
-                            "#DFC27D",
-                            30,
-                            "#BF812D",
-                            60,
-                            "#8C510A",
-                            100,
-                            "#4A2C06"
-                        ],
-                        "circle-opacity": 0.9,
-                        "circle-stroke-width": 0.6,
-                        "circle-stroke-color": "#FFFFFF"
-                    },
                     "tooltip_fields": [
                         "PTID",
                         "TOTALCOAL",
@@ -721,29 +363,6 @@
                         "SURFELEV",
                         "DEPTHCOALTOP",
                         "DEPTHCOALBOT"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Under 10 ft total coal",
-                            "color": "#F6E8C3"
-                        },
-                        {
-                            "label": "10–30 ft",
-                            "color": "#DFC27D"
-                        },
-                        {
-                            "label": "30–60 ft",
-                            "color": "#BF812D"
-                        },
-                        {
-                            "label": "60–100 ft",
-                            "color": "#8C510A"
-                        },
-                        {
-                            "label": "100 ft or more",
-                            "color": "#4A2C06"
-                        }
                     ]
                 }
             ]
@@ -761,34 +380,6 @@
                     "display_name": "Mineral occurrences · UGS 2026",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 3.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "TYPE_"
-                            ],
-                            "Metal",
-                            "#E65100",
-                            "Ind. Min.",
-                            "#3182BD",
-                            "Energy",
-                            "#756BB1",
-                            "Metal - Energy",
-                            "#C94A4A",
-                            "Metal - Ind. Min.",
-                            "#31A354",
-                            "Ind. Min. - Energy",
-                            "#9E6BB0",
-                            "Metal - Ind. Min. - Energy",
-                            "#8C6D31",
-                            "#999999"
-                        ],
-                        "circle-opacity": 0.8,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
-                    },
                     "tooltip_fields": [
                         "SITE_NAME",
                         "COMMODITY",
@@ -796,41 +387,6 @@
                         "STATUS",
                         "DISTRICT",
                         "COUNTY"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Metallic",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Industrial minerals",
-                            "color": "#3182BD"
-                        },
-                        {
-                            "label": "Energy",
-                            "color": "#756BB1"
-                        },
-                        {
-                            "label": "Metal + Energy",
-                            "color": "#C94A4A"
-                        },
-                        {
-                            "label": "Metal + Ind. min.",
-                            "color": "#31A354"
-                        },
-                        {
-                            "label": "Ind. min. + Energy",
-                            "color": "#9E6BB0"
-                        },
-                        {
-                            "label": "Metal + Ind. min. + Energy",
-                            "color": "#8C6D31"
-                        },
-                        {
-                            "label": "Other / unspecified",
-                            "color": "#999999"
-                        }
                     ]
                 }
             ]
@@ -856,53 +412,12 @@
                         ],
                         "Utah"
                     ],
-                    "default_style": {
-                        "circle-radius": 3.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "com_type"
-                            ],
-                            "M",
-                            "#E65100",
-                            "N",
-                            "#3182BD",
-                            "B",
-                            "#31A354",
-                            "E",
-                            "#756BB1",
-                            "#999999"
-                        ],
-                        "circle-opacity": 0.8,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
-                    },
                     "tooltip_fields": [
                         "site_name",
                         "commod1",
                         "dev_stat",
                         "oper_type",
                         "county"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Metallic",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Non-metallic",
-                            "color": "#3182BD"
-                        },
-                        {
-                            "label": "Metallic + non-metallic",
-                            "color": "#31A354"
-                        },
-                        {
-                            "label": "Other / unspecified",
-                            "color": "#999999"
-                        }
                     ]
                 }
             ]
@@ -938,29 +453,6 @@
                             2015
                         ]
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#E65100",
-                            "Pending",
-                            "#FBC02D",
-                            "Interim",
-                            "#8D6E63",
-                            "Closed",
-                            "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#7F3300",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_DISP",
@@ -968,25 +460,6 @@
                         "lease_year",
                         "CMMDTY",
                         "EFF_DT"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#E65100"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#FBC02D"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#BDBDBD"
-                        }
                     ]
                 }
             ]
@@ -1011,27 +484,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#4A148C",
-                            "Pending",
-                            "#7B1FA2",
-                            "Closed",
-                            "#E1BEE7",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#12005E",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1041,21 +493,6 @@
                         "FRMTN",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#4A148C"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#7B1FA2"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#E1BEE7"
-                        }
                     ]
                 }
             ]
@@ -1080,25 +517,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#004D40",
-                            "Closed",
-                            "#B2DFDB",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#00251A",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1108,17 +526,6 @@
                         "FRMTN",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#004D40"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#B2DFDB"
-                        }
                     ],
                     "control": {
                         "type": "slider",
@@ -1154,29 +561,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#3E2723",
-                            "Pending",
-                            "#5D4037",
-                            "Interim",
-                            "#8D6E63",
-                            "Closed",
-                            "#D7CCC8",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#1B0000",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1185,25 +569,6 @@
                         "CMMDTY",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#3E2723"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#5D4037"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#D7CCC8"
-                        }
                     ],
                     "control": {
                         "type": "slider",
@@ -1239,23 +604,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Closed",
-                            "#F0F4C3",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#4B4500",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1264,13 +612,6 @@
                         "CMMDTY",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Closed / expired",
-                            "color": "#F0F4C3"
-                        }
                     ],
                     "control": {
                         "type": "slider",
@@ -1306,27 +647,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#BF360C",
-                            "Interim",
-                            "#FF8A65",
-                            "Closed",
-                            "#FFCCBC",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#870000",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1335,21 +655,6 @@
                         "CMMDTY",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#BF360C"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#FF8A65"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#FFCCBC"
-                        }
                     ]
                 }
             ]
@@ -1374,29 +679,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#0D47A1",
-                            "Pending",
-                            "#1976D2",
-                            "Interim",
-                            "#64B5F6",
-                            "Closed",
-                            "#BBDEFB",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#002171",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1405,25 +687,6 @@
                         "CMMDTY",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#0D47A1"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#1976D2"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#64B5F6"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#BBDEFB"
-                        }
                     ],
                     "control": {
                         "type": "slider",
@@ -1459,29 +722,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#FF6F00",
-                            "Pending",
-                            "#FFA000",
-                            "Interim",
-                            "#FFCA28",
-                            "Closed",
-                            "#FFECB3",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.4
-                    },
-                    "outline_style": {
-                        "line-color": "#C43E00",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1490,25 +730,6 @@
                         "CMMDTY",
                         "RCRD_ACRS",
                         "case_year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (active)",
-                            "color": "#FF6F00"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#FFA000"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#FFCA28"
-                        },
-                        {
-                            "label": "Closed / expired",
-                            "color": "#FFECB3"
-                        }
                     ],
                     "control": {
                         "type": "slider",
@@ -1544,33 +765,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "BLM_PROD"
-                            ],
-                            "LODE CLAIM",
-                            "#8E24AA",
-                            "LODE CLAIM - NATIONAL PARK",
-                            "#8E24AA",
-                            "PLACER CLAIM",
-                            "#00897B",
-                            "PLACER CLAIM - NATIONAL PARK",
-                            "#00897B",
-                            "MILL SITE",
-                            "#F9A825",
-                            "TUNNEL SITE",
-                            "#D81B60",
-                            "#999999"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#4A148C",
-                        "line-width": 0.3
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "CSE_NR",
@@ -1578,25 +772,6 @@
                         "CSE_DISP",
                         "status",
                         "RCRD_ACRS"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Lode claim",
-                            "color": "#8E24AA"
-                        },
-                        {
-                            "label": "Placer claim",
-                            "color": "#00897B"
-                        },
-                        {
-                            "label": "Mill site",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Tunnel site",
-                            "color": "#D81B60"
-                        }
                     ]
                 }
             ]
@@ -1621,25 +796,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "op_level"
-                            ],
-                            "Notice",
-                            "#26A69A",
-                            "Plan of Operations",
-                            "#00695C",
-                            "#999999"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#004D40",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NAME",
                         "op_level",
@@ -1647,17 +803,6 @@
                         "CSE_DISP",
                         "RCRD_ACRS",
                         "ADMIN_STATE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Notice (≤ 5-acre disturbance)",
-                            "color": "#26A69A"
-                        },
-                        {
-                            "label": "Plan of Operations",
-                            "color": "#00695C"
-                        }
                     ]
                 }
             ]
@@ -1674,14 +819,6 @@
                     "id": "udogm-oil-gas-fields-pmtiles",
                     "display_name": "Producing oil & gas fields · UDOGM 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#FB8C00",
-                        "fill-opacity": 0.2
-                    },
-                    "outline_style": {
-                        "line-color": "#E65100",
-                        "line-width": 0.8
-                    },
                     "tooltip_fields": [
                         "FIELDNAME",
                         "STATUS",
@@ -1689,38 +826,12 @@
                         "COUNTY",
                         "DISC_WELL",
                         "year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Producing oil & gas field",
-                            "color": "#FB8C00"
-                        }
                     ]
                 },
                 {
                     "id": "udogm-coal-permits-pmtiles",
                     "display_name": "Coal mine permits · UDOGM 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "status"
-                            ],
-                            "Active",
-                            "#33691E",
-                            "Temporary Cessation",
-                            "#F9A825",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.5
-                    },
-                    "outline_style": {
-                        "line-color": "#1B2E0F",
-                        "line-width": 0.6
-                    },
                     "tooltip_fields": [
                         "mine_name",
                         "company",
@@ -1728,21 +839,6 @@
                         "County",
                         "acres",
                         "year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Active",
-                            "color": "#33691E"
-                        },
-                        {
-                            "label": "Temporary cessation",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Inactive / abandoned / other",
-                            "color": "#9E9E9E"
-                        }
                     ]
                 },
                 {
@@ -1750,31 +846,6 @@
                     "display_name": "Oil & gas wells · UDOGM 2026",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 2.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "welltype"
-                            ],
-                            "OW",
-                            "#43A047",
-                            "GW",
-                            "#E53935",
-                            "D",
-                            "#9E9E9E",
-                            [
-                                "WI",
-                                "WD"
-                            ],
-                            "#1E88E5",
-                            "#757575"
-                        ],
-                        "circle-opacity": 0.75,
-                        "circle-stroke-width": 0.2,
-                        "circle-stroke-color": "#333333"
-                    },
                     "tooltip_fields": [
                         "wellname",
                         "operator",
@@ -1783,29 +854,6 @@
                         "fieldname",
                         "county",
                         "year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Oil well",
-                            "color": "#43A047"
-                        },
-                        {
-                            "label": "Gas well",
-                            "color": "#E53935"
-                        },
-                        {
-                            "label": "Dry hole",
-                            "color": "#9E9E9E"
-                        },
-                        {
-                            "label": "Injection / disposal",
-                            "color": "#1E88E5"
-                        },
-                        {
-                            "label": "Other well type",
-                            "color": "#757575"
-                        }
                     ]
                 },
                 {
@@ -1813,13 +861,6 @@
                     "display_name": "Mineral mine permits · UDOGM 2026",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 3.5,
-                        "circle-color": "#6D4C41",
-                        "circle-opacity": 0.85,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
-                    },
                     "tooltip_fields": [
                         "Mine_Name",
                         "Mineral_Type",
@@ -1827,13 +868,6 @@
                         "Company",
                         "County",
                         "year"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Permitted mineral mine",
-                            "color": "#6D4C41"
-                        }
                     ]
                 }
             ]
@@ -1850,80 +884,19 @@
                     "id": "ugs-uranium-area-boundaries-pmtiles",
                     "display_name": "Uranium areas · UGS 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": "#000000",
-                        "fill-opacity": 0
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 1.4
-                    },
                     "tooltip_fields": [
                         "NAME",
                         "ID"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Colorado Plateau uranium area",
-                            "color": "#6A1B9A"
-                        }
                     ]
                 },
                 {
                     "id": "ugs-uranium-districts-pmtiles",
                     "display_name": "Uranium districts · UGS 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "POTENTIAL"
-                            ],
-                            "High",
-                            "#4A148C",
-                            "Moderate",
-                            "#9575CD",
-                            "Low",
-                            "#D1C4E9",
-                            "None",
-                            "#D9D9D9",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#311B92",
-                        "line-width": 0.5
-                    },
                     "tooltip_fields": [
                         "NAME",
                         "POTENTIAL",
                         "NUMBER"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "High uranium potential",
-                            "color": "#4A148C"
-                        },
-                        {
-                            "label": "Moderate",
-                            "color": "#9575CD"
-                        },
-                        {
-                            "label": "Low",
-                            "color": "#D1C4E9"
-                        },
-                        {
-                            "label": "No potential assigned",
-                            "color": "#D9D9D9"
-                        },
-                        {
-                            "label": "Unclassified",
-                            "color": "#9E9E9E"
-                        }
                     ]
                 },
                 {
@@ -1931,32 +904,6 @@
                     "display_name": "Past uranium producers · UGS 2026",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 3.2,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "DEP_SIZE"
-                            ],
-                            [
-                                "LARGE",
-                                "LGE"
-                            ],
-                            "#B71C1C",
-                            "MEDIUM",
-                            "#F57C00",
-                            [
-                                "SMALL",
-                                "SML"
-                            ],
-                            "#FDD835",
-                            "#9E9E9E"
-                        ],
-                        "circle-opacity": 0.85,
-                        "circle-stroke-width": 0.4,
-                        "circle-stroke-color": "#333333"
-                    },
                     "tooltip_fields": [
                         "SITE_NAME",
                         "DIST",
@@ -1964,25 +911,6 @@
                         "DEP_SIZE",
                         "COMMOD",
                         "OWNER"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Large deposit",
-                            "color": "#B71C1C"
-                        },
-                        {
-                            "label": "Medium",
-                            "color": "#F57C00"
-                        },
-                        {
-                            "label": "Small",
-                            "color": "#FDD835"
-                        },
-                        {
-                            "label": "Size not recorded",
-                            "color": "#9E9E9E"
-                        }
                     ]
                 },
                 {
@@ -1991,24 +919,6 @@
                     "group": "Wells, mines & permits",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 4.5,
-                        "circle-color": [
-                            "match",
-                            [
-                                "get",
-                                "STATUS"
-                            ],
-                            "ACT",
-                            "#1B5E20",
-                            "SUS",
-                            "#F9A825",
-                            "#9E9E9E"
-                        ],
-                        "circle-opacity": 0.9,
-                        "circle-stroke-width": 0.8,
-                        "circle-stroke-color": "#FFFFFF"
-                    },
                     "tooltip_fields": [
                         "NAME",
                         "OPERATOR",
@@ -2016,21 +926,6 @@
                         "PRODUCT",
                         "STATUS",
                         "MINEID"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Active",
-                            "color": "#1B5E20"
-                        },
-                        {
-                            "label": "Suspended",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Other / not recorded",
-                            "color": "#9E9E9E"
-                        }
                     ]
                 },
                 {
@@ -2039,25 +934,11 @@
                     "group": "Wells, mines & permits",
                     "layer_type": "circle",
                     "visible": false,
-                    "default_style": {
-                        "circle-radius": 6,
-                        "circle-color": "#D81B60",
-                        "circle-opacity": 0.95,
-                        "circle-stroke-width": 1.2,
-                        "circle-stroke-color": "#FFFFFF"
-                    },
                     "tooltip_fields": [
                         "NAME",
                         "OPERATOR",
                         "COUNTY",
                         "MILL_ID"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Uranium mill",
-                            "color": "#D81B60"
-                        }
                     ]
                 }
             ]
@@ -2082,14 +963,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": "#827717",
-                        "fill-opacity": 0.22
-                    },
-                    "outline_style": {
-                        "line-color": "#556B2F",
-                        "line-width": 0.5
-                    },
                     "tooltip_fields": [
                         "ALLOT_NAME",
                         "ALLOT_NO",
@@ -2097,13 +970,6 @@
                         "ADM_UNIT_CD",
                         "GIS_ACRES",
                         "ADMIN_ST"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "BLM grazing allotment",
-                            "color": "#827717"
-                        }
                     ]
                 }
             ]
@@ -2120,75 +986,6 @@
                     "id": "utah-federal-mineral-estate-pmtiles",
                     "display_name": "Federal mineral estate · BLM 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "case",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "ALL_MIN"
-                                ],
-                                "X"
-                            ],
-                            "#4E342E",
-                            [
-                                "==",
-                                [
-                                    "get",
-                                    "ALL_MIN"
-                                ],
-                                "I"
-                            ],
-                            "#C2185B",
-                            [
-                                "any",
-                                [
-                                    "has",
-                                    "Oil_Gas"
-                                ],
-                                [
-                                    "has",
-                                    "Coal"
-                                ],
-                                [
-                                    "has",
-                                    "Oil_Shale"
-                                ],
-                                [
-                                    "has",
-                                    "Gilsonite"
-                                ],
-                                [
-                                    "has",
-                                    "Potash_Pot"
-                                ],
-                                [
-                                    "has",
-                                    "Sodium"
-                                ],
-                                [
-                                    "has",
-                                    "Phosphate"
-                                ],
-                                [
-                                    "has",
-                                    "Geo_Steam"
-                                ],
-                                [
-                                    "has",
-                                    "Unknown_"
-                                ]
-                            ],
-                            "#EF6C00",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#3E2723",
-                        "line-width": 0.3
-                    },
                     "tooltip_fields": [
                         "County",
                         "GIS_Acres",
@@ -2203,25 +1000,6 @@
                         "Phosphate",
                         "Geo_Steam",
                         "Unknown_"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "All minerals — federal (86,271)",
-                            "color": "#4E342E"
-                        },
-                        {
-                            "label": "All minerals — Indian (5,071)",
-                            "color": "#C2185B"
-                        },
-                        {
-                            "label": "Specific commodities only (10,085)",
-                            "color": "#EF6C00"
-                        },
-                        {
-                            "label": "No commodity flag (158)",
-                            "color": "#9E9E9E"
-                        }
                     ]
                 }
             ]
@@ -2246,29 +1024,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#00838F",
-                            "Pending",
-                            "#FBC02D",
-                            "Interim",
-                            "#8D6E63",
-                            "Closed",
-                            "#B0BEC5",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#004D40",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NR",
                         "BLM_PROD",
@@ -2276,25 +1031,6 @@
                         "disp_year",
                         "RCRD_ACRS",
                         "CSE_JURIS_DESC"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (in effect)",
-                            "color": "#00838F"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#FBC02D"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Closed / terminated",
-                            "color": "#B0BEC5"
-                        }
                     ]
                 }
             ]
@@ -2319,29 +1055,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#1565C0",
-                            "Pending",
-                            "#F9A825",
-                            "Interim",
-                            "#6A1B9A",
-                            "Closed",
-                            "#B0BEC5",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#0D47A1",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NR",
                         "BLM_PROD",
@@ -2350,25 +1063,6 @@
                         "CSE_WIDTH",
                         "CSE_LGTH",
                         "RCRD_ACRS"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (in effect)",
-                            "color": "#1565C0"
-                        },
-                        {
-                            "label": "Pending",
-                            "color": "#F9A825"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#6A1B9A"
-                        },
-                        {
-                            "label": "Closed / terminated",
-                            "color": "#B0BEC5"
-                        }
                     ]
                 }
             ]
@@ -2393,27 +1087,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "CSE_DISP"
-                            ],
-                            "Authorized",
-                            "#2E7D32",
-                            "Interim",
-                            "#8D6E63",
-                            "Status Record",
-                            "#A5D6A7",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.45
-                    },
-                    "outline_style": {
-                        "line-color": "#1B5E20",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "CSE_NR",
                         "BLM_PROD",
@@ -2421,21 +1094,6 @@
                         "REC_TYPE_CSE_GRP",
                         "RCRD_ACRS",
                         "SUPP_USE"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Authorized (in effect)",
-                            "color": "#2E7D32"
-                        },
-                        {
-                            "label": "Interim",
-                            "color": "#8D6E63"
-                        },
-                        {
-                            "label": "Status Record (historical entry)",
-                            "color": "#A5D6A7"
-                        }
                     ]
                 }
             ]
@@ -2452,25 +1110,6 @@
                     "id": "fee-pmtiles",
                     "display_name": "Protected areas · USGS PAD-US 4.1",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "GAP_Sts"
-                            ],
-                            "1",
-                            "#26633A",
-                            "2",
-                            "#3E9C47",
-                            "3",
-                            "#7EB3D3",
-                            "4",
-                            "#BDBDBD",
-                            "#888888"
-                        ],
-                        "fill-opacity": 0.5
-                    },
                     "default_filter": [
                         "==",
                         [
@@ -2483,25 +1122,6 @@
                         "Unit_Nm",
                         "GAP_Sts",
                         "Mang_Type"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "GAP 1 – biodiversity (strict)",
-                            "color": "#26633A"
-                        },
-                        {
-                            "label": "GAP 2 – biodiversity (multi-use)",
-                            "color": "#3E9C47"
-                        },
-                        {
-                            "label": "GAP 3 – multiple use",
-                            "color": "#7EB3D3"
-                        },
-                        {
-                            "label": "GAP 4 – no known mandate",
-                            "color": "#BDBDBD"
-                        }
                     ]
                 }
             ]
@@ -2517,22 +1137,7 @@
                 {
                     "id": "iplc-poly-pmtiles",
                     "display_name": "Indigenous & community lands · LandMark 2025",
-                    "visible": false,
-                    "default_style": {
-                        "fill-color": "#6A1B9A",
-                        "fill-opacity": 0.2
-                    },
-                    "outline_style": {
-                        "line-color": "#6A1B9A",
-                        "line-width": 0.8
-                    },
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Indigenous / community lands",
-                            "color": "#6A1B9A"
-                        }
-                    ]
+                    "visible": false
                 }
             ]
         },
@@ -2566,42 +1171,12 @@
                     "id": "final-pmtiles",
                     "display_name": "ESA critical habitat · USFWS 2026",
                     "visible": false,
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "listing_st"
-                            ],
-                            "Endangered",
-                            "#AD1457",
-                            "Threatened",
-                            "#EC407A",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#6A0032",
-                        "line-width": 0.6
-                    },
                     "tooltip_fields": [
                         "comname",
                         "sciname",
                         "listing_st",
                         "spcode",
                         "effectdate"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Endangered",
-                            "color": "#AD1457"
-                        },
-                        {
-                            "label": "Threatened",
-                            "color": "#EC407A"
-                        }
                     ]
                 }
             ]
@@ -2626,29 +1201,6 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "match",
-                            [
-                                "get",
-                                "data_type"
-                            ],
-                            "Corridors",
-                            "#827717",
-                            "WinterRange",
-                            "#C0CA33",
-                            "Stopovers",
-                            "#4527A0",
-                            "AnnualRange",
-                            "#DCE775",
-                            "#9E9E9E"
-                        ],
-                        "fill-opacity": 0.35
-                    },
-                    "outline_style": {
-                        "line-color": "#4A4410",
-                        "line-width": 0.5
-                    },
                     "tooltip_fields": [
                         "species",
                         "herd",
@@ -2656,21 +1208,6 @@
                         "contour",
                         "volume",
                         "source_release_date"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Migration corridor",
-                            "color": "#827717"
-                        },
-                        {
-                            "label": "Winter range",
-                            "color": "#C0CA33"
-                        },
-                        {
-                            "label": "Stopover",
-                            "color": "#4527A0"
-                        }
                     ]
                 }
             ]
@@ -2688,44 +1225,11 @@
                     "display_name": "Federal trails · USFS / NPS / BLM 2026",
                     "layer_type": "line",
                     "visible": false,
-                    "default_style": {
-                        "line-color": [
-                            "match",
-                            [
-                                "get",
-                                "admin_agency"
-                            ],
-                            "USFS",
-                            "#2E7D32",
-                            "NPS",
-                            "#5D4037",
-                            "BLM",
-                            "#E65100",
-                            "#888888"
-                        ],
-                        "line-width": 1.0,
-                        "line-opacity": 0.9
-                    },
                     "tooltip_fields": [
                         "trail_name",
                         "admin_agency",
                         "admin_unit",
                         "length_miles"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "USFS trail",
-                            "color": "#2E7D32"
-                        },
-                        {
-                            "label": "NPS trail",
-                            "color": "#5D4037"
-                        },
-                        {
-                            "label": "BLM trail",
-                            "color": "#E65100"
-                        }
                     ]
                 }
             ]
@@ -2751,32 +1255,6 @@
                         ],
                         "Utah"
                     ],
-                    "default_style": {
-                        "line-color": [
-                            "match",
-                            [
-                                "get",
-                                "Classifica"
-                            ],
-                            [
-                                "Wild",
-                                "Wild, Scenic",
-                                "Wild, Recreational",
-                                "Wild, Scenic, Recreational"
-                            ],
-                            "#006064",
-                            [
-                                "Scenic",
-                                "Scenic, Recreational"
-                            ],
-                            "#0097A7",
-                            "Recreational",
-                            "#4DD0E1",
-                            "#888888"
-                        ],
-                        "line-width": 1.4,
-                        "line-opacity": 0.9
-                    },
                     "tooltip_fields": [
                         "River",
                         "Reach",
@@ -2785,25 +1263,6 @@
                         "GIS_Miles",
                         "Management",
                         "County"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "Wild",
-                            "color": "#006064"
-                        },
-                        {
-                            "label": "Scenic",
-                            "color": "#0097A7"
-                        },
-                        {
-                            "label": "Recreational",
-                            "color": "#4DD0E1"
-                        },
-                        {
-                            "label": "Unclassified",
-                            "color": "#888888"
-                        }
                     ]
                 }
             ]
@@ -2828,73 +1287,11 @@
                         ],
                         "UT"
                     ],
-                    "default_style": {
-                        "fill-color": [
-                            "case",
-                            [
-                                "<",
-                                [
-                                    "get",
-                                    "RPL_THEMES"
-                                ],
-                                0
-                            ],
-                            "#E0E0E0",
-                            [
-                                "step",
-                                [
-                                    "get",
-                                    "RPL_THEMES"
-                                ],
-                                "#F2F0F7",
-                                0.2,
-                                "#CBC9E2",
-                                0.4,
-                                "#9E9AC8",
-                                0.6,
-                                "#6A51A3",
-                                0.8,
-                                "#3F007D"
-                            ]
-                        ],
-                        "fill-opacity": 0.55
-                    },
-                    "outline_style": {
-                        "line-color": "#4A3B6B",
-                        "line-width": 0.4
-                    },
                     "tooltip_fields": [
                         "COUNTY",
                         "FIPS",
                         "RPL_THEMES",
                         "ST_ABBR"
-                    ],
-                    "legend_type": "categorical",
-                    "legend_classes": [
-                        {
-                            "label": "0.0–0.2 (least vulnerable)",
-                            "color": "#F2F0F7"
-                        },
-                        {
-                            "label": "0.2–0.4",
-                            "color": "#CBC9E2"
-                        },
-                        {
-                            "label": "0.4–0.6",
-                            "color": "#9E9AC8"
-                        },
-                        {
-                            "label": "0.6–0.8",
-                            "color": "#6A51A3"
-                        },
-                        {
-                            "label": "0.8–1.0 (most vulnerable)",
-                            "color": "#3F007D"
-                        },
-                        {
-                            "label": "No data",
-                            "color": "#E0E0E0"
-                        }
                     ]
                 }
             ]
